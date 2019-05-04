@@ -4,7 +4,9 @@
 
 Help United Way to quickly approve applications based on the address (driver license or ID) and burnt house rating.
 
-Reference: https://github.com/IBM/drones-iot-visual-recognition/blob/master/WildFires/WILDFIRES.md
+Reference: 
+- https://github.com/IBM/drones-iot-visual-recognition/blob/master/WildFires/WILDFIRES.md
+- https://developers.google.com/maps/documentation/javascript/examples/geocoding-reverse
 
 ## App Services
 
