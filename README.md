@@ -3,45 +3,8 @@
 ## Objective
 
 Help United Way to quickly approve applications based on the address (driver license or ID) and burnt house rating.
-Inputs:
 
-Who is sending the drones?
-
-Where are the drones going?
-
-Initial Data Collection
-
-Drones are sent to scan the area and send back images and coordinates into some database
-Live Validation
-
-Drone flies to the address and then the rating process takes place
-In-Person Validation
-
-Address from the driver's license
-Pre-processed input from image recognitiion
-Historical satellite image (from Google?)
-Current image from drone
-Assumption: drone can send us coordinates (metadata of image file)
-Coordinates are used from drone image to lookup the address with Google API
-Compare the two images (historical and current) and give a rating
-Output: Address and comparison rating
-CalFire provided information to United Way
-
-Rank: is the house completely destroyed or damage
-They were doing this on foot, communicate back to their bases, happening over a long period of time
-The whole area is closed
-The Fire Department has a rule that you can't fly during the day.
-Night vision for Drone
-Exterior is taken into account for the CalFire rating
-If you're home is completely destroyed, we will give you a grant, if not
-Unlivable situations are not taken into account be CalFire
-Image Sources:
-
-Drone
-Cell Phones
-Video
-Coordinates
-Verification of address
+## App Services
 
 - Storage
     - Current Image file
@@ -58,6 +21,42 @@ Verification of address
 
 - Image Recognition
     - Watson Image Recognition for rating
+
+## Inputs/Outputs
+Inputs:
+
+- Who is sending the drones?
+- Where are the drones going?
+- Initial Data Collection
+    - Drones are sent to scan the area and send back images and coordinates into some database
+- Live Validation
+- Drone flies to the address and then the rating process takes place
+- In-Person Validation
+- Address from the driver's license
+- Pre-processed input from image recognitiion
+- Historical satellite image (from Google?)
+- Current image from drone
+- Assumption: drone can send us coordinates (metadata of image file)
+- Coordinates are used from drone image to lookup the address with Google API
+- Compare the two images (historical and current) and give a rating
+- Output: Address and comparison rating
+
+
+## Existing Process
+- CalFire provided information to United Way
+- Rank: is the house completely destroyed or damage
+- They were doing this on foot, communicate back to their bases, happening over a long period of time
+
+## Existing Constraints
+- The whole area is closed
+The Fire Department has a rule that you can't fly during the day.
+Night vision for Drone
+Exterior is taken into account for the CalFire rating
+If you're home is completely destroyed, we will give you a grant, if not
+Unlivable situations are not taken into account be CalFire
+Image Sources:
+
+
 
 
 ## Presentation Notes
