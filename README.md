@@ -4,6 +4,15 @@
 
 Help United Way to quickly approve applications based on the address (driver license or ID) and burnt house rating.
 
+Core Functionality:
+
+- Fire Victim Application (can be filled out on iPad, phone, desktop computer)
+- Fire Victim Database (which stores all information)
+- United Way Dashboard (access to fire victims, status of house, etc.)
+    - Fires
+        - Application Status (pending, complete, rejected, etc.)
+        - Victim Information
+
 Reference: 
 - https://github.com/IBM/drones-iot-visual-recognition/blob/master/WildFires/WILDFIRES.md
 - https://developers.google.com/maps/documentation/javascript/examples/geocoding-reverse
