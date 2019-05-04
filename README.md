@@ -111,3 +111,6 @@ MAx 5 per team
 
 translate high threshold burnt houses to a map.
 
+## Future Work
+
+Automite the application process to provide initial rating
