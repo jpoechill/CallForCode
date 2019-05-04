@@ -114,3 +114,7 @@ translate high threshold burnt houses to a map.
 ## Future Work
 
 Automite the application process to provide initial rating
+
+Additional image types (interior of house, multiple angels of exterior, video frames, cell phone pictures)
+
+Overrite the rating
