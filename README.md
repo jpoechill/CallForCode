@@ -4,6 +4,9 @@
 
 Help United Way to quickly approve applications based on the address (driver license or ID) and burnt house rating.
 
+Google Slide Presentation from Call for Code Hackathon: https://docs.google.com/presentation/d/1d_3tq-1y3BTtaHsHbbBHTFACioDKjJyVuCnjy360n_4/edit?usp=sharing
+
+
 Core Functionality:
 
 - Fire Victim Application (can be filled out on iPad, phone, desktop computer)
@@ -12,6 +15,7 @@ Core Functionality:
     - Fires
         - Application Status (pending, complete, rejected, etc.)
         - Victim Information
+        
 
 Reference: 
 - https://github.com/IBM/drones-iot-visual-recognition/blob/master/WildFires/WILDFIRES.md
