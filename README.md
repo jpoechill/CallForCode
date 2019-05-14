@@ -4,7 +4,7 @@ This is the development repository for the following applications used for Wildf
 
 ## Survivor Dashboard
 
-Core Functionality:
+### Core Functionality:
 
 - Displays survivor information categorized by Wildfire
 - Allows users to:
@@ -36,6 +36,8 @@ Core Functionality:
                 - Date of mailing
 
 ## Survivor Application
+
+### Core Functionality
 
 - Displays survivor application information
 - Allows users to :
