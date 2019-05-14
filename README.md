@@ -13,6 +13,8 @@ Core Functionality:
         - Current Address (after wildfire)
         - Home Address (during wildfire)
             - Home status
+            - Home photograph
+            - Home address verification
         - Phone Type
             - Phone
         - Email Address
@@ -24,7 +26,7 @@ Core Functionality:
         - Application status
             - FEMA Number
         - Organizations survivor is working with
-        - Organizations survivor is referred to by UW
+        - Organizations survivor is referred to by main org
         - Gift card information
             - Card Number
             - Card amount
@@ -32,3 +34,15 @@ Core Functionality:
                 - Date of pickup
             - Mailed?
                 - Date of mailing
+
+## Survivor Application
+
+- Displays survivor application information
+- Allows users to :
+    - Create an account
+    - Submit an application
+    - Modify application data
+    - View the status of their application
+    - View the status of their gift card
+    - Submit their application
+        - Demographic information in 
