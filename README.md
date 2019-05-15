@@ -2,6 +2,16 @@
 
 This is the development repository for the following applications used for Wildfire Survivor Data Management:
 
+## Project Roadmap
+
+[x] Initial Kickoff + Gather Requirements
+[ ] Initial Mockups (MM/DD/YYYY)
+[ ] Initial Functional Survivor Dashboard (MM/DD/YYYY)
+[ ] Initial Functional Survivor Application (MM/DD/YYYY)
+[ ] Initial Production Release for Survivor Dashboard (MM/DD/YYYY)
+[ ] Initial Production Release for Survivor Application (MM/DD/YYYY)
+
+
 ## Survivor Dashboard
 
 ### Core Functionality:
