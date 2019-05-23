@@ -1,10 +1,10 @@
 {
-  "name": "Wildfire Survivor Management System",
+  "name": "wildfire-survivor-management-system",
   "version": "1.0.0",
   "description": "A dashboard and registration app for United Way Wildfire Survivors",
-  "main": "src/server.js",
+  "main": "./WildfireSurvivorManagementSystem/server.js",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "node ./WildfireSurvivorManagementSystem/server.js"
   },
   "dependencies": {
     "body-parser": "1.18.3",

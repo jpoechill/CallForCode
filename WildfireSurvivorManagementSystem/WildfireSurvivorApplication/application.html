@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Wildfire Survivor Application</title>
+</head>
+
+<body>
+	<h1>Wildlife Survivor Application</h1>
+	<form id="survivor-form">
+		<fieldset>
+			<legend>General Information</legend>
+			<p>
+				<label for="firstname">First Name</label>
+				<input name="firstname" type="text" placeholder="First Name" required />
+			</p>
+			<p>
+				<label for="middlename">Middle Name</label>
+				<input name="middlename" type="text" placeholder="Middle Name" />
+			</p>
+			<p>
+				<label for="lastname">Last Name</label>
+				<input name="lastname" type="text" placeholder="Last Name" required />
+			</p>
+			<p>
+				<label for="phone">Phone Number</label>
+				<input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+			</p>
+			<p>
+				<label for="email">Email Address</label>
+				<input name="email" type="email" placeholder="Email address" required />
+			</p>
+			<p>
+				<label for="femanumber">FEMA Number</label>
+				<input name="femanumber" type="text" placeholder="XXXXXXXX" required />
+			</p>
+			<p>
+				<label for="wildfirename">Wildfire Name</label>
+				<select required>
+					<option value="Carr">Carr</option>
+					<option value="Camp">Camp</option>
+				</select>
+			</p>
+			<p>
+				<label for="currentaddress1">Current Address 1</label>
+				<input name="currentaddress1" type="text" required />
+			</p>
+		</fieldset>
+	</form>
+</body>
+
+</html>
