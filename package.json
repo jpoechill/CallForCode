@@ -4,7 +4,7 @@
   "description": "A dashboard and registration app for United Way Wildfire Survivors",
   "main": "./WildfireSurvivorManagementSystem/server.js",
   "scripts": {
-    "start": "node ./WildfireSurvivorManagementSystem/server.js"
+    "start": "nodemon ./WildfireSurvivorManagementSystem/server.js"
   },
   "dependencies": {
     "body-parser": "1.18.3",
@@ -13,6 +13,7 @@
     "chromedriver": "2.45.0",
     "dotenv": "6.2.0",
     "express": "4.16.4",
+    "helmet": "^3.18.0",
     "mocha": "5.2.0",
     "pug": "2.0.3",
     "puppeteer": "^1.12.2",

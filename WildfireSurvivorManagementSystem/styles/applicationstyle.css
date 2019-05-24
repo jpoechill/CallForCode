@@ -1,7 +1,15 @@
-label {
-  padding-bottom: 10px;
+fieldset {
+  display: flex;
+  flex-direction: column;
 }
 
-input {
-  padding-bottom: 10px;
+label {
+  margin-bottom: 10px;
+}
+
+input, select {
+  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 50%;
 }
