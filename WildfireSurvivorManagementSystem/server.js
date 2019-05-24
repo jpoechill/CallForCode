@@ -1,7 +1,19 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const app = express();
-const port = 8080;
+const port = 8000;
+const helmet = require("helmet");
+
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      styleSrc: ["'self'", "maxcdn.bootstrapcdn.com"]
+    }
+  })
+);
+
+app.use(express.static("styles"));
 
 app.route("/").get((req, res) => {
   res.sendFile(__dirname + "/index.html");
