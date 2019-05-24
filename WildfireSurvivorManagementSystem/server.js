@@ -8,7 +8,8 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'", "https://www.gstatic.com"],
-      scriptSrc: ["'self'", "https://www.gstatic.com"],
+      scriptSrc: ["'self'", "https://www.gstatic.com", "'unsafe-inline'"],
+      connectSrc: ["'self'", "https://www.googleapis.com"],
       styleSrc: ["'self'"]
     }
   })

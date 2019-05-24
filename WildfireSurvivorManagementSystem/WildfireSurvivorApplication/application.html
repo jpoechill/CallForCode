@@ -4,7 +4,7 @@
 <head>
 	<title>Wildfire Survivor Application</title>
 	<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://www.gstatic.com;
-	script-src 'self' https://www.gstatic.com;
+	script-src 'self' https://www.gstatic.com 'unsafe-inline' https://www.googleapis.com;
 	  style-src 'self'">
 	  
 	<link rel="stylesheet" type="text/css" href="applicationstyle.css">
@@ -61,9 +61,8 @@
 	</form>
 
 	<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
-	<script src="/__/firebase/6.0.2/firebase-auth.js"></script>
-	<script src="/__/firebase/6.0.2/firebase-firestore.js"></script>
-	<script src="/__/firebase/init.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+  	<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
 	<script>
 	  // Your web app's Firebase configuration
 	  var firebaseConfig = {
