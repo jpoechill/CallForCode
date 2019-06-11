@@ -1,8 +1,10 @@
-# Survivor App
-
 ## Sketch Files
 
 https://sketch.cloud/s/8Az7w/a/5eYv2P
+
+# Survivor App
+
+- The Survivor App will be used by wildfire surivors to submit their information to UW
 
 ## Components
 
@@ -100,3 +102,48 @@ CompleteMessage
 ContactUs
 
 - contact_us_information
+
+# Dashboard
+- The Dashboard will be used by UW staff to view and manage (update) survivor data
+
+## Components
+
+Header
+- logo
+- user_menu
+
+Sidebar
+- link_to_dashboard
+- link_to_analytics
+- link_to_applications
+- link_to_map
+
+Wildfires
+- camp_fire
+- carr_fire
+
+UpdatedApplications
+- survivor_preview
+- see_all_button
+
+NewApplications
+- survivor_preview
+- see_all_button
+
+Applications
+- visibility_filters
+- search
+- applications_table
+
+SingleApplication
+- visibility_filters
+- general_information
+- document_approval
+- house_status
+- cash_grant
+- notes
+- emails
+- application_status
+- last_updates
+
+
