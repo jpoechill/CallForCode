@@ -5,7 +5,7 @@ This is the development repository for the following applications used for Wildf
 ## Project Roadmap
 
 - [x] Initial Kickoff + Gather Requirements
-- [ ] Initial Mockups (05/30/2019)
+- [x] Initial Mockups (05/30/2019)
 - [ ] Initial Functional Survivor Dashboard (MM/DD/YYYY)
 - [ ] Initial Functional Survivor Application (MM/DD/YYYY)
 - [ ] Initial Production Release for Survivor Dashboard (MM/DD/YYYY)
