@@ -37,9 +37,9 @@ GeneralInformation
 
 AdditionalContact
 
-- additional_contact_firstname
-- additional_contact_middlename
-- additional_contact_lastname
+- additional_contact_first_name
+- additional_contact_middle_name
+- additional_contact_last_name
 - additional_contact_phone
 - additional_contact_email
 - additional_contact_current_address
