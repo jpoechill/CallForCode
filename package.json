@@ -1,35 +1,35 @@
 {
-  "name": "wildfire-survivor-management-system",
-  "version": "1.0.0",
-  "description": "A dashboard and registration app for United Way Wildfire Survivors",
-  "main": "./WildfireSurvivorManagementSystem/server.js",
-  "scripts": {
-    "start": "nodemon ./WildfireSurvivorManagementSystem/server.js"
-  },
+  "name": "wsms",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "body-parser": "1.18.3",
-    "chai": "4.2.0",
-    "chai-http": "4.2.1",
-    "chromedriver": "2.45.0",
-    "dotenv": "6.2.0",
-    "enzyme": "3.10.0",
-    "enzyme-adapter-react-16": "1.14.0",
-    "express": "4.16.4",
-    "helmet": "^3.18.0",
-    "mocha": "5.2.0",
-    "pug": "2.0.3",
-    "puppeteer": "^1.12.2",
-    "qunit": "2.9.1",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
-    "selenium-webdriver": "4.0.0-alpha.1",
-    "tape": "4.9.2"
+    "@testing-library/react": "^8.0.1",
+    "cypress": "^3.3.1",
+    "cypress-file-upload": "^3.1.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1"
   },
-  "devDependencies": {
-    "babel-jest": "^24.8.0",
-    "nodemon": "^1.18.4",
-    "jest": "^24.8.0",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/preset-react": "^7.0.0"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "cypress:open": "cypress open"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

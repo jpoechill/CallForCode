@@ -1,6 +1,11 @@
 import React from "react";
+import states from "../../constants/states";
 
 const CashGrantInformation = () => {
+  const stateOptions = states.map((state) => 
+    <option value={state.abbreviation}>{state.name}</option>
+  );
+
   return (
     <div>
       <h2>CashGrantInformation</h2>
@@ -23,7 +28,9 @@ const CashGrantInformation = () => {
         placeholder="Apartment Number"
       />
       <input type="text" name="damaged_city" placeholder="City" required />
-      <input type="text" name="damaged_state" placeholder="State" required />
+      <select name="damaged_state">
+        {stateOptions}
+      </select>
       <input type="text" name="damaged_zip" placeholder="zip" required />
     </div>
   );

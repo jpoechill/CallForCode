@@ -1,7 +1,12 @@
 import React from "react";
 
 const Notes = () => {
-  return <h2>Notes</h2>;
+  return (
+    <div>
+      <h2>Notes</h2>
+      <input type="text" name="notes" />
+    </div>
+  )
 };
 
 export default Notes;

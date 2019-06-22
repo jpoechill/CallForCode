@@ -24,6 +24,7 @@ const StartPage = () => {
       <Receipts />
       <Agencies />
       <Signature />
+      <button name="preview">Preview</button>
     </div>
   );
 };

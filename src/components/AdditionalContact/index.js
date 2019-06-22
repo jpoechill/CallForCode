@@ -1,6 +1,11 @@
 import React from "react";
+import states from "../../constants/states";
 
 const AdditionalContact = () => {
+  const stateOptions = states.map((state) => 
+    <option value={state.abbreviation}>{state.name}</option>
+  );
+
   return (
     <div>
       <h2>AdditionalContact</h2>
@@ -50,12 +55,9 @@ const AdditionalContact = () => {
         placeholder="City"
         required
       />
-      <input
-        type="text"
-        name="additional_contact_state"
-        placeholder="State"
-        required
-      />
+      <select name="additional_contact_state" >
+        {stateOptions}
+      </select>
       <input
         type="text"
         name="additional_contact_zip"

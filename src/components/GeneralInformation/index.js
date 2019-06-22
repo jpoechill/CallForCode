@@ -1,6 +1,11 @@
 import React from "react";
+import states from "../../constants/states";
 
 const GeneralInformation = () => {
+  const stateOptions = states.map((state) => 
+    <option value={state.abbreviation}>{state.name}</option>
+  );
+
   return (
     <div>
       <h2>GeneralInformation</h2>
@@ -41,11 +46,13 @@ const GeneralInformation = () => {
       />
       <input
         type="text"
-        name="survivor_apartment_numer"
+        name="survivor_apartment_number"
         placeholder="Apartment Number"
       />
       <input type="text" name="survivor_city" placeholder="City" required />
-      <input type="text" name="survivor_state" placeholder="State" required />
+      <select name="survivor_state">
+        {stateOptions}
+      </select>
       <input type="text" name="survivor_zip" placeholder="Zip Code" required />
     </div>
   );

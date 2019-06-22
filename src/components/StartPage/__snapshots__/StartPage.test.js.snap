@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StartPage contains form components 1`] = `
+<div>
+  <h1>
+    StartPage
+  </h1>
+  <div>
+    <h2>
+      GeneralInformation
+    </h2>
+    <input
+      name="survivor_first_name"
+      placeholder="First Name"
+      required={true}
+      type="text"
+    />
+    <input
+      name="survivor_middle_name"
+      placeholder="Middle Name"
+      type="text"
+    />
+    <input
+      name="survivor_last_name"
+      placeholder="Last Name"
+      required={true}
+      type="text"
+    />
+    <input
+      name="survivor_phone"
+      placeholder="Phone Number"
+      required={true}
+      type="text"
+    />
+    <input
+      name="survivor_email"
+      placeholder="Email Address"
+      required={true}
+      type="text"
+    />
+    <input
+      name="survivor_current_address"
+      placeholder="Current Address"
+      required={true}
+      type="text"
+    />
+    <input
+      name="survivor_apartment_numer"
+      placeholder="Apartment Number"
+      type="text"
+    />
+    <input
+      name="survivor_city"
+      placeholder="City"
+      required={true}
+      type="text"
+    />
+    <input
+      name="survivor_state"
+      placeholder="State"
+      required={true}
+      type="text"
+    />
+    <input
+      name="survivor_zip"
+      placeholder="Zip Code"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div>
+    <h2>
+      AdditionalContact
+    </h2>
+    <input
+      name="additional_contact_first_name"
+      placeholder="First Name"
+      required={true}
+      type="text"
+    />
+    <input
+      name="additional_contact_middle_name"
+      placeholder="Middle Name"
+      type="text"
+    />
+    <input
+      name="additional_contact_last_name"
+      placeholder="Last Name"
+      required={true}
+      type="text"
+    />
+    <input
+      name="additional_contact_phone"
+      placeholder="Phone Number"
+      required={true}
+      type="text"
+    />
+    <input
+      name="additional_contact_email"
+      placeholder="Email Address"
+      required={true}
+      type="text"
+    />
+    <input
+      name="additional_contact_current_address"
+      placeholder="Current Address"
+      required={true}
+      type="text"
+    />
+    <input
+      name="additional_contact_apartment_number"
+      placeholder="Apartment Number"
+      type="text"
+    />
+    <input
+      name="additional_contact_city"
+      placeholder="City"
+      required={true}
+      type="text"
+    />
+    <input
+      name="additional_contact_state"
+      placeholder="State"
+      required={true}
+      type="text"
+    />
+    <input
+      name="additional_contact_zip"
+      placeholder="Zip Code"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div>
+    <h2>
+      CashGrantInformation
+    </h2>
+    <input
+      name="fema_number"
+      required={true}
+      type="text"
+    />
+    <select
+      name="fire_name"
+      required={true}
+    >
+      <option
+        value="none"
+      />
+      <option
+        value="camp"
+      >
+        Camp Fire
+      </option>
+      <option
+        value="carr"
+      >
+        Carr Fire
+      </option>
+      <option
+        value="tubbs"
+      >
+        Tubbs Fire
+      </option>
+    </select>
+    <input
+      name="damaged_address"
+      placeholder="Damaged House Address"
+      required={true}
+      type="text"
+    />
+    <input
+      name="damaged_apartment_number"
+      placeholder="Apartment Number"
+      type="text"
+    />
+    <input
+      name="damaged_city"
+      placeholder="City"
+      required={true}
+      type="text"
+    />
+    <input
+      name="damaged_state"
+      placeholder="State"
+      required={true}
+      type="text"
+    />
+    <input
+      name="damaged_zip"
+      placeholder="zip"
+      required={true}
+      type="text"
+    />
+  </div>
+  <h2>
+    Notes
+  </h2>
+  <h2>
+    PhotoID
+  </h2>
+  <h2>
+    AddressProof
+  </h2>
+  <h2>
+    HouseDamage
+  </h2>
+  <h2>
+    Receipts
+  </h2>
+  <h2>
+    Agencies
+  </h2>
+  <h2>
+    Signature
+  </h2>
+</div>
+`;
