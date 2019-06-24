@@ -1,7 +1,12 @@
 import React from "react";
 
 const AddressProof = () => {
-  return <h2>AddressProof</h2>;
+  return (
+    <div>
+      <h2>Address Proof</h2>
+      <input type="file" name="address_proof_file_upload" accept="image/*" multiple/>
+    </div>
+  )
 };
 
 export default AddressProof;

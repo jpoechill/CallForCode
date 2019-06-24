@@ -1,7 +1,12 @@
 import React from "react";
 
 const Receipts = () => {
-  return <h2>Receipts</h2>;
+  return (
+    <div>
+      <h2>Receipts</h2>
+      <input type="file" name="receipts_file_upload" accept="image/*" multiple/>
+    </div>
+  )
 };
 
 export default Receipts;

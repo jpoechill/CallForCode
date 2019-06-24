@@ -122,12 +122,44 @@ describe('User submits form', () => {
           .type('Notes')
 
         // *** PHOTOID *** //
-          
+        const photoIdFileName = 'PhotoID.jpg';
+        
+        cy.fixture(photoIdFileName).then(fileContent => {
+          cy.get('[name="photo_id_file_upload"]').upload(
+            { fileContent: fileContent, fileName: photoIdFileName, mimeType: 'image/jpeg'},
+            { subjectType: 'input' },
+          );
+        });
+
         // *** ADDRESS PROOF *** //
+        const addressProofFileName = 'AddressProof.jpg';
+        
+        cy.fixture(addressProofFileName).then(fileContent => {
+          cy.get('[name="address_proof_file_upload"]').upload(
+            { fileContent: fileContent, fileName: addressProofFileName, mimeType: 'image/jpeg'},
+            { subjectType: 'input' },
+          );
+        });
 
         // *** HOUSE DAMAGE *** //
 
+        const houseDamageFileName = 'HouseDamage.jpg';
+        
+        cy.fixture(houseDamageFileName).then(fileContent => {
+          cy.get('[name="house_damage_file_upload"]').upload(
+            { fileContent: fileContent, fileName: houseDamageFileName, mimeType: 'image/jpeg'},
+            { subjectType: 'input' },
+          );
+        });
         // *** RECEIPTS *** //
+        const receiptsFileName = 'Receipts.jpg';
+        
+        cy.fixture(receiptsFileName).then(fileContent => {
+          cy.get('[name="receipts_file_upload"]').upload(
+            { fileContent: fileContent, fileName: receiptsFileName, mimeType: 'image/jpeg'},
+            { subjectType: 'input' },
+          );
+        });
 
         // *** AGENCIES *** //
         cy.get('[type="checkbox"]')
