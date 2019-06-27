@@ -9,6 +9,8 @@ import HouseDamage from "../HouseDamage";
 import Receipts from "../Receipts";
 import Agencies from "../Agencies";
 import Signature from "../Signature";
+import NotUsingHooks from "../NotUsingHooks";
+import UsingHooks from "../UsingHooks";
 
 const StartPage = () => {
   return (
@@ -25,6 +27,8 @@ const StartPage = () => {
       <Agencies />
       <Signature />
       <button name="preview">Preview</button>
+      <NotUsingHooks />
+      <UsingHooks />
     </div>
   );
 };
