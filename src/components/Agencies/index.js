@@ -1,71 +1,136 @@
 import React from "react";
+import "./index.css";
 
 const Agencies = () => {
   return (
-    <div>
+    <div id="agency-list">
       <h2>Agencies</h2>
-      <input type="checkbox" name="alliance_for_workforce_development" value="alliance_for_workforce_development"/>
-      <label for="alliance_for_workforce_development">Alliance for Workforce Development</label>
 
-      <input type="checkbox" name="butte_211" value="butte_211"/>
-      <label for="butte_211">Butte 211</label>
+      <label htmlFor="alliance_htmlFor_workhtmlForce_development">
+        <input
+          type="checkbox"
+          name="alliance_htmlFor_workhtmlForce_development"
+          value="alliance_htmlFor_workhtmlForce_development"
+        />
+        Alliance htmlFor WorkhtmlForce Development
+      </label>
 
-      <input type="checkbox" name="caring_choices" value="caring_choices"/>
-      <label for="caring_choices">Caring Choices</label>
+      <label htmlFor="butte_211">
+        <input type="checkbox" name="butte_211" value="butte_211" />
+        Butte 211
+      </label>
 
-      <input type="checkbox" name="catalyst" value="catalyst"/>
-      <label for="catalyst">Catalyst</label>
+      <label htmlFor="caring_choices">
+        <input type="checkbox" name="caring_choices" value="caring_choices" />
+        Caring Choices
+      </label>
 
-      <input type="checkbox" name="chip" value="chip"/>
-      <label for="chip">CHIP</label>
+      <label htmlFor="catalyst">
+        <input type="checkbox" name="catalyst" value="catalyst" />
+        Catalyst
+      </label>
 
-      <input type="checkbox" name="dess" value="dess"/>
-      <label for="dess">DESS</label>
+      <label htmlFor="chip">
+        <input type="checkbox" name="chip" value="chip" />
+        CHIP
+      </label>
 
-      <input type="checkbox" name="fema" value="fema"/>
-      <label for="fema">FEMA</label>
+      <label htmlFor="dess">
+        <input type="checkbox" name="dess" value="dess" />
+        DESS
+      </label>
 
-      <input type="checkbox" name="habitat_for_humanity" value="habitat_for_humanity"/>
-      <label for="habitat_for_humanity">Habitat for Humanity</label>
+      <label htmlFor="fema">
+        <input type="checkbox" name="fema" value="fema" />
+        FEMA
+      </label>
 
-      <input type="checkbox" name="jesus_center" value="jesus_center"/>
-      <label for="jesus_center">Jesus Center</label>
+      <label htmlFor="habitat_htmlFor_humanity">
+        <input
+          type="checkbox"
+          name="habitat_htmlFor_humanity"
+          value="habitat_htmlFor_humanity"
+        />
+        Habitat htmlFor Humanity
+      </label>
 
-      <input type="checkbox" name="lsnc" value="lsnc"/>
-      <label for="lsnc">LSNC</label>
+      <label htmlFor="jesus_center">
+        <input type="checkbox" name="jesus_center" value="jesus_center" />
+        Jesus Center
+      </label>
 
-      <input type="checkbox" name="ltrg_unmet_needs" value="ltrg_unmet_needs"/>
-      <label for="ltrg_unmet_needs">LTRG Unmet Needs</label>
+      <label htmlFor="lsnc">
+        <input type="checkbox" name="lsnc" value="lsnc" />
+        LSNC
+      </label>
 
-      <input type="checkbox" name="nvcss" value="nvcss"/>
-      <label for="nvcss">NVCSS</label>
+      <label htmlFor="ltrg_unmet_needs">
+        <input
+          type="checkbox"
+          name="ltrg_unmet_needs"
+          value="ltrg_unmet_needs"
+        />
+        LTRG Unmet Needs
+      </label>
 
-      <input type="checkbox" name="policy_holders_united" value="policy_holders_united"/>
-      <label for="policy_holders_united">Policy Holders United</label>
+      <label htmlFor="nvcss">
+        <input type="checkbox" name="nvcss" value="nvcss" />
+        NVCSS
+      </label>
 
-      <input type="checkbox" name="red_cross" value="red_cross"/>
-      <label for="red_cross">Red Cross</label>
+      <label htmlFor="policy_holders_united">
+        <input
+          type="checkbox"
+          name="policy_holders_united"
+          value="policy_holders_united"
+        />
+        Policy Holders United
+      </label>
 
-      <input type="checkbox" name="salvation_army" value="salvation_army"/>
-      <label for="salvation_army">Salvation Army</label>
+      <label htmlFor="red_cross">
+        <input type="checkbox" name="red_cross" value="red_cross" />
+        Red Cross
+      </label>
 
-      <input type="checkbox" name="st_vincent_de_paul" value="st_vincent_de_paul"/>
-      <label for="st_vincent_de_paul">St. Vincent de Paul</label>
+      <label htmlFor="salvation_army">
+        <input type="checkbox" name="salvation_army" value="salvation_army" />
+        Salvation Army
+      </label>
 
-      <input type="checkbox" name="torres_shelter" value="torres_shelter"/>
-      <label for="torres_shelter">Torres Shelter</label>
+      <label htmlFor="st_vincent_de_paul">
+        <input
+          type="checkbox"
+          name="st_vincent_de_paul"
+          value="st_vincent_de_paul"
+        />
+        St. Vincent de Paul
+      </label>
 
-      <input type="checkbox" name="tzu_chi" value="tzu_chi"/>
-      <label for="tzu_chi">Tzu Chi</label>
+      <label htmlFor="torres_shelter">
+        <input type="checkbox" name="torres_shelter" value="torres_shelter" />
+        Torres Shelter
+      </label>
 
-      <input type="checkbox" name="vet_center" value="vet_center"/>
-      <label for="vet_center">Vet Center</label>
+      <label htmlFor="tzu_chi">
+        <input type="checkbox" name="tzu_chi" value="tzu_chi" />
+        Tzu Chi
+      </label>
 
-      <input type="checkbox" name="youth_for_change" value="youth_for_change"/>
-      <label for="youth_for_change">Youth for Change</label>
+      <label htmlFor="vet_center">
+        <input type="checkbox" name="vet_center" value="vet_center" />
+        Vet Center
+      </label>
+
+      <label htmlFor="youth_htmlFor_change">
+        <input
+          type="checkbox"
+          name="youth_htmlFor_change"
+          value="youth_htmlFor_change"
+        />
+        Youth htmlFor Change
+      </label>
     </div>
-  
-  )
+  );
 };
 
 export default Agencies;

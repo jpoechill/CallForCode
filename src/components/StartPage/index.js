@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../Header";
 import GeneralInformation from "../GeneralInformation";
 import AdditionalContact from "../AdditionalContact";
 import CashGrantInformation from "../CashGrantInformation";
@@ -9,8 +10,6 @@ import HouseDamage from "../HouseDamage";
 import Receipts from "../Receipts";
 import Agencies from "../Agencies";
 import Signature from "../Signature";
-import UsingCustomHooks from "../UsingCustomHooks";
-import Header from "../Header";
 
 const StartPage = () => {
   return (
