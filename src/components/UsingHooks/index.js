@@ -36,7 +36,6 @@ export default function Greetings(props) {
     const name = useFormInput('Mary')
     const surname = useFormInput('Poppins')
     const width = useWindowWidth();
-    console.log(width)
 
     useDocumentTitle(name.value + ' ' + surname.value)
 
