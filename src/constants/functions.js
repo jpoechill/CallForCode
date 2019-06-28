@@ -1,10 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+const useStateWithLocalStorage = (localStorageKey) => {
+    const [value, setValue] = useState(
+        JSON.parse(localStorage.getItem(localStorageKey)) || {}
+    );
+
+    useEffect(() => {
+        localStorage.setItem(localStorageKey, JSON.stringify(value))
+    });
+
+    return [value, setValue];
+}
 
 const useFormInput = () => {
-    const [value, setValue] = useState({})
-
-    function handleChange(e) {
-        setValue({ ...value, [e.target.name]: e.target.value })
+    const [value, setValue] = useStateWithLocalStorage('userInputLocalStorage');
+    const handleChange = event => {
+        setValue({ ...value, [event.target.name]: event.target.value })
     }
 
     return {

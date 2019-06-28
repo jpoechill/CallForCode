@@ -8,7 +8,8 @@ const CashGrantInformation = () => {
 
   return (
     <div>
-      <h2>CashGrantInformation</h2>
+      <h2>CashGrant Information</h2>
+      <h3>Please provide inforomation regarding the home address damaged by the wildfire(s)</h3>
       <input type="text" name="fema_number" required />
       <select name="fire_name" required>
         <option value="none" />

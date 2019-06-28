@@ -8,7 +8,7 @@ const Agencies = () => {
       <label for="alliance_for_workforce_development">Alliance for Workforce Development</label>
 
       <input type="checkbox" name="butte_211" value="butte_211"/>
-      <label for="butte_211">Bute 211</label>
+      <label for="butte_211">Butte 211</label>
 
       <input type="checkbox" name="caring_choices" value="caring_choices"/>
       <label for="caring_choices">Caring Choices</label>

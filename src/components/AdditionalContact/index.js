@@ -8,7 +8,8 @@ const AdditionalContact = () => {
 
   return (
     <div>
-      <h2>AdditionalContact</h2>
+      <h2>Additional Contact</h2>
+      <h3>Please provide a contact if we are not able to reach you</h3>
       <input
         type="text"
         name="additional_contact_first_name"

@@ -10,11 +10,12 @@ import Receipts from "../Receipts";
 import Agencies from "../Agencies";
 import Signature from "../Signature";
 import UsingCustomHooks from "../UsingCustomHooks";
+import Header from "../Header";
 
 const StartPage = () => {
   return (
     <div>
-      <h1>StartPage</h1>
+      <Header />
       <GeneralInformation />
       <AdditionalContact />
       <CashGrantInformation />
@@ -26,7 +27,6 @@ const StartPage = () => {
       <Agencies />
       <Signature />
       <button name="preview">Preview</button>
-      <UsingCustomHooks />
     </div>
   );
 };
