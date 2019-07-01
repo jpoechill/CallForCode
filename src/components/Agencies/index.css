@@ -1,0 +1,12 @@
+#agency-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1 fr);
+}
+
+[input] {
+  grid-column: 1;
+}
+
+[label] {
+  grid-column: 2;
+}

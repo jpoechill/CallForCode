@@ -1,0 +1,19 @@
+body {
+    font-family: 'Arial';
+}
+
+h2 {
+  color: #111580;
+  font-size: 1.5em;
+}
+
+h3 {
+  color: #313031;
+  font-size: 1.2em;
+}
+
+input[type="text"]
+{
+  font-size: 1.2em;
+  color: #777777;
+}
