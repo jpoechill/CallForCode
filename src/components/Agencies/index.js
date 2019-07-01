@@ -12,7 +12,7 @@ const Agencies = () => {
           name="alliance_htmlFor_workhtmlForce_development"
           value="alliance_htmlFor_workhtmlForce_development"
         />
-        Alliance htmlFor WorkhtmlForce Development
+        Alliance for Workforce Development
       </label>
 
       <label htmlFor="butte_211">
@@ -51,7 +51,7 @@ const Agencies = () => {
           name="habitat_htmlFor_humanity"
           value="habitat_htmlFor_humanity"
         />
-        Habitat htmlFor Humanity
+        Habitat for Humanity
       </label>
 
       <label htmlFor="jesus_center">
@@ -127,7 +127,7 @@ const Agencies = () => {
           name="youth_htmlFor_change"
           value="youth_htmlFor_change"
         />
-        Youth htmlFor Change
+        Youth for Change
       </label>
     </div>
   );
