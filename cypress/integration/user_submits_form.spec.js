@@ -2,124 +2,155 @@ describe('User submits form', () => {
     
 
     it('User fills out StartPage', () => {
+      let testData = {
+        survivor_first_name: "First Name",
+        survivor_middle_name: "Middle Name",
+        survivor_last_name: "Last Name",
+        survivor_phone: "000-000-0000",
+        survivor_email: "email@address.com",
+        survivor_current_address: "123 Stree Name",
+        survivor_apartment_number: "123",
+        survivor_city: "City",
+        survivor_state: "CA",
+        survivor_zip: "12345",
+        additional_contact_first_name: "First Name",
+        additional_contact_middle_name: "Middle Name",
+        additional_contact_last_name: "Last Name",
+        additional_contact_phone: "000-000-0000",
+        additional_contact_email: "email@address.com",
+        additional_contact_current_address: "123 Stree Name",
+        additional_contact_apartment_number: "123",
+        additional_contact_city: "City",
+        additional_contact_state: "CA",
+        additional_contact_zip: "12345",
+        fema_number: "ABCDEF123",
+        fire_name: "Tubbs Fire",
+        damaged_address: "123 Street",
+        damaged_apartment_number: "123",
+        damaged_city: "City",
+        damaged_state: "CA",
+        damaged_zip: "00000",
+        notes: "Notes",
+        signature: "signature"
+      }
         cy.visit('http://localhost:3000');
         // *** GENERAL INFORMATION *** //
 
         // Populate First Name
         cy.get('[name="survivor_first_name"]')
-          .type('First Name');
+          .type(testData.survivor_first_name);
         
         // Populate Middle Name
         cy.get('[name="survivor_middle_name"]')
-          .type('Middle Name');
+          .type(testData.survivor_middle_name);
 
         // Populate Middle Name
         cy.get('[name="survivor_last_name"]')
-          .type('Last Name');
+          .type(testData.survivor_last_name);
 
         // Populate Phone Number
         cy.get('[name="survivor_phone"]')
-          .type('000-000-0000');
+          .type(testData.survivor_phone);
         
         // Populate Email
         cy.get('[name="survivor_email"]')
-          .type('email@address.com');
+          .type(testData.survivor_email);
         
         // Populate Current Address
         cy.get('[name="survivor_current_address"]')
-          .type('123 Street Name');
+          .type(testData.survivor_current_address);
 
         // Populate Apartment Number
         cy.get('[name="survivor_apartment_number"]')
-          .type('123');
+          .type(testData.survivor_apartment_number);
 
         // Populate City
         cy.get('[name="survivor_city"]')
-          .type('City');
+          .type(testData.survivor_city);
         
         // Populate State
         cy.get('[name="survivor_state"]')
-          .select('CA');
+          .select(testData.survivor_state);
 
         // Populate Zip
         cy.get('[name="survivor_zip"]')
-          .type('12345');
+          .type(testData.survivor_zip);
 
         // *** ADDITIONAL CONTACT ** //
 
         // Populate First Name
         cy.get('[name="additional_contact_first_name"]')
-          .type('First Name');
+          .type(testData.additional_contact_first_name);
         
         // Populate Middle Name
         cy.get('[name="additional_contact_middle_name"]')
-          .type('Middle Name');
+          .type(testData.additional_contact_middle_name);
 
         // Populate Middle Name
         cy.get('[name="additional_contact_last_name"]')
-          .type('Last Name');
+          .type(testData.additional_contact_last_name);
 
         // Populate Phone Number
         cy.get('[name="additional_contact_phone"]')
-          .type('000-000-0000');
+          .type(testData.additional_contact_phone);
         
         // Populate Email
         cy.get('[name="additional_contact_email"]')
-          .type('email@address.com');
+          .type(testData.additional_contact_email);
         
         // Populate Current Address
         cy.get('[name="additional_contact_current_address"]')
-          .type('123 Street Name');
+          .type(testData.additional_contact_current_address);
 
         // Populate Apartment Number
         cy.get('[name="additional_contact_apartment_number"]')
-          .type('123');
+          .type(testData.additional_contact_apartment_number);
 
         // Populate City
         cy.get('[name="additional_contact_city"]')
-          .type('City');
+          .type(testData.additional_contact_city);
         
         // Populate State
         cy.get('[name="additional_contact_state"]')
-          .select('CA');
+          .select(testData.additional_contact_state);
 
         // Populate Zip
         cy.get('[name="additional_contact_zip"]')
-          .type('12345');
+          .type(testData.additional_contact_zip);
 
         // *** CASH GRANT INFORMATION *** //
 
         // Populate 9 Digit FEMA Number
         cy.get('[name="fema_number"]')
-          .type('ABCDEF123');
+          .type(testData.fema_number);
 
         // Populate Fire Name
         cy.get('[name="fire_name"]')
-          .select('Tubbs Fire');
+          .select(testData.fire_name);
 
         // Populate Damaged Address
         cy.get('[name="damaged_address"]')
-          .type('123 Street Name');
+          .type(testData.damaged_address);
 
         // Populate Apartment Number
         cy.get('[name="damaged_apartment_number"]')
-          .type('123');
+          .type(testData.damaged_apartment_number);
 
         // Populate City
         cy.get('[name="damaged_city"]')
-          .type('City');
+          .type(testData.damaged_city);
         
         // Populate State
         cy.get('[name="damaged_state"]')
-          .select('CA');
+          .select(testData.damaged_state);
 
         // Populate Zip
         cy.get('[name="damaged_zip"]')
-          .type('12345');
+          .type(testData.damaged_zip);
 
         // *** NOTES *** //
         cy.get('[name="notes"]')
-          .type('Notes')
+          .type(testData.notes)
 
         // *** PHOTOID *** //
         const photoIdFileName = 'PhotoID.jpg';
@@ -188,11 +219,14 @@ describe('User submits form', () => {
 
         // *** ELECTRONIC SIGNATURE *** //
         cy.get('[name="signature"]')
-          .type('signature');
+          .type(testData.signature);
 
         // *** PREVIEW *** //
         cy.get('[name="preview"]')
           .click();
+
+          cy.get('[name="survivor_first_name"]')
+          .should('eq', testData.survivor_first_name);
 
         // *** SUBMIT *** //
         cy.get('[name="submit"]')
