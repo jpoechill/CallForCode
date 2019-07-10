@@ -1,6 +1,7 @@
 import React from "react";
 
 const Notes = () => {
+  // TODO: add useFormInput
   return (
     <div>
       <h2>Notes</h2>

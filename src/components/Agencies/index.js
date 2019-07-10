@@ -6,11 +6,11 @@ const Agencies = () => {
     <div id="agency-list">
       <h2>Agencies</h2>
 
-      <label htmlFor="alliance_htmlFor_workhtmlForce_development">
+      <label htmlFor="alliance_for_workforce_development">
         <input
           type="checkbox"
-          name="alliance_htmlFor_workhtmlForce_development"
-          value="alliance_htmlFor_workhtmlForce_development"
+          name="alliance_for_workforce_development"
+          value="alliance_for_workforce_development"
         />
         Alliance for Workforce Development
       </label>
@@ -45,11 +45,11 @@ const Agencies = () => {
         FEMA
       </label>
 
-      <label htmlFor="habitat_htmlFor_humanity">
+      <label htmlFor="habitat_for_humanity">
         <input
           type="checkbox"
-          name="habitat_htmlFor_humanity"
-          value="habitat_htmlFor_humanity"
+          name="habitat_for_humanity"
+          value="habitat_for_humanity"
         />
         Habitat for Humanity
       </label>
@@ -121,11 +121,11 @@ const Agencies = () => {
         Vet Center
       </label>
 
-      <label htmlFor="youth_htmlFor_change">
+      <label htmlFor="youth_for_change">
         <input
           type="checkbox"
-          name="youth_htmlFor_change"
-          value="youth_htmlFor_change"
+          name="youth_for_change"
+          value="youth_for_change"
         />
         Youth for Change
       </label>

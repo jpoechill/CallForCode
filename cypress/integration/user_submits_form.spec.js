@@ -225,8 +225,8 @@ describe('User submits form', () => {
         cy.get('[name="preview"]')
           .click();
 
-          cy.get('[name="survivor_first_name"]')
-          .should('eq', testData.survivor_first_name);
+        cy.get('[name="survivor_name_preview"]')
+          .should('eq', testData.survivor_first_name + ' ' + testData.survivor_middle_name + ' ' + testData.survivor_last_name);
 
         // *** SUBMIT *** //
         cy.get('[name="submit"]')
