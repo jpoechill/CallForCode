@@ -7,7 +7,7 @@ const CashGrantInformation = () => {
   );
 
   return (
-    <div>
+    <div id="cash-grant-information">
       <h2>CashGrant Information</h2>
       <h3>Please provide inforomation regarding the home address damaged by the wildfire(s)</h3>
       <input type="text" name="fema_number" required />

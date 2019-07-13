@@ -7,7 +7,7 @@ const AdditionalContact = () => {
   );
 
   return (
-    <div>
+    <div id="additional-contact">
       <h2>Additional Contact</h2>
       <h3>Please provide a contact if we are not able to reach you</h3>
       <input

@@ -10,7 +10,7 @@ const GeneralInformation = () => {
   const userInput = useFormInput()
 
   return (
-    <div>
+    <div id="general-information-container">
       <h2>General Information</h2>
       <h3>Please provide your current information so that we can contact you about your case</h3>
       <input
