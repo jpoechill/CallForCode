@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial';
+  font-family: "Arial";
 }
 
 h2 {
@@ -12,8 +12,12 @@ h3 {
   font-size: 1.2em;
 }
 
-input[type="text"]
-{
+input[type="text"] {
   font-size: 1.2em;
   color: #777777;
+}
+
+#agencies-container {
+  display: flex;
+  flex-direction: column;
 }
