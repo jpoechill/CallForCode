@@ -52,3 +52,5 @@ const FIELDS = {
   agencies: ["agencies"],
   signature: ["signature"]
 };
+
+export default FIELDS;
