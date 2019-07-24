@@ -29,5 +29,26 @@ const FIELDS = {
     "additional_contact_city",
     "additional_contact_state",
     "additional_contact_zip"
-  ]
+  ],
+  cash_grant_information: [
+    "fema_number",
+    "fire_name",
+    "damaged_address1",
+    "damaged_address2",
+    "damaged_city",
+    "damaged_state",
+    "damaged_zip",
+    "landlord_first_name",
+    "landlord_middle_name",
+    "landlord_last_name",
+    "landlord_phone",
+    "landlord_email"
+  ],
+  notes: ["notes"],
+  photo_id: ["photo_id"],
+  address_proof: ["address_proof"],
+  house_damage: ["house_damage"],
+  receipts: ["receipts"],
+  agencies: ["agencies"],
+  signature: ["signature"]
 };
