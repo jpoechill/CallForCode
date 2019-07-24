@@ -4,83 +4,75 @@ import agencies from "../../constants/agencies";
 import StartPage from "../StartPage";
 import PreviewPage from "../PreviewPage";
 import CompletePage from "../CompletePage";
+import SCHEMA from "../../constants/schema";
 
 const WildfireSurvivorApp = () => {
   const [state, setState] = useState(
-    JSON.parse(localStorage.getItem("formData")) || {
-      household_members: { count: 0 }
-    }
+    JSON.parse(localStorage.getItem("formData")) || SCHEMA
   );
 
-  const formInput = {
-    value: state,
-    handleChange: event => {
-      let eventClass = event.target.className;
-      let name;
-      let value;
-      switch (eventClass) {
-        case "household_members":
-          name = event.target.name;
-          value = state["household_members"]["count"] + 1;
-          break;
-        case "agencies":
-          name = event.target.name;
-          value = event.target.checked;
-          break;
-        case "images":
-          name = event.target.name;
-          if (event.target.files) {
-            let fileDataUrl = Array.prototype.map.call(
-              event.target.files,
-              file => {
-                return URL.createObjectURL(file);
-              }
-            );
-            value = fileDataUrl;
-          }
-          break;
-        case "members-of-household":
-          name = event.target.parentElement.id;
-          value = state[eventClass]
-            ? {
-                ...state[eventClass][name],
-                [event.target.name]: event.target.value
-              }
-            : { [event.target.name]: event.target.value };
-          break;
-        case "general-information":
-        case "additional-contact-information":
-        case "cash-grant-information":
-        case "notes":
-        case "signature":
-        default:
-          name = event.target.name;
-          value = event.target.value;
-          break;
-      }
-      let newState = {
-        ...state,
-        [eventClass]: { ...state[eventClass], [name]: value }
-      };
-      localStorage.setItem("formData", JSON.stringify(newState));
-      setState(newState);
+  /*
+  const handleChange = event => {
+    let eventClass = event.target.className;
+    let name;
+    let value;
+    switch (eventClass) {
+      case "household_members":
+        name = event.target.name;
+        value = state["household_members"]["count"] + 1;
+        break;
+      case "agencies":
+        name = event.target.name;
+        value = event.target.checked;
+        break;
+      case "images":
+        name = event.target.name;
+        if (event.target.files) {
+          let fileDataUrl = Array.prototype.map.call(
+            event.target.files,
+            file => {
+              return URL.createObjectURL(file);
+            }
+          );
+          value = fileDataUrl;
+        }
+        break;
+      case "members-of-household":
+        name = event.target.parentElement.id;
+        value = state[eventClass]
+          ? {
+              ...state[eventClass][name],
+              [event.target.name]: event.target.value
+            }
+          : { [event.target.name]: event.target.value };
+        break;
+      case "general-information":
+      case "additional-contact-information":
+      case "cash-grant-information":
+      case "notes":
+      case "signature":
+      default:
+        name = event.target.name;
+        value = event.target.value;
+        break;
     }
+    let newState = {
+      ...state,
+      [eventClass]: { ...state[eventClass], [name]: value }
+    };
+    localStorage.setItem("formData", JSON.stringify(newState));
+    setState(newState);
   };
+  */
 
   /**
-   * Get image URL
+   * update state and localStorage
+   * @param {event} e
    */
-
-  const getImage = property => {
-    let value;
-    if (state.images) {
-      if (state.images[property]) {
-        value = state.images[property][0];
-      } else {
-        value = "";
-      }
-    }
-    return value;
+  const handleChange = e => {
+    let newState = { ...state, [e.target.name]: e.target.value };
+    localStorage.setItem("formData", JSON.stringify(newState));
+    setState(newState);
   };
   /**
    * Get state given a set of nested properties
@@ -100,9 +92,6 @@ const WildfireSurvivorApp = () => {
     return value;
   };
 
-  /**
-   * Gt household member data
-   */
   const getHouseholdMemberState = (property1, property2, property3) => {
     let value;
     if (state[property1]) {
@@ -139,7 +128,7 @@ const WildfireSurvivorApp = () => {
         type="checkbox"
         name={agency.name}
         checked={getState("agencies", agency.name)}
-        onChange={formInput.handleChange}
+        onChange={handleChange}
       />
       {agency.text}
     </label>
@@ -152,29 +141,21 @@ const WildfireSurvivorApp = () => {
     let id;
     let householdPreviewElements = [];
 
-    if (state["members-of-household"]) {
-      for (let i = 0; i < state.household_members.count; i++) {
-        id = "member_of_household_" + i;
-
-        householdPreviewElements.push(
-          <p>
-            Name:{" "}
-            {state["members-of-household"][id][
-              "member_of_household_first_name"
+    for (let i = 0; i <= state.household_members.count; i++) {
+      id = "member_of_household_" + i;
+      householdPreviewElements.push(
+        <p>
+          Name:{" "}
+          {state["members-of-household"][id]["member_of_household_first_name"] +
+            " " +
+            state["members-of-household"][id][
+              "member_of_household_middle_name"
             ] +
-              " " +
-              state["members-of-household"][id][
-                "member_of_household_middle_name"
-              ] +
-              " " +
-              state["members-of-household"][id][
-                "member_of_household_last_name"
-              ]}
-          </p>
-        );
-      }
+            " " +
+            state["members-of-household"][id]["member_of_household_last_name"]}
+        </p>
+      );
     }
-
     return householdPreviewElements;
   };
   // TODO: Generate household member inputs
@@ -197,7 +178,7 @@ const WildfireSurvivorApp = () => {
               id,
               "member_of_household_first_name"
             )}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             key={id + "_middle_name"}
@@ -210,7 +191,7 @@ const WildfireSurvivorApp = () => {
               id,
               "member_of_household_middle_name"
             )}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             key={id + "_last_name"}
@@ -223,7 +204,7 @@ const WildfireSurvivorApp = () => {
               id,
               "member_of_household_last_name"
             )}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             key={id + "_dob"}
@@ -236,7 +217,7 @@ const WildfireSurvivorApp = () => {
               id,
               "member_of_household_dob"
             )}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             key={id + "_relation"}
@@ -249,7 +230,7 @@ const WildfireSurvivorApp = () => {
               id,
               "member_of_household_relation"
             )}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <br />
           <br />
@@ -299,7 +280,7 @@ const WildfireSurvivorApp = () => {
             name="survivor_first_name"
             placeholder="First Name"
             value={getState("general-information", "survivor_first_name")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             className="general-information"
@@ -307,7 +288,7 @@ const WildfireSurvivorApp = () => {
             name="survivor_middle_name"
             placeholder="Middle Name"
             value={getState("general-information", "survivor_middle_name")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             className="general-information"
@@ -315,7 +296,7 @@ const WildfireSurvivorApp = () => {
             name="survivor_last_name"
             placeholder="Last Name"
             value={getState("general-information", "survivor_last_name")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             className="general-information"
@@ -323,7 +304,7 @@ const WildfireSurvivorApp = () => {
             name="survivor_phone"
             placeholder="Phone Number"
             value={getState("general-information", "survivor_phone")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             className="general-information"
@@ -331,7 +312,7 @@ const WildfireSurvivorApp = () => {
             name="survivor_email"
             placeholder="Email Address"
             value={getState("general-information", "survivor_email")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             className="general-information"
@@ -339,7 +320,7 @@ const WildfireSurvivorApp = () => {
             name="survivor_current_address"
             placeholder="Current Address"
             value={getState("general-information", "survivor_current_address")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             className="general-information"
@@ -347,7 +328,7 @@ const WildfireSurvivorApp = () => {
             name="survivor_apartment_number"
             placeholder="Apartment Number"
             value={getState("general-information", "survivor_apartment_number")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             className="general-information"
@@ -355,13 +336,13 @@ const WildfireSurvivorApp = () => {
             name="survivor_city"
             placeholder="City"
             value={getState("general-information", "survivor_city")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <select
             className="general-information"
             name="survivor_state"
             value={getState("general-information", "survivor_state")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           >
             {stateOptions}
           </select>
@@ -371,7 +352,7 @@ const WildfireSurvivorApp = () => {
             name="survivor_zip"
             placeholder="Zip Code"
             value={getState("general-information", "survivor_zip")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
         </div>
         <div id="members-of-household">
@@ -383,7 +364,7 @@ const WildfireSurvivorApp = () => {
           <button
             className="household_members"
             name="count"
-            onClick={formInput.handleChange}
+            onClick={handleChange}
           >
             Add a household member
           </button>
@@ -400,7 +381,7 @@ const WildfireSurvivorApp = () => {
               "additional-contact-information",
               "additional_contact_first_name"
             )}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             className="additional-contact-information"
@@ -411,7 +392,7 @@ const WildfireSurvivorApp = () => {
               "additional-contact-information",
               "additional_contact_middle_name"
             )}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             className="additional-contact-information"
@@ -422,7 +403,7 @@ const WildfireSurvivorApp = () => {
               "additional-contact-information",
               "additional_contact_last_name"
             )}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             className="additional-contact-information"
@@ -433,7 +414,7 @@ const WildfireSurvivorApp = () => {
               "additional-contact-information",
               "additional_contact_phone"
             )}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             className="additional-contact-information"
@@ -444,7 +425,7 @@ const WildfireSurvivorApp = () => {
               "additional-contact-information",
               "additional_contact_email"
             )}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             className="additional-contact-information"
@@ -455,7 +436,7 @@ const WildfireSurvivorApp = () => {
               "additional-contact-information",
               "additional_contact_current_address"
             )}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             className="additional-contact-information"
@@ -466,7 +447,7 @@ const WildfireSurvivorApp = () => {
               "additional-contact-information",
               "additional_contact_apartment_number"
             )}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             className="additional-contact-information"
@@ -477,7 +458,7 @@ const WildfireSurvivorApp = () => {
               "additional-contact-information",
               "additional_contact_city"
             )}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <select
             className="additional-contact-information"
@@ -486,7 +467,7 @@ const WildfireSurvivorApp = () => {
               "additional-contact-information",
               "additional_contact_state"
             )}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           >
             {stateOptions}
           </select>
@@ -499,7 +480,7 @@ const WildfireSurvivorApp = () => {
               "additional-contact-information",
               "additional_contact_zip"
             )}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
         </div>
         <div id="cash-grant-information">
@@ -514,13 +495,13 @@ const WildfireSurvivorApp = () => {
             name="fema_number"
             placeholder="FEMA Number"
             value={getState("cash-grant-information", "fema_number")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <select
             className="cash-grant-information"
             name="fire_name"
             value={getState("cash-grant-information", "fire_name")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           >
             <option value="none" />
             <option value="camp">Camp Fire</option>
@@ -533,7 +514,7 @@ const WildfireSurvivorApp = () => {
             name="damaged_address"
             placeholder="Damaged House Address"
             value={getState("cash-grant-information", "damaged_address")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             className="cash-grant-information"
@@ -544,7 +525,7 @@ const WildfireSurvivorApp = () => {
               "cash-grant-information",
               "damaged_apartment_number"
             )}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             className="cash-grant-information"
@@ -552,13 +533,13 @@ const WildfireSurvivorApp = () => {
             name="damaged_city"
             placeholder="City"
             value={getState("cash-grant-information", "damaged_city")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <select
             className="cash-grant-information"
             name="damaged_state"
             value={getState("cash-grant-information", "damaged_state")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           >
             {stateOptions}
           </select>
@@ -568,7 +549,7 @@ const WildfireSurvivorApp = () => {
             name="damaged_zip"
             placeholder="zip"
             value={getState("cash-grant-information", "damaged_zip")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <h3>If you rented, enter information about your landlord</h3>
           <input
@@ -577,7 +558,7 @@ const WildfireSurvivorApp = () => {
             name="landlord_first_name"
             placeholder="First Name"
             value={getState("cash-grant-information", "landlord_first_name")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             className="cash-grant-information"
@@ -585,7 +566,7 @@ const WildfireSurvivorApp = () => {
             name="landlord_middle_name"
             placeholder="Middle Name"
             value={getState("cash-grant-information", "landlord_middle_name")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             className="cash-grant-information"
@@ -593,7 +574,7 @@ const WildfireSurvivorApp = () => {
             name="landlord_last_name"
             placeholder="Last Name"
             value={getState("cash-grant-information", "landlord_last_name")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             className="cash-grant-information"
@@ -601,7 +582,7 @@ const WildfireSurvivorApp = () => {
             name="landlord_phone"
             placeholder="###-###-####"
             value={getState("cash-grant-information", "landlord_phone")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
           <input
             className="cash-grant-information"
@@ -609,7 +590,7 @@ const WildfireSurvivorApp = () => {
             name="landlord_email"
             placeholder="Email Address"
             value={getState("cash-grant-information", "landlord_email")}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
         </div>
         <div id="notes-container">
@@ -625,7 +606,7 @@ const WildfireSurvivorApp = () => {
             type="text"
             name="notes"
             value={notes}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
         </div>
         <div id="photo-id-container">
@@ -635,7 +616,7 @@ const WildfireSurvivorApp = () => {
             type="file"
             name="photo_id_file_upload"
             accept="image/*"
-            onChange={formInput.handleChange}
+            onChange={handleChange}
             multiple
           />
         </div>
@@ -646,7 +627,7 @@ const WildfireSurvivorApp = () => {
             type="file"
             name="address_proof_file_upload"
             accept="image/*"
-            onChange={formInput.handleChange}
+            onChange={handleChange}
             multiple
           />
         </div>
@@ -657,7 +638,7 @@ const WildfireSurvivorApp = () => {
             type="file"
             name="house_damage_file_upload"
             accept="image/*"
-            onChange={formInput.handleChange}
+            onChange={handleChange}
             multiple
           />
         </div>
@@ -668,7 +649,7 @@ const WildfireSurvivorApp = () => {
             type="file"
             name="receipts_file_upload"
             accept="image/*"
-            onChange={formInput.handleChange}
+            onChange={handleChange}
             multiple
           />
         </div>
@@ -682,8 +663,7 @@ const WildfireSurvivorApp = () => {
             className="signature"
             type="text"
             name="signature"
-            value={state.signature.signature}
-            onChange={formInput.handleChange}
+            onChange={handleChange}
           />
         </div>
         <button type="submit" value="preview" name="preview">
@@ -819,12 +799,15 @@ const WildfireSurvivorApp = () => {
         <p id="notes_preview">{notes}</p>
 
         <h2>Photo ID</h2>
-        <img id="photo_id_preview" src={getImage("photo_id_file_upload")} />
+        <img
+          id="photo_id_preview"
+          src={getState("images", "photo_id_file_upload")[0]}
+        />
 
         <h2>Address Proof</h2>
         <img
           id="address_proof_preview"
-          src={getImage("address_proof_file_upload")}
+          src={getState("images", "address_proof_file_upload")[0]}
         />
 
         <h2>Damaged House Photos</h2>
