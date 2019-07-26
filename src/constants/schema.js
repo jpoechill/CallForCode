@@ -2,51 +2,85 @@ const SCHEMA = {
   survivor_first_name: {
     type: "string",
     initial_value: "",
+    placeholder: "First Name",
     validation: () => {}
   },
   survivor_middle_name: {
     type: "string",
     initial_value: "",
+    placeholder: "Middle Name",
     validation: () => {}
   },
   survivor_last_name: {
     type: "string",
     initial_value: "",
+    placeholder: "Last Name",
     validation: () => {}
   },
-  survivor_phone: { type: "string", initial_value: "", validation: () => {} },
-  survivor_email: { type: "string", initial_value: "", validation: () => {} },
+  survivor_phone: {
+    type: "string",
+    initial_value: "",
+    placeholder: "###-###-####",
+    validation: () => {}
+  },
+  survivor_email: {
+    type: "string",
+    initial_value: "",
+    placeholder: "email@address.com",
+    validation: () => {}
+  },
   survivor_address1: {
     type: "string",
     initial_value: "",
+    placeholder: "Address 1",
     validation: () => {}
   },
   survivor_address2: {
     type: "string",
     initial_value: "",
+    placeholder: "Address 2",
     validation: () => {}
   },
-  survivor_city: { type: "string", initial_value: "", validation: () => {} },
-  survivor_state: { type: "string", initial_value: "", validation: () => {} },
-  survivor_zip: { type: "string", initial_value: "", validation: () => {} },
+  survivor_city: {
+    type: "string",
+    initial_value: "",
+    placeholder: "City",
+    validation: () => {}
+  },
+  survivor_state: {
+    type: "string",
+    initial_value: "",
+    placeholder: null,
+    validation: () => {}
+  },
+  survivor_zip: {
+    type: "string",
+    initial_value: "",
+    placeholder: "#####",
+    validation: () => {}
+  },
   household_member_0_first_name: {
     type: "string",
     initial_value: "",
+    placeholder: "First Name",
     validation: () => {}
   },
   household_member_0_middle_name: {
     type: "string",
     initial_value: "",
+    placeholder: "Middle Name",
     validation: () => {}
   },
   household_member_0_last_name: {
     type: "string",
     initial_value: "",
+    placeholder: "Last Name",
     validation: () => {}
   },
   household_member_0_dob: {
     type: "string",
     initial_value: "",
+    placeholder: "MM/DD/YYYY",
     validation: () => {}
   },
   household_member_0_relation: {

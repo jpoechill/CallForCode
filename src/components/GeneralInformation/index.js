@@ -1,6 +1,7 @@
 import React from "react";
 import states from "../../constants/states";
 import SCHEMA from "../../constants/schema";
+import FIELDS from "../../constants/component_fields";
 import useFormInput from "../../constants/functions";
 
 const GeneralInformation = () => {
@@ -9,6 +10,18 @@ const GeneralInformation = () => {
       {state.name}
     </option>
   ));
+
+  const general_information_fields = FIELDS.general_information;
+
+  const general_information_elements = general_information_fields.map((field) => {
+    <input
+      type="text"
+      name={field}
+      value={SCHEMA[field].initial_value},
+      placeholder=
+    
+    />
+  })
 };
 const GeneralInformation2 = () => {
   const stateOptions = states.map(state => (
