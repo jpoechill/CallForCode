@@ -4,7 +4,7 @@ import SCHEMA from "../../constants/schema";
 import FIELDS from "../../constants/component_fields";
 import useFormInput from "../../constants/functions";
 
-const GeneralInformation = () => {
+const GeneralInformation = ({ handleChange }) => {
   const stateOptions = states.map(state => (
     <option key={state.abbreviation} value={state.abbreviation}>
       {state.name}
@@ -13,16 +13,43 @@ const GeneralInformation = () => {
 
   const general_information_fields = FIELDS.general_information;
 
-  const general_information_elements = general_information_fields.map((field) => {
-    <input
-      type="text"
-      name={field}
-      value={SCHEMA[field].initial_value},
-      placeholder=
-    
-    />
-  })
+  const general_information_elements = general_information_fields.map(
+    (field, idx) => {
+      switch (field) {
+        case "survivor_state":
+          return (
+            <select
+              key={idx}
+              className="general-information"
+              name="survivor_state"
+              value={SCHEMA[field].initial_value}
+              onChange={handleChange}
+            >
+              {stateOptions}
+            </select>
+          );
+        default:
+          return (
+            <input
+              key={idx}
+              className="general-information"
+              type="text"
+              name={field}
+              value={SCHEMA[field].initial_value}
+              placeholder={SCHEMA[field].placeholder}
+            />
+          );
+      }
+    }
+  );
+
+  return (
+    <div id="general-information-container">{general_information_elements}</div>
+  );
 };
+
+/*
+
 const GeneralInformation2 = () => {
   const stateOptions = states.map(state => (
     <option value={state.abbreviation}>{state.name}</option>
@@ -114,13 +141,10 @@ const GeneralInformation2 = () => {
         onChange={userInput.onChange}
         required
       />
-      {/*
-      <div>
-        {JSON.stringify(userInput.value)}
-      </div>
-      */}
     </div>
   );
 };
+
+*/
 
 export default GeneralInformation;

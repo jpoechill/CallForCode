@@ -1,14 +1,24 @@
 import React, { useState, useEffect } from "react";
+import GeneralInformation from "../GeneralInformation";
 import states from "../../constants/states";
 import agencies from "../../constants/agencies";
 import StartPage from "../StartPage";
 import PreviewPage from "../PreviewPage";
 import CompletePage from "../CompletePage";
 import SCHEMA from "../../constants/schema";
+import FIELDS from "../../constants/component_fields";
 
 const WildfireSurvivorApp = () => {
+  const initialState = {};
+
+  Object.keys(SCHEMA).forEach(key => {
+    if (SCHEMA.hasOwnProperty(key)) {
+      initialState[key] = SCHEMA[key].initial_value;
+    }
+  });
+
   const [state, setState] = useState(
-    JSON.parse(localStorage.getItem("formData")) || SCHEMA
+    JSON.parse(localStorage.getItem("formData")) || initialState
   );
 
   /*
@@ -73,6 +83,7 @@ const WildfireSurvivorApp = () => {
     let newState = { ...state, [e.target.name]: e.target.value };
     localStorage.setItem("formData", JSON.stringify(newState));
     setState(newState);
+    debugger;
   };
   /**
    * Get state given a set of nested properties
@@ -115,6 +126,38 @@ const WildfireSurvivorApp = () => {
     </option>
   ));
 
+  const general_information_fields = FIELDS.general_information;
+
+  const general_information_elements = general_information_fields.map(
+    (field, idx) => {
+      switch (field) {
+        case "survivor_state":
+          return (
+            <select
+              key={idx}
+              className="general-information"
+              name="survivor_state"
+              value={SCHEMA[field].initial_value}
+              onChange={handleChange}
+            >
+              {stateOptions}
+            </select>
+          );
+        default:
+          return (
+            <input
+              key={idx}
+              className="general-information"
+              type="text"
+              name={field}
+              value={state[field]}
+              placeholder={SCHEMA[field].placeholder}
+              onChange={handleChange}
+            />
+          );
+      }
+    }
+  );
   // Store agencyNames from agencies import for reference in checkedAgencyList
   const agencyNames = agencies.map(agency => agency.name);
 
@@ -268,93 +311,13 @@ const WildfireSurvivorApp = () => {
   return (
     <div id="form-container">
       <div id="start-page-container">
-        <div id="general-information-container">
-          <h2>General Information</h2>
-          <h3>
-            Please provide your current information so that we can contact you
-            about your case
-          </h3>
-          <input
-            className="general-information"
-            type="text"
-            name="survivor_first_name"
-            placeholder="First Name"
-            value={getState("general-information", "survivor_first_name")}
-            onChange={handleChange}
-          />
-          <input
-            className="general-information"
-            type="text"
-            name="survivor_middle_name"
-            placeholder="Middle Name"
-            value={getState("general-information", "survivor_middle_name")}
-            onChange={handleChange}
-          />
-          <input
-            className="general-information"
-            type="text"
-            name="survivor_last_name"
-            placeholder="Last Name"
-            value={getState("general-information", "survivor_last_name")}
-            onChange={handleChange}
-          />
-          <input
-            className="general-information"
-            type="text"
-            name="survivor_phone"
-            placeholder="Phone Number"
-            value={getState("general-information", "survivor_phone")}
-            onChange={handleChange}
-          />
-          <input
-            className="general-information"
-            type="text"
-            name="survivor_email"
-            placeholder="Email Address"
-            value={getState("general-information", "survivor_email")}
-            onChange={handleChange}
-          />
-          <input
-            className="general-information"
-            type="text"
-            name="survivor_current_address"
-            placeholder="Current Address"
-            value={getState("general-information", "survivor_current_address")}
-            onChange={handleChange}
-          />
-          <input
-            className="general-information"
-            type="text"
-            name="survivor_apartment_number"
-            placeholder="Apartment Number"
-            value={getState("general-information", "survivor_apartment_number")}
-            onChange={handleChange}
-          />
-          <input
-            className="general-information"
-            type="text"
-            name="survivor_city"
-            placeholder="City"
-            value={getState("general-information", "survivor_city")}
-            onChange={handleChange}
-          />
-          <select
-            className="general-information"
-            name="survivor_state"
-            value={getState("general-information", "survivor_state")}
-            onChange={handleChange}
-          >
-            {stateOptions}
-          </select>
-          <input
-            className="general-information"
-            type="text"
-            name="survivor_zip"
-            placeholder="Zip Code"
-            value={getState("general-information", "survivor_zip")}
-            onChange={handleChange}
-          />
-        </div>
+        <h2>General Information</h2>
+        <h3>
+          Please provide your current information so that we can contact you
+          about your case
+        </h3>
+        {general_information_elements}
+        {/* 
         <div id="members-of-household">
           <h2>Members of Household</h2>
           <h3>
@@ -825,6 +788,7 @@ const WildfireSurvivorApp = () => {
         <button type="submit" value="submit" name="submit">
           Submit
         </button>
+        */}
       </div>
     </div>
   );
