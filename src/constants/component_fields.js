@@ -37,7 +37,9 @@ const FIELDS = {
     "damaged_address2",
     "damaged_city",
     "damaged_state",
-    "damaged_zip",
+    "damaged_zip"
+  ],
+  landlord_information: [
     "landlord_first_name",
     "landlord_middle_name",
     "landlord_last_name",
@@ -49,7 +51,37 @@ const FIELDS = {
   address_proof: ["address_proof"],
   house_damage: ["house_damage"],
   receipts: ["receipts"],
-  agencies: ["agencies"],
+  can_content_release: ["can_content_release"],
+  agencies: [
+    "alliance_for_workplace_development",
+    "butte_211",
+    "caring_choices",
+    "chip",
+    "dess",
+    "fema",
+    "habitat_for_humanity",
+    "jesus_center",
+    "lsnc",
+    "ltrg_unmet_needs",
+    "nvcss",
+    "policy_holders_united",
+    "red_cross",
+    "salvation_army",
+    "st_vincent_de_paul",
+    "torres_shelter",
+    "tzu_chi",
+    "vet_center",
+    "youth_for_change"
+  ],
+  case_managers: [
+    "referring_agency",
+    "case_manager_first_name",
+    "case_manager_middle_name",
+    "case_manager_last_name",
+    "case_manager_phone",
+    "case_manager_email"
+  ],
+  sba_loan: ["sba_loan_yes", "sba_loan_no"],
   signature: ["signature"]
 };
 
