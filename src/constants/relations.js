@@ -7,10 +7,12 @@ const relations = [
   { name: "Brother", value: "brother" },
   { name: "Daughter", value: "daughter" },
   { name: "Son", value: "son" },
+  { name: "Grandfather", value: "grandfather" },
+  { name: "Grandmother", value: "grandmother" },
   { name: "Aunt", value: "aunt" },
   { name: "Uncle", value: "uncle" },
   { name: "Niece", value: "niece" },
-  { name: "Nephew", value: "newphew" },
+  { name: "Nephew", value: "nephew" },
   { name: "Other", value: "other" }
 ];
 

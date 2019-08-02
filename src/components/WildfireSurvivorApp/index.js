@@ -88,38 +88,6 @@ const WildfireSurvivorApp = () => {
     setState(newState);
   };
 
-  /**
-   * Get state given a set of nested properties
-   * @param {string} property1 first child prop of state
-   * @param {string} property2 first child propr of state[property1]
-   * @return value of state[property1][property2]
-   */
-  const getState = (property1, property2) => {
-    let value;
-    if (state[property1]) {
-      if (state[property1][property2]) {
-        value = state[property1][property2];
-      } else {
-        value = "";
-      }
-    }
-    return value;
-  };
-
-  const getHouseholdMemberState = (property1, property2, property3) => {
-    let value;
-    if (state[property1]) {
-      if (state[property1][property2]) {
-        if (state[property1][property2][property3]) {
-          value = state[property1][property2][property3];
-        } else {
-          value = "";
-        }
-      }
-    }
-    return value;
-  };
-
   const getInputElements = category => {
     return FIELDS[category].map((field, idx) => {
       switch (SCHEMA[field].input) {
@@ -213,111 +181,50 @@ const WildfireSurvivorApp = () => {
   let members_of_household_elements = getInputElements("members_of_household");
 
   /**
-   * Get house member data for preview
+   * Add household member data to SCHEMA and FIELDS
    */
-  const getHouseholdMemberData = () => {
-    let id;
-    let householdPreviewElements = [];
+  const addHouseholdMember = () => {
+    let current_household_member_count = state["members_of_household_count"];
+    const prefix = "household_member_" + current_household_member_count;
 
-    for (let i = 0; i <= state.household_members.count; i++) {
-      id = "member_of_household_" + i;
-      householdPreviewElements.push(
-        <p>
-          Name:{" "}
-          {state["members-of-household"][id]["member_of_household_first_name"] +
-            " " +
-            state["members-of-household"][id][
-              "member_of_household_middle_name"
-            ] +
-            " " +
-            state["members-of-household"][id]["member_of_household_last_name"]}
-        </p>
-      );
-    }
-    return householdPreviewElements;
-  };
-  // TODO: Generate household member inputs
-  const getHouseholdMemberInputs = () => {
-    let id;
-    let householdInputElements = [];
-    for (let i = 0; i <= state.household_members.count; i++) {
-      id = "member_of_household_" + i;
+    const schema_values = [
+      SCHEMA["household_member_0_first_name"],
+      SCHEMA["household_member_0_middle_name"],
+      SCHEMA["household_member_0_last_name"],
+      SCHEMA["household_member_0_dob"],
+      SCHEMA["household_member_0_relation"]
+    ];
 
-      householdInputElements.push(
-        <div key={id} id={id}>
-          <input
-            key={id + "_first_name"}
-            className="members-of-household"
-            type="text"
-            name="member_of_household_first_name"
-            placeholder="First Name"
-            value={getHouseholdMemberState(
-              "members-of-household",
-              id,
-              "member_of_household_first_name"
-            )}
-            onChange={handleChange}
-          />
-          <input
-            key={id + "_middle_name"}
-            className="members-of-household"
-            type="text"
-            name="member_of_household_middle_name"
-            placeholder="Middle Name"
-            value={getHouseholdMemberState(
-              "members-of-household",
-              id,
-              "member_of_household_middle_name"
-            )}
-            onChange={handleChange}
-          />
-          <input
-            key={id + "_last_name"}
-            className="members-of-household"
-            type="text"
-            name="member_of_household_last_name"
-            placeholder="Last Name"
-            value={getHouseholdMemberState(
-              "members-of-household",
-              id,
-              "member_of_household_last_name"
-            )}
-            onChange={handleChange}
-          />
-          <input
-            key={id + "_dob"}
-            className="members-of-household"
-            type="text"
-            name="member_of_household_dob"
-            placeholder="Date of Birth (MM/DD/YYYY)"
-            value={getHouseholdMemberState(
-              "members-of-household",
-              id,
-              "member_of_household_dob"
-            )}
-            onChange={handleChange}
-          />
-          <input
-            key={id + "_relation"}
-            className="members-of-household"
-            type="text"
-            name="member_of_household_relation"
-            placeholder="Relation"
-            value={getHouseholdMemberState(
-              "members-of-household",
-              id,
-              "member_of_household_relation"
-            )}
-            onChange={handleChange}
-          />
-          <br />
-          <br />
-        </div>
-      );
+    const schema_keys = [
+      "_first_name",
+      "_middle_name",
+      "_last_name",
+      "_dob",
+      "_relation"
+    ].map(key => prefix + key);
+
+    // Update FIELDS
+    for (let i = 0; i < schema_keys.length; i++) {
+      FIELDS["members_of_household"].push(schema_keys[i]);
     }
-    return householdInputElements;
+
+    // Update SCHEMA
+    for (let i = 0; i < schema_keys.length; i++) {
+      SCHEMA[schema_keys[i]] = schema_values[i];
+    }
+
+    let newState = {
+      ...state,
+      ["members_of_household_count"]: current_household_member_count + 1
+    };
+    localStorage.setItem("formData", JSON.stringify(newState));
+    setState(newState);
   };
 
+  /**
+   * Add case manager to FIELDS and SCHEMA
+   */
+  const addCaseManager = () => {};
   return (
     <div id="form-container">
       <div id="start-page-container">
@@ -334,7 +241,9 @@ const WildfireSurvivorApp = () => {
           <h3>Please provide information about members of your household</h3>
           {members_of_household_elements}
           <br />
-          <button name="add_household_member">Add Household Member</button>
+          <button name="add_household_member" onClick={addHouseholdMember}>
+            Add Household Member
+          </button>
         </div>
         <div id="additional-contact-information-container">
           <h2>Additional Contact</h2>

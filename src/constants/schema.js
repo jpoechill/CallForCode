@@ -530,6 +530,12 @@ const SCHEMA = {
     input: "text",
     type: "string",
     validation: () => {}
+  },
+  members_of_household_count: {
+    input: null,
+    type: "number",
+    initial_value: 1,
+    validation: () => {}
   }
 };
 
