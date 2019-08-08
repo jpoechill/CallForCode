@@ -12,6 +12,7 @@ const FIELDS = {
     "survivor_zip"
   ],
   members_of_household: [
+    "members_of_household_count",
     "household_member_0_first_name",
     "household_member_0_middle_name",
     "household_member_0_last_name",
@@ -74,12 +75,12 @@ const FIELDS = {
     "youth_for_change"
   ],
   case_managers: [
-    "referring_agency",
-    "case_manager_first_name",
-    "case_manager_middle_name",
-    "case_manager_last_name",
-    "case_manager_phone",
-    "case_manager_email"
+    "case_manager_0_referring_agency",
+    "case_manager_0_first_name",
+    "case_manager_0_middle_name",
+    "case_manager_0_last_name",
+    "case_manager_0_phone",
+    "case_manager_0_email"
   ],
   sba_loan: ["sba_loan_yes", "sba_loan_no"],
   signature: ["signature"]

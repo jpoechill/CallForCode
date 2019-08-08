@@ -118,6 +118,12 @@ const SCHEMA = {
     placeholder: "#####",
     validation: () => {}
   },
+  members_of_household_count: {
+    input: null,
+    type: "number",
+    initial_value: 1,
+    validation: () => {}
+  },
   household_member_0_first_name: {
     input: "text",
     type: "string",
@@ -475,40 +481,46 @@ const SCHEMA = {
     name: "Youth for Change",
     validation: () => {}
   },
-  referring_agency: {
+  case_manager_0_referring_agency: {
     input: "select",
     type: "string",
     options: agencyOptions,
     validation: () => {}
   },
-  case_manager_first_name: {
+  case_manager_count: {
+    input: null,
+    type: "number",
+    initial_value: 1,
+    validation: () => {}
+  },
+  case_manager_0_first_name: {
     input: "text",
     type: "string",
     initial_value: "",
     placeholder: placeholders["first_name"],
     validation: () => {}
   },
-  case_manager_middle_name: {
+  case_manager_0_middle_name: {
     input: "text",
     type: "string",
     initial_value: "",
     placeholder: placeholders["middle_name"],
     validation: () => {}
   },
-  case_manager_last_name: {
+  case_manager_0_last_name: {
     input: "text",
     type: "string",
     initial_value: "",
     placeholder: placeholders["last_name"],
     validation: () => {}
   },
-  case_manager_phone: {
+  case_manager_0_phone: {
     input: "text",
     type: "string",
     initial_value: "",
     placeholder: placeholders["phone"]
   },
-  case_manager_email: {
+  case_manager_0_email: {
     initial_value: "",
     placeholder: placeholders["email"]
   },
@@ -529,12 +541,6 @@ const SCHEMA = {
   signature: {
     input: "text",
     type: "string",
-    validation: () => {}
-  },
-  members_of_household_count: {
-    input: null,
-    type: "number",
-    initial_value: 1,
     validation: () => {}
   }
 };

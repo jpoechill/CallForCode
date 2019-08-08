@@ -142,6 +142,8 @@ const WildfireSurvivorApp = () => {
               {SCHEMA[field].placeholder}
             </label>
           );
+        case null:
+          break;
         case "text":
         default:
           return (
@@ -186,7 +188,6 @@ const WildfireSurvivorApp = () => {
   const addHouseholdMember = () => {
     let current_household_member_count = state["members_of_household_count"];
     const prefix = "household_member_" + current_household_member_count;
-
     const schema_values = [
       SCHEMA["household_member_0_first_name"],
       SCHEMA["household_member_0_middle_name"],
@@ -224,7 +225,45 @@ const WildfireSurvivorApp = () => {
   /**
    * Add case manager to FIELDS and SCHEMA
    */
-  const addCaseManager = () => {};
+  const addCaseManager = () => {
+    let current_case_manager_count = state["case_manager_count"];
+    const prefix = "case_manager_" + current_case_manager_count;
+    const schema_values = [
+      SCHEMA["case_manager_0_referring_agency"],
+      SCHEMA["case_manager_0_first_name"],
+      SCHEMA["case_manager_0_middle_name"],
+      SCHEMA["case_manager_0_last_name"],
+      SCHEMA["case_manager_0_phone"],
+      SCHEMA["case_manager_0_email"]
+    ];
+
+    const schema_keys = [
+      "_referring_agency",
+      "_first_name",
+      "_middle_name",
+      "_last_name",
+      "_phone",
+      "_email"
+    ].map(key => prefix + key);
+
+    // Update FIELDS
+    for (let i = 0; i < schema_keys.length; i++) {
+      FIELDS["case_managers"].push(schema_keys[i]);
+    }
+
+    // Update SCHEMA
+    for (let i = 0; i < schema_keys.length; i++) {
+      SCHEMA[schema_keys[i]] = schema_values[i];
+    }
+
+    let newState = {
+      ...state,
+      ["case_manager_count"]: current_case_manager_count + 1
+    };
+    localStorage.setItem("formData", JSON.stringify(newState));
+    setState(newState);
+  };
+
   return (
     <div id="form-container">
       <div id="start-page-container">
@@ -300,7 +339,9 @@ const WildfireSurvivorApp = () => {
           <h2>Case Managers you work with</h2>
           {case_managers_information_elements}
           <br />
-          <button name="add_case_manager">Add Case Manager</button>
+          <button name="add_case_manager" onClick={addCaseManager}>
+            Add Case Manager
+          </button>
         </div>
         <div id="sba-loan-container">
           <h2>Did you apply for a SBA loan?</h2>
