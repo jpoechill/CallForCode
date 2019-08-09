@@ -2,14 +2,11 @@ import React, { useState, useEffect } from "react";
 import GeneralInformation from "../GeneralInformation";
 import states from "../../constants/states";
 import agencies from "../../constants/agencies";
-import StartPage from "../StartPage";
-import PreviewPage from "../PreviewPage";
-import CompletePage from "../CompletePage";
 import SCHEMA from "../../constants/schema";
 import FIELDS from "../../constants/component_fields";
 
 const WildfireSurvivorApp = () => {
-  const initialState = {};
+  const initialState = {"start_page": true, "preview_page": false, "confirmation_page": false};
 
   // Set initial state
   Object.keys(SCHEMA).forEach(key => {
@@ -24,144 +21,108 @@ const WildfireSurvivorApp = () => {
     JSON.parse(localStorage.getItem("formData")) || initialState
   );
 
-  /*
-  const handleChange = event => {
-    let eventClass = event.target.className;
-    let name;
-    let value;
-    switch (eventClass) {
-      case "household_members":
-        name = event.target.name;
-        value = state["household_members"]["count"] + 1;
-        break;
-      case "agencies":
-        name = event.target.name;
-        value = event.target.checked;
-        break;
-      case "images":
-        name = event.target.name;
-        if (event.target.files) {
-          let fileDataUrl = Array.prototype.map.call(
-            event.target.files,
-            file => {
-              return URL.createObjectURL(file);
-            }
-          );
-          value = fileDataUrl;
-        }
-        break;
-      case "members-of-household":
-        name = event.target.parentElement.id;
-        value = state[eventClass]
-          ? {
-              ...state[eventClass][name],
-              [event.target.name]: event.target.value
-            }
-          : { [event.target.name]: event.target.value };
-        break;
-      case "general-information":
-      case "additional-contact-information":
-      case "cash-grant-information":
-      case "notes":
-      case "signature":
-      default:
-        name = event.target.name;
-        value = event.target.value;
-        break;
-    }
-    let newState = {
-      ...state,
-      [eventClass]: { ...state[eventClass], [name]: value }
-    };
-    localStorage.setItem("formData", JSON.stringify(newState));
-    setState(newState);
-  };
-  */
-
   /**
    * update state and localStorage
    * @param {event} e
    */
   const handleChange = e => {
+    console.log("handle")
     let newState = { ...state, [e.target.name]: e.target.value };
     localStorage.setItem("formData", JSON.stringify(newState));
     setState(newState);
   };
 
+  return (
+    <div>
+    {state["start_page"] ? <StartPage state={state} setState={setState} handleChange={handleChange} /> : null}
+    {state["preview_page"] ? <PreviewPage state={state} setState={setState} /> : null}
+    {state["confirmation_page"] ? <ConfirmationPage /> : null}
+    </div>
+  )
+
+}
+
+const StartPage = ({state, setState, handleChange}) => {
+  /**
+   * lookup category in FIELDS, and fields in SCHEMA
+   * return elements used for form inputs
+   * @param {string} category 
+   * @return {Array}
+   */
   const getInputElements = category => {
     return FIELDS[category].map((field, idx) => {
-      switch (SCHEMA[field].input) {
-        case "file":
-          return (
-            <input
-              key={idx}
-              className={category}
-              type="file"
-              name={field}
-              accept="image/*"
-              onChange={handleChange}
-              multiple
-            />
-          );
-        case "select":
-          return (
-            <select
-              key={idx}
-              className={category}
-              name={field}
-              onChange={handleChange}
-            >
-              {SCHEMA[field].options}
-            </select>
-          );
-        case "checkbox":
-          return (
-            <label htmlFor={field}>
-              <input
-                key={idx}
-                className={category}
-                type="checkbox"
-                name={field}
-                value={state[field]}
-                placeholder={SCHEMA[field].placeholder}
-                onChange={handleChange}
-              />
-              {SCHEMA[field].name}
-            </label>
-          );
-        case "radio":
-          return (
-            <label htmlFor={field}>
-              <input
-                key={idx}
-                className={category}
-                type="radio"
-                name={SCHEMA[field].name}
-                onChange={handleChange}
-              />
-              {SCHEMA[field].placeholder}
-            </label>
-          );
-        case null:
-          break;
-        case "text":
-        default:
-          return (
-            <input
-              key={idx}
-              className={category}
-              type="text"
-              name={field}
-              value={state[field]}
-              placeholder={SCHEMA[field].placeholder}
-              onChange={handleChange}
-            />
-          );
-      }
-    });
-  };
+     switch (SCHEMA[field].input) {
+       case "file":
+         return (
+           <input
+             key={idx}
+             className={category}
+             type="file"
+             name={field}
+             accept="image/*"
+             onChange={handleChange}
+             multiple
+           />
+         );
+       case "select":
+         return (
+           <select
+             key={idx}
+             className={category}
+             name={field}
+             onChange={handleChange}
+           >
+             {SCHEMA[field].options}
+           </select>
+         );
+       case "checkbox":
+         return (
+           <label htmlFor={field}>
+             <input
+               key={idx}
+               className={category}
+               type="checkbox"
+               name={field}
+               value={state[field]}
+               placeholder={SCHEMA[field].placeholder}
+               onChange={handleChange}
+             />
+             {SCHEMA[field].name}
+           </label>
+         );
+       case "radio":
+         return (
+           <label htmlFor={field}>
+             <input
+               key={idx}
+               className={category}
+               type="radio"
+               name={SCHEMA[field].name}
+               onChange={handleChange}
+             />
+             {SCHEMA[field].placeholder}
+           </label>
+         );
+       case null:
+         break;
+       case "text":
+       default:
+         return (
+           <input
+             key={idx}
+             className={category}
+             type="text"
+             name={field}
+             value={state[field]}
+             placeholder={SCHEMA[field].placeholder}
+             onChange={handleChange}
+           />
+         );
+     }
+   });
+ };
 
-  // Get input elements
+  // Get input elements for each category on the Start Page
   let general_information_elements = getInputElements("general_information");
   let additional_contact_information_elements = getInputElements(
     "additional_contact_information"
@@ -184,6 +145,8 @@ const WildfireSurvivorApp = () => {
 
   /**
    * Add household member data to SCHEMA and FIELDS
+   * used as event handler for button clicked to add household member
+   * form inputs
    */
   const addHouseholdMember = () => {
     let current_household_member_count = state["members_of_household_count"];
@@ -216,14 +179,16 @@ const WildfireSurvivorApp = () => {
 
     let newState = {
       ...state,
-      ["members_of_household_count"]: current_household_member_count + 1
+      "members_of_household_count": current_household_member_count + 1
     };
     localStorage.setItem("formData", JSON.stringify(newState));
     setState(newState);
   };
 
   /**
-   * Add case manager to FIELDS and SCHEMA
+   * Add case manager member data to SCHEMA and FIELDS
+   * used as event handler for button clicked to add household member
+   * form inputs
    */
   const addCaseManager = () => {
     let current_case_manager_count = state["case_manager_count"];
@@ -258,14 +223,22 @@ const WildfireSurvivorApp = () => {
 
     let newState = {
       ...state,
-      ["case_manager_count"]: current_case_manager_count + 1
+      "case_manager_count": current_case_manager_count + 1
     };
     localStorage.setItem("formData", JSON.stringify(newState));
     setState(newState);
   };
 
+  /**
+   * handle preview button click event
+   */
+  const handlePreview = (e) => {
+    let newState = { ...state, "start_page": false, "preview_page": true}
+    localStorage.setItem("formData", JSON.stringify(newState));
+    setState(newState);
+  }
+
   return (
-    <div id="form-container">
       <div id="start-page-container">
         <div id="general-information-container">
           <h2>General Information</h2>
@@ -356,9 +329,36 @@ const WildfireSurvivorApp = () => {
           </h3>
           {signature_elements}
         </div>
+        <button type="submit" onClick={handlePreview}>Preview</button>
       </div>
-    </div>
   );
 };
 
+const PreviewPage = ({ state, setState }) => {
+  /**
+   * handle submit button click event
+   */
+  const handleSubmit = (e) => {
+    let newState = { ...state, "preview_page": false, "confirmation_page": true}
+    localStorage.setItem("formData", JSON.stringify(newState));
+    setState(newState);
+  }
+  return (
+    <div id="preview-container">
+      <h2>General Information</h2>
+      <p id="survivor-name-preview">
+        Name:{ " " + state["survivor_first_name"]}
+      </p>
+      <button type="submit" onClick={handleSubmit}>Submit</button>
+    </div>
+  )
+}
+
+const ConfirmationPage = () => {
+  return (
+    <div id="confirmation-container">
+      <h2>Confirmation Page</h2>
+    </div>
+  )
+}
 export default WildfireSurvivorApp;
