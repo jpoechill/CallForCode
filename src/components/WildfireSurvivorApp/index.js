@@ -465,7 +465,7 @@ const PreviewPage = ({ state, setState }) => {
       </p>
       <h2>Case Managers</h2>
       <p id="case_managers_preview">
-
+        
       </p>
       <h2>SBA Loan</h2>
       <p id="sba_loan_preview">
