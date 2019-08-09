@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-import GeneralInformation from "../GeneralInformation";
-import states from "../../constants/states";
-import agencies from "../../constants/agencies";
 import SCHEMA from "../../constants/schema";
 import FIELDS from "../../constants/component_fields";
 
@@ -26,14 +23,16 @@ const WildfireSurvivorApp = () => {
    * @param {event} e
    */
   const handleChange = e => {
-    console.log("handle")
-    let newState = { ...state, [e.target.name]: e.target.value };
+    let name = e.target.name
+    let value = e.target.type == "checkbox" ? e.target.checked : e.target.value
+    let newState = { ...state, name: value };
     localStorage.setItem("formData", JSON.stringify(newState));
     setState(newState);
   };
 
   return (
     <div>
+      <Header state={state} setState={setState} />
     {state["start_page"] ? <StartPage state={state} setState={setState} handleChange={handleChange} /> : null}
     {state["preview_page"] ? <PreviewPage state={state} setState={setState} /> : null}
     {state["confirmation_page"] ? <ConfirmationPage /> : null}
@@ -42,6 +41,38 @@ const WildfireSurvivorApp = () => {
 
 }
 
+const Header = ({ state, setState }) => {
+  const goToStartPage = e => {
+    let newState = {...state, "start_page": true, "preview_page": false, "confirmation_page": false}
+    localStorage.setItem("formData", JSON.stringify(newState));
+    setState(newState);
+  }
+
+  const goToPreviewPage = e => {
+    let newState = {...state, "start_page": false, "preview_page": true, "confirmation_page": false}
+    localStorage.setItem("formData", JSON.stringify(newState));
+    setState(newState);
+  }
+
+  const goToConfirmationPage = e => {
+    let newState = {...state, "start_page": false, "preview_page": false, "confirmation_page": true}
+    localStorage.setItem("formData", JSON.stringify(newState));
+    setState(newState);
+  }
+
+  return (
+    <div id="header">
+      <svg viewBox="0 0 800 100"id="header-svg">
+        <text x="32" y="25" >Start</text>
+        {state["start_page"] ? <circle cx="50" cy="50" r="10" fill="orange" onClick={goToStartPage} /> : <circle cx="50" cy="50" r="10" fill="black" onClick={goToStartPage}/>}
+        <text x="173" y="25">Preview</text>
+        {state["preview_page"] ? <circle cx="200" cy="50" r="10" fill="orange" onClick={goToPreviewPage}/> : <circle cx="200" cy="50" r="10" fill="black" onClick={goToPreviewPage}/>}
+        <text x="308" y="25">Confirmation</text>
+        {state["confirmation_page"] ? <circle cx="350" cy="50" r="10" fill="orange" onClick={goToConfirmationPage}/> : <circle cx="350" cy="50" r="10" fill="black" onClick={goToConfirmationPage}/>}
+      </svg>
+    </div>
+  )
+}
 const StartPage = ({state, setState, handleChange}) => {
   /**
    * lookup category in FIELDS, and fields in SCHEMA
@@ -343,12 +374,108 @@ const PreviewPage = ({ state, setState }) => {
     localStorage.setItem("formData", JSON.stringify(newState));
     setState(newState);
   }
+
+  const goToStartPage = e => {
+    let newState = {...state, "start_page": true, "preview_page": false, "confirmation_page": false}
+    localStorage.setItem("formData", JSON.stringify(newState));
+    setState(newState);
+  }
+
   return (
     <div id="preview-container">
       <h2>General Information</h2>
       <p id="survivor-name-preview">
-        Name:{ " " + state["survivor_first_name"]}
+        Name:{ " " + state["survivor_first_name"] + " " + state["survivor_middle_name"] + " " + state["survivor_last_name"]}
       </p>
+      <p id="survivor_phone_preview">
+        Phone:{" " + state["survivor_phone"]}
+      </p>
+      <p id="survivor_email_preview">
+        Email:{" " + state["survivor_email"]}
+      </p>
+      <p id="survivor_address_preview">
+        Address:{" " + state["survivor_address1"] + " " + state["survivor_address2"] + " " + state["survivor_city"] + ", " + state["survivor_state"] + " " + state["survivor_zip"]}
+      </p>
+      <h2>Members of Household</h2>
+      <p id="members_of_household_preview"></p>
+      <h2>Additional Contact</h2>
+      <p id="additional_contact_preview">
+      <p id="additional_contact_name_preview">
+        Name:{ " " + state["additional_contact_first_name"] + " " + state["additional_contact_middle_name"] + " " + state["additional_contact_last_name"]}
+      </p>
+      <p id="survivor_phone_preview">
+        Phone:{" " + state["additional_contact_phone"]}
+      </p>
+      <p id="additional_contact_email_preview">
+        Email:{" " + state["additional_contact_email"]}
+      </p>
+      <p id="survivor_address_preview">
+        Address:{" " + state["additional_contact_address1"] + " " + state["additional_contact_address2"] + ", " + state["additional_contact_city"] + ", " + state["additional_contact_state"] + " " + state["additional_contact_zip"]}
+      </p>
+      <h2>Members of Household</h2>
+      <p id="members_of_household_preview"></p>
+      </p>
+      <h2>Cash Grant Information</h2>
+      <p id="fema_preview">
+        FEMA #: {" " + state["fema_number"]}
+      </p>
+      <p id="fire_name_preview">
+        Fire Name: {" " + state["fire_name"]}
+      </p>
+      <p id="fire_name_preview">
+        Damaged House Address: {" " + state["damaged_address1"] + " " + state["damaged_address2"] + " " + state["damaged_city"] + ", " + state["damaged_state"] + " " + state["damaged_zip"]}
+      </p>
+      <h2>Landlord Information</h2>
+      <p id="landlord_name_preview">
+        Name: {" " + state["landlord_first_name"] + " " + state["landlord_middle_name"] + " " + state["landlord_last_name"]}
+      </p>
+      <p id="landlord_phone_preview">
+        Phone: {" " + state["landlord_phone"]}
+      </p>
+      <p id="landlord_email_preview">
+        Email: {" " + state["landlord_email"]}
+      </p>
+      <h2>Notes</h2>
+      <p id="notes_preview">
+        Notes: {" " + state["notes"]}
+      </p>
+      <h2>Photo ID</h2>
+      <p id="photo_id_preview">
+
+      </p>
+      <h2>Address Proof</h2>
+      <p id="address_proof_preview">
+
+      </p>
+      <h2>Damaged House Photos</h2>
+      <p id="damaged_house_preview">
+
+      </p>
+      <h2>Receipts</h2>
+      <p id="receipts_preview">
+
+      </p>
+      <h2>CAN Consent and Release Form</h2>
+      <p id="can_conset_release_preview">
+
+      </p>
+      <h2>Agencies You Work With</h2>
+      <p id="agencies_preview">
+
+      </p>
+      <h2>Case Managers</h2>
+      <p id="case_managers_preview">
+
+      </p>
+      <h2>SBA Loan</h2>
+      <p id="sba_loan_preview">
+
+      </p>
+      <h2>Electronic Signature</h2>
+      <p id="signature_preview">
+        {state["signature"]}
+      </p>
+      <button type="submit" onClick={goToStartPage}>Back</button>
       <button type="submit" onClick={handleSubmit}>Submit</button>
     </div>
   )

@@ -15,6 +15,7 @@ h3 {
 input[type="text"] {
   font-size: 1.2em;
   color: #777777;
+  margin: 5px;
 }
 
 #agencies-container {
