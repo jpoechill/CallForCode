@@ -23,9 +23,9 @@ const WildfireSurvivorApp = () => {
    * @param {event} e
    */
   const handleChange = e => {
-    let name = e.target.name
+    let name = e.target.name;
     let value = e.target.type == "checkbox" ? e.target.checked : e.target.value
-    let newState = { ...state, name: value };
+    let newState = { ...state, [name]: value };
     localStorage.setItem("formData", JSON.stringify(newState));
     setState(newState);
   };
@@ -107,19 +107,31 @@ const StartPage = ({state, setState, handleChange}) => {
            </select>
          );
        case "checkbox":
-         return (
-           <label htmlFor={field}>
+         // Return checkbox as checked if user has clicked it
+         let checkbox = state[field] ? (<label htmlFor={field}>
+          <input
+            key={idx}
+            className={category}
+            type="checkbox"
+            name={field}
+            placeholder={SCHEMA[field].placeholder}
+            onChange={handleChange}
+            checked
+          />
+          {SCHEMA[field].name}
+        </label>) : (<label htmlFor={field}>
              <input
                key={idx}
                className={category}
                type="checkbox"
                name={field}
-               value={state[field]}
                placeholder={SCHEMA[field].placeholder}
                onChange={handleChange}
              />
              {SCHEMA[field].name}
-           </label>
+           </label>);
+         return (
+           checkbox
          );
        case "radio":
          return (
