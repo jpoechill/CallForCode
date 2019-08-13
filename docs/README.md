@@ -22,7 +22,7 @@ My intention is not to provide these codepens as examples of "best practices" in
 - <a href="https://codepen.io/vishalbakshi/pen/ZEzQaOE?editors=1010">Text Input React Form Example</a>
   - This represents how WSMS handles inputs to the majority of form elements. Please open your browser's developer tools to watch local storage update.
 
-- <a href="#">Dynamically Generated Input Elements</a>
+- <a href="https://codepen.io/vishalbakshi/pen/RwbrxyX?editors=0010">Dynamically Generated Input Elements</a>
    - Two categories of fields (i.e. fieldsets) in WSMS require the ability to add form elements dynamically: Household Members and Case Managers. This pen shows you how I've implemented that feature.
    
    
