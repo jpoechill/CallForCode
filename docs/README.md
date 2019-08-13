@@ -19,4 +19,5 @@ Currently (August 13, 2019), the Survivor Application data flow is as follows (t
 
 My intention is not to provide these codepens as examples of "best practices" in an absolute or objective way (although I've tried!) but rather to provide these as codepens to illustrate how I have understood problem and how I've implemented my solution. If something looks off/wrong/inefficient, it very well might be so please open a PR with any appropriate edits. Also if you know of an easy way to embed codepens into this markdown, PR for that as well.
 
-<a href="https://codepen.io/vishalbakshi/pen/ZEzQaOE?editors=1010">Text Input React Form Example</a>
+- <a href="https://codepen.io/vishalbakshi/pen/ZEzQaOE?editors=1010">Text Input React Form Example</a>
+  - This represents how WSMS handles inputs to the majority of form elements. Please open your browser's developer tools to watch local storage update.
