@@ -5,15 +5,15 @@ This is the development repository for two apps (Survivor Application and Surviv
 ## Project Roadmap
 
 - [x] Initial Kickoff + Gather Requirements
-- [x] Initial Mockups (<a href="https://sketch.cloud/s/8Az7w">Sketch files</a>)
-- [ ] Initial Functional Survivor Application
-- [ ] Initial Functional Survivor Dashboard
-- [ ] Initial Production Release for Survivor Application
-- [ ] Initial Production Release for Survivor Dashboard
+- [x] Initial Sketches (<a href="https://sketch.cloud/s/8Az7w">Sketch files</a>)
+- [ ] Initial (Development) Survivor Application
+- [ ] Initial (Development) Survivor Dashboard
+- [ ] Initial (Production) Release for Survivor Application
+- [ ] Initial (Production) Release for Survivor Dashboard
 
 ## Project Overview
 
-The project is split into two apps: a Survivor Application (in this case application == "form") and a Survivor Dashboard. Each user has one Application and the Dashboard shows all users' Application data along with some internal admin-related data (financial assistance details, application status, etc.)
+The project is split into two apps: a Survivor Application and a Survivor Dashboard. Each user will have an account for their Survivor Application and each staff/admin will have an account for the Survivor Dashboard, which shows all users' Survivor Application data along with some internal admin-related data (financial assistance details, application status, etc.)
 
 <img src="./public/images/WSMS.svg" />
 
