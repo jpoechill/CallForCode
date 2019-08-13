@@ -2,6 +2,8 @@
 
 Welcome to the documentation for this project!
 
+The latest Sketch files for this project are located at the following link: https://sketch.cloud/s/8Az7w
+
 ## Survivor Application
 
 The Survivor Application is essentially an HTML `<form>` built with React. If you haven't made forms with React, or haven't used React, please read through their docs, <a href="https://reactjs.org/docs/forms.html">particularly this section which describes how React handles forms</a>.
