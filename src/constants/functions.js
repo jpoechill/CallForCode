@@ -13,9 +13,11 @@ const useStateWithLocalStorage = (localStorageKey) => {
 }
 
 const useFormInput = () => {
+    // add form validation logic here as well
     const [value, setValue] = useStateWithLocalStorage('userInputLocalStorage');
+    console.log(value, setValue)
     const handleChange = event => {
-        setValue({ ...value, [event.target.name]: event.target.value })
+        setValue({...value, [event.target.name]: event.target.value })
     }
 
     return {
