@@ -1,6 +1,6 @@
 # Wildfire Survivor Management System
 
-This is the development repository for the two following applications (Survivor Application and Survivor Dashboard) used for Wildfire Survivor Data Management:
+This is the development repository for two apps (Survivor Application and Survivor Dashboard) which together create the Wildfire Survivor Management System (WSMS).
 
 ## Project Roadmap
 
