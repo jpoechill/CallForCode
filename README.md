@@ -49,9 +49,11 @@ The project is split into two apps: a Survivor Application (in this case applica
 
 Thank you for choosing to contribute to this project!
 
-1. We hold bi-weekly phone calls with 2-3 client contacts. Add your email to this list (Google Sheet link) and we will send you the Google Hangouts link right before the call. Meeting minutes will be located in (Google Drive folder link)
+0. Join our Slack channel (invite link if it works).
 
-2. Please review the current project documentation. This will help you understand the motivation behind the existing code and areas of improvement (there are many).
+1. We hold bi-weekly phone calls with 2-3 client contacts. Meeting minutes will be located in <a href="https://drive.google.com/drive/folders/10XQV-3Z71ZYGFno3BFoPAunxVdZGDOM5?usp=sharing">this folder</a>.
+
+2. Please review the <a href="./docs">project documentation</a>. This will help you understand the motivation behind the existing code and areas of improvement (there are many).
 
 3. Please first look through the (Projects link). If a task is listed as OPEN in either the TO DO or IN PROGRESS columns, please add your name the card and start working on it! Once you're ready for a code review, open a PR by following our (link to PR template).
 
