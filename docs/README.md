@@ -18,15 +18,15 @@ Currently (August 13, 2019), the Survivor Application data flow is as follows (t
 
 ### Codepen Examples
 
-My intention is not to provide these codepens as examples of _best practices_ in an absolute or objective way but rather to illustrate how I have understood problem and how I've implemented my solution. Also, it gives you a targeted way to explore alternative solutions.  If something looks off/wrong/inefficient, it very well might be so please open a PR with edits.
+My intention is to illustrate how I have understood problems and solutions for the core functionality of the .
 
 - <a href="https://codepen.io/vishalbakshi/pen/ZEzQaOE?editors=1010">Text Input React Form Example</a>
-  - This represents how WSMS handles inputs to the majority of form elements. Please open your browser's developer tools to watch local storage update.
+  - This represents how the Survivor Application currently handles inputs to the majority of form elements. Please open your browser's developer tools to watch local storage update.
 
 - <a href="https://codepen.io/vishalbakshi/pen/RwbrxyX?editors=0010">Dynamically Generated Input Elements</a>
-   - Two categories of fields (i.e. fieldsets) in WSMS require the ability to add form elements dynamically: Household Members and Case Managers. This pen shows you how I've implemented that feature.
+   - Two categories of fields (i.e. fieldsets) in the Survivor Application require the ability to add form elements dynamically: Household Members and Case Managers. This pen shows you how I've implemented that feature.
 
-- <a href="#">Pseudo-Routing</a>
-  - Currently, the "routing" implemented in WSMS needs to be replaced with functionality to handle browser functionality (back/forward buttons) with something like <a href="https://reacttraining.com/react-router/">React-Router</a>
-  - The current "routing" implementation just toggles the visiblity of each page in the Application (StartPage, PreviewPage, ConfirmationPage)
+- <a href="https://codepen.io/vishalbakshi/pen/jONWxKB?editors=1010">Pseudo-Routing</a>
+  - Currently, the "routing" implemented in the Survivor Application needs to be replaced with functionality to handle browser functionality (back/forward buttons) with something like <a href="https://reacttraining.com/react-router/">React-Router</a>
+  - The current "routing" implementation just toggles the visiblity of each page in the Survivor Application (StartPage, PreviewPage, ConfirmationPage) similar to what is shown
    
