@@ -40,9 +40,10 @@ The project is split into two apps: a Survivor Application (in this case applica
 ## Installation
 
 1. Download the repo
-2. `npm install` inside the `CallForCode` directory
-3. `npm start` will start the development server on `localhost:3000`
-4. `npm run cypress:open` will run the cypress integration tests
+2. Navigate to the `CallForCode` directory
+3. `npm install` inside the `CallForCode` directory
+4. `npm start` will start the development server on `localhost:3000`
+5. `npm run cypress:open` will run the cypress integration tests
 
 ## Contributions
 
