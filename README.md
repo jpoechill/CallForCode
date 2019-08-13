@@ -11,8 +11,11 @@ This is the development repository for the two following applications (Survivor 
 - [ ] Initial Production Release for Survivor Application
 - [ ] Initial Production Release for Survivor Dashboard
 
-> User -> Survivor App -> Staff -> Survivor Dashboard -> User flowchar
+## Project Overview
 
+The project is split into two apps: a Survivor Application (in this case application == "form") and a Survivor Dashboard. Each user has one Application and the Dashboard shows all users' Application data along with some internal admin-related data (financial assistance details, application status, etc.)
+
+<img src="./public/images/WSMS.svg" />
 
 ## Survivor Application
 
