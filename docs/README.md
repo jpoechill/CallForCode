@@ -18,7 +18,9 @@ Currently (August 13, 2019), the Survivor Application data flow is as follows (t
 
 ### Codepen Examples
 
-My intention is to illustrate how I have understood problems and solutions for the core functionality of the .
+My intention is to illustrate how I have understood problems and solutions for the core functionality. The motivation behind using Local Storage is two-fold: 
+  - We want to avoid losing filled form data upon browser refresh
+  - It helps to synchronize state updates (which has been helpful during development) since `setState` is an asynchronous operation. 
 
 - <a href="https://codepen.io/vishalbakshi/pen/ZEzQaOE?editors=1010">Text Input React Form Example</a>
   - This represents how the Survivor Application currently handles inputs to the majority of form elements. Please open your browser's developer tools to watch local storage update.
