@@ -2,6 +2,10 @@
 
 This is the development repository for two apps (Survivor Application and Survivor Dashboard) which together create the Wildfire Survivor Management System (WSMS).
 
+## Origin Story
+
+@AlenaNV, @cmatthey and I met each other at an IBM Call for Code Hackathon and submitted a <a href="https://docs.google.com/presentation/d/1d_3tq-1y3BTtaHsHbbBHTFACioDKjJyVuCnjy360n_4/edit?usp=sharing">Proof Of Concept</a> after working with the Development Director from United Way (Northern California). He and his team were interested in moving forward so we did! @AlenaNV has created <a href="https://sketch.cloud/s/8Az7w">the Sketch files at this link</a> from the requirements we have gathered since then. I've been working on getting the MVP together. 
+
 ## Project Roadmap
 
 - [x] Initial Kickoff + Gather Requirements
@@ -49,16 +53,16 @@ The project is split into two apps: a Survivor Application and a Survivor Dashbo
 
 Thank you for choosing to contribute to this project!
 
-0. Join our Slack channel (invite link if it works).
+0. Join our Slack channel (<a href="https://join.slack.com/t/wsms-contributors/shared_invite/enQtNzI2Mjk5MDM2Mzg0LTUyYWYwMjNiN2U3MTJlMDhhYmFlNWNlOGQ4ZWJkYWE0MTAzZjU0MjYzYzkxNWExNDMxMjViZWNhY2MxZmZkODE">invite link</a>).
 
-1. We hold bi-weekly phone calls with 2-3 client contacts. Meeting minutes will be located in <a href="https://drive.google.com/drive/folders/10XQV-3Z71ZYGFno3BFoPAunxVdZGDOM5?usp=sharing">this folder</a>.
+1. Meeting minutes from review calls with the United Way contacts will be located in <a href="https://drive.google.com/drive/folders/10XQV-3Z71ZYGFno3BFoPAunxVdZGDOM5?usp=sharing">this folder</a>.
 
-2. Please review the <a href="./docs">project documentation</a>. This will help you understand the motivation behind the existing code and areas of improvement (there are many).
+2. Please review the <a href="./docs">project documentation</a>. This will help you understand the motivation behind the existing code and areas of improvement (there are many areas of improvement).
 
 3. Please see our <a href="docs/CONTRIBUTING.md">Contributing</a> guide
 
 4. We highly recommend that you read through the latest Meeting Minutes to stay up to speed with the latest and greatest.
 
-5. Please add to the documentation! Please don't hesitate to create or add to the documentation of this project by opening a PR by following our (link to PR template). Correcting even the smallest typo helps. 
+5. Please add to the documentation! Correcting even the smallest typo helps. 
 
-6. Reach out in Slack (link) if you're not sure how to contribute, want to collaborate, or have any questions on something you are working on.
+6. Reach out in Slack (<a href="https://join.slack.com/t/wsms-contributors/shared_invite/enQtNzI2Mjk5MDM2Mzg0LTUyYWYwMjNiN2U3MTJlMDhhYmFlNWNlOGQ4ZWJkYWE0MTAzZjU0MjYzYzkxNWExNDMxMjViZWNhY2MxZmZkODE">invite link</a>) to keep abreast of the latest and greatest, if you're not sure how to contribute, want to collaborate, or have any questions on something you are working on.
