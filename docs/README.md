@@ -6,7 +6,7 @@ The latest Sketch files for this project are located at the following link: http
 
 ## Survivor Application
 
-The Survivor Application is essentially a set of HTML `form` elements rendered using React. If you haven't made forms with React please read through <a href="https://reactjs.org/docs/forms.html">the article at this link which describes how React handles forms</a>.
+The Survivor Application is essentially a set of HTML `form` elements rendered using React. If you haven't made forms with React please read through <a href="https://reactjs.org/docs/forms.html">the official docs at this link which describes how React handles forms</a>.
 
 Currently (August 13, 2019), the Survivor Application data flow is as follows (there are some exceptions which are discussed below):
 
