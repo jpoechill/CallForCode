@@ -55,9 +55,9 @@ Thank you for choosing to contribute to this project!
 
 2. Please review the <a href="./docs">project documentation</a>. This will help you understand the motivation behind the existing code and areas of improvement (there are many).
 
-3. Please first look through the (Projects link). If a task is listed as OPEN in either the TO DO or IN PROGRESS columns, please add your name the card and start working on it! Once you're ready for a code review, open a PR by following our (link to PR template).
+3. Please see our <a href="docs/CONTRIBUTING.md">Contributing</a> guide
 
-4. We highly recommend that you read through the latest Meeting Minutes and attend the next call to stay up to speed with the latest and greatest.
+4. We highly recommend that you read through the latest Meeting Minutes to stay up to speed with the latest and greatest.
 
 5. Please add to the documentation! Please don't hesitate to create or add to the documentation of this project by opening a PR by following our (link to PR template). Correcting even the smallest typo helps. 
 
