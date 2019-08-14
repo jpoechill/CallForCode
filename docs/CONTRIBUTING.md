@@ -42,7 +42,7 @@ Here are broad areas where there is a need right now for contributions. There ar
    - Are there any patterns that may result in poor UX?
    
 3. Accessibility
-   - Are there areas of the UI that can be improved for accessibility? _Yes_
+   - Are there areas of the UI code that can be improved for accessibility? _Yes_
    - Are there systemic ways (documentation, testing, PR template) we can implement accessibility best practices into the development process?
    
 4. Styling
