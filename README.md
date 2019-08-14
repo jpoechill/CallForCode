@@ -4,7 +4,7 @@ This is the development repository for two apps (Survivor Application and Surviv
 
 ## Origin Story
 
-@AlenaNV, @cmatthey and I met each other at an IBM Call for Code Hackathon and submitted a <a href="https://docs.google.com/presentation/d/1d_3tq-1y3BTtaHsHbbBHTFACioDKjJyVuCnjy360n_4/edit?usp=sharing">Proof Of Concept</a> after working with the Development Director from United Way (Northern California). He and his team were interested in moving forward so we did! @AlenaNV has created <a href="https://sketch.cloud/s/8Az7w">the Sketch files at this link</a> from the requirements we have gathered since then. I've been working on getting the MVP together. 
+@AlenaNV, @cmatthey and I met each other at an IBM Call for Code Hackathon and submitted a <a href="https://docs.google.com/presentation/d/1d_3tq-1y3BTtaHsHbbBHTFACioDKjJyVuCnjy360n_4/edit?usp=sharing">Proof Of Concept</a> after working with the Development Director from United Way (Northern California). He and his team were interested in moving forward so we did! @AlenaNV has created <a href="https://sketch.cloud/s/8Az7w">the Sketch files at this link</a> from the requirements we have gathered since then. I've been working on getting the MVP together (React, Node, Firebase, Cypress). 
 
 ## Project Roadmap
 
