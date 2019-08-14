@@ -2,10 +2,12 @@
 
 Thank you for being interested in contributing to this project!
 
+Please <a href="https://join.slack.com/t/wsms-contributors/shared_invite/enQtNzI2Mjk5MDM2Mzg0LTUyYWYwMjNiN2U3MTJlMDhhYmFlNWNlOGQ4ZWJkYWE0MTAzZjU0MjYzYzkxNWExNDMxMjViZWNhY2MxZmZkODE">join our Slack workspace by clicking this link</a>.
+
 This project is in the early stages of development, so there's a lot of room and need for a wide variety of skills.
 Before you begin tackling a task, please peruse <a href="./README.md">this repo's documentation</a>.
 
-If you're not sure about anything in that documentation, please reach out in the (Slack link).
+If you're not sure about anything in that documentation, please reach out in Slack.
 
 ## How Can I Contribute?
 
@@ -25,11 +27,11 @@ Please view the <a href="https://github.com/vishalbakshi/CallForCode/projects/1"
 - Being Reviewed
 - Done
 
-For the first four categories, if you see a task you want to work on, add your handle to the assignees list, send a message announcing that you're starting to work on it in the most relevant Slack channel (link) and start working on it!
+For the first four categories, if you see a task you want to work on, add your handle to the assignees list, send a message announcing that you're starting to work on it in `#getting-started` Slack channel and start working on it!
 
 ### TL;still reading
 
-Here are broad areas where there is a need right now for contributions. There are some major assumptions/decisions that were made during the first few months of gathering requirements and building out the initial development Survivor Application, so if you have any intuition or suggestions for the following areas after reviewing our docs, please open an issue or send a message in the most relevant (Slack channel):
+Here are broad areas where there is a need right now for contributions. There are some major assumptions/decisions that were made during the first few months of gathering requirements and building out the initial development Survivor Application, so if you have any intuition or suggestions for the following areas after reviewing our docs, please open an issue or send a message in the `#suggestions` Slack channel:
 
 1. Architecture
      - How will this app operate if all existing survivors are actively using it? Expect anywhere from 8k - 13k users for the Survivor Application and 1-10 admin for the Survivor Dashboard.
