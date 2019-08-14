@@ -49,9 +49,9 @@ The project is split into two apps: a Survivor Application and a Survivor Dashbo
 4. `npm start` will start the development server on `localhost:3000`
 5. `npm run cypress:open` will run the cypress integration tests
 
-## Contributions
+## Contribute!
 
-Thank you for choosing to contribute to this project!
+Please! We need all the help we can get to reach the MVP efficiently, effectively and enjoyably.
 
 0. Join our Slack channel (<a href="https://join.slack.com/t/wsms-contributors/shared_invite/enQtNzI2Mjk5MDM2Mzg0LTUyYWYwMjNiN2U3MTJlMDhhYmFlNWNlOGQ4ZWJkYWE0MTAzZjU0MjYzYzkxNWExNDMxMjViZWNhY2MxZmZkODE">invite link</a>).
 
@@ -61,8 +61,3 @@ Thank you for choosing to contribute to this project!
 
 3. Please see our <a href="docs/CONTRIBUTING.md">Contributing</a> guide
 
-4. We highly recommend that you read through the latest Meeting Minutes to stay up to speed with the latest and greatest.
-
-5. Please add to the documentation! Correcting even the smallest typo helps. 
-
-6. Reach out in Slack (<a href="https://join.slack.com/t/wsms-contributors/shared_invite/enQtNzI2Mjk5MDM2Mzg0LTUyYWYwMjNiN2U3MTJlMDhhYmFlNWNlOGQ4ZWJkYWE0MTAzZjU0MjYzYzkxNWExNDMxMjViZWNhY2MxZmZkODE">invite link</a>) to keep abreast of the latest and greatest, if you're not sure how to contribute, want to collaborate, or have any questions on something you are working on.
