@@ -15,7 +15,7 @@ If you are new to OSS (Open Source Software), software sevelopment in general, a
 
 Please open a PR with any improvements you think would benefit this document!
 
-Please read the <a href="./CODE_OF_CONDUCT.md">Code of Conduct</a>
+Please read the <a href="../CODE_OF_CONDUCT.md">Code of Conduct</a>
 
 Please view the <a href="https://github.com/vishalbakshi/CallForCode/projects/1">Project Task board</a> which is updated frequently and contains all actionable tasks in one of the five following categories:
 
