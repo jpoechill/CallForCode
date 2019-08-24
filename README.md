@@ -1,61 +1,63 @@
 # Wildfire Survivor Management System
 
-This is the development repository for the two following applications (Survivor Application and Survivor Dashboard) used for Wildfire Survivor Data Management:
+This is the development repository for two apps (Survivor Application and Survivor Dashboard) which together create the Wildfire Survivor Management System (WSMS).
+
+## Origin Story
+
+@AlenaNV, @cmatthey and I met each other at an IBM Call for Code Hackathon and submitted a <a href="https://docs.google.com/presentation/d/1d_3tq-1y3BTtaHsHbbBHTFACioDKjJyVuCnjy360n_4/edit?usp=sharing">Proof Of Concept</a> after working with the Development Director from United Way (Northern California). He and his team were interested in moving forward so we did! @AlenaNV has created <a href="https://sketch.cloud/s/8Az7w">the Sketch files at this link</a> from the requirements we have gathered since then. I've been working on getting the MVP together (React, Node, Firebase, Cypress). 
 
 ## Project Roadmap
 
 - [x] Initial Kickoff + Gather Requirements
-- [x] Initial Mockups (<a href="https://sketch.cloud/s/8Az7w">Sketch files</a>)
-- [ ] Initial Functional Survivor Application
-- [ ] Initial Functional Survivor Dashboard
-- [ ] Initial Production Release for Survivor Application
-- [ ] Initial Production Release for Survivor Dashboard
+- [x] Initial Sketches (<a href="https://sketch.cloud/s/8Az7w">Sketch files</a>)
+- [ ] Initial (Development) Survivor Application
+- [ ] Initial (Development) Survivor Dashboard
+- [ ] Initial (Production) Release for Survivor Application
+- [ ] Initial (Production) Release for Survivor Dashboard
 
-> User -> Survivor App -> Staff -> Survivor Dashboard -> User flowchar
+## Project Overview
 
+The project is split into two apps: a Survivor Application and a Survivor Dashboard. Each user will have an account for their Survivor Application and each staff/admin will have an account for the Survivor Dashboard, which shows all users' Survivor Application data along with some internal admin-related data (financial assistance details, application status, etc.)
+
+<img src="./public/images/WSMS.svg" />
 
 ## Survivor Application
 
 ### Core Functionality
 
-- Displays survivor application information
 - Allows users (wildfire survivors) to :
-  - Create an account
-  - Submit an application
+  - Create an account (Email link sign-in is preferred method)
+  - Fill out, preview and submit an application
   - Modify their application data
   - View the status of their application
-  - View the status of their gift card
   
 ## Survivor Dashboard
 
 ### Core Functionality:
 
-- Displays survivor information
 - Allows users (staff members) to:
   - View and update demographic information
   - View and update application status
-  
+  - View and update financial assistance data
  <hr>
  
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Installation
 
 1. Download the repo
-2. `npm install` inside the `CallForCode` directory
-3. `npm start` will start the development server on `localhost:3000`
-4. `npm run cypress:open` will run the cypress integration tests
+2. Navigate to the `CallForCode` directory
+3. `npm install` inside the `CallForCode` directory
+4. `npm start` will start the development server on `localhost:3000`
+5. `npm run cypress:open` will run the cypress integration tests
 
-## Contributions
+## Contribute!
 
-Thank you for choosing to contribute to this project!
+Please! We need all the help we can get to reach the MVP efficiently, effectively and enjoyably.
 
-1. We hold bi-weekly phone calls with 2-3 client contacts. The next call will be on Friday, August 23rd at 1:30-2:30pm (PST). Add your email to this list (Google Sheet link) and we will send you the Google Hangouts link right before the call. Meeting minutes will be located in (Google Drive folder link)
+0. Join our Slack channel (<a href="https://join.slack.com/t/wsms-contributors/shared_invite/enQtNzI2Mjk5MDM2Mzg0LTUyYWYwMjNiN2U3MTJlMDhhYmFlNWNlOGQ4ZWJkYWE0MTAzZjU0MjYzYzkxNWExNDMxMjViZWNhY2MxZmZkODE">invite link</a>).
 
-2. Please review the current project overview (link) which shows the current mental model which the app is built around. This will help you understand the motivation behind the code.
+1. Meeting minutes from review calls with the United Way contacts will be located in <a href="https://drive.google.com/drive/folders/10XQV-3Z71ZYGFno3BFoPAunxVdZGDOM5?usp=sharing">this folder</a>.
 
-3. Please first look through the (Projects link). If it is listed as OPEN in either the TO DO or IN PROGRESS columns, please add your name the card and start working on it! We highly recommend that you read through the latest Meeting Minutes and attend the next call to stay up to speed with the latest and greatest. Once you're ready for a code review, open a PR by following our (link to PR template).
+2. Please review the <a href="./docs">project documentation</a>. This will help you understand the motivation behind the existing code and areas of improvement (there are many areas of improvement).
 
-4. Documentation! Please don't hesitate to create or add to the documentation of this project by opening a PR by following our (link to PR template). Correcting even the smallest typo helps. 
+3. Please see our <a href="docs/CONTRIBUTING.md">Contributing</a> guide
 
-5. First timers: reach out in Slack (link) if you're not sure how to contribute. 
