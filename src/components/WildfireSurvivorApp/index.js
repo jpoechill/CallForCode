@@ -107,7 +107,7 @@ const StartPage = ({state, setState, handleChange}) => {
            </select>
          );
        case "radio":
-         let radio = state[field] ? (<label htmlFor={field}>
+         let radio = state[field] ? (<label htmlFor={SCHEMA[field].name}>
           <input
             key={idx}
             className={category}
@@ -118,7 +118,7 @@ const StartPage = ({state, setState, handleChange}) => {
             checked
           />
           {SCHEMA[field].label}
-          </label>) : (<label htmlFor={field}>
+          </label>) : (<label htmlFor={SCHEMA[field].name}>
              <input
                key={idx}
                className={category}
