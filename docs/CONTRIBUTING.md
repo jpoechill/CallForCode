@@ -15,8 +15,6 @@ If you are new to OSS (Open Source Software), software sevelopment in general, a
 
 ### TL;DR
 
-Please open a PR with any improvements you think would benefit this document!
-
 Please read the <a href="../CODE_OF_CONDUCT.md">Code of Conduct</a>
 
 Please view the <a href="https://github.com/vishalbakshi/CallForCode/projects/1">Project Task board</a> which is updated frequently and contains all actionable tasks in one of the five following categories:
@@ -27,7 +25,9 @@ Please view the <a href="https://github.com/vishalbakshi/CallForCode/projects/1"
 - Being Reviewed
 - Done
 
-For the first four categories, if you see a task you want to work on, add your handle to the assignees list, send a message announcing that you're starting to work on it in `#getting-started` Slack channel and start working on it!
+For the first four categories, if you see a task you want to work on, send a message announcing that you're starting to work on it in `#getting-started` Slack channel, fork the repo, and open a pull request when you are ready for a code review!
+
+When you have opened a PR with your changes, send a message in the `#code-review` Slack channel.
 
 ### TL;still reading
 
