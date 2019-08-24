@@ -106,45 +106,56 @@ const StartPage = ({state, setState, handleChange}) => {
              {SCHEMA[field].options}
            </select>
          );
+       case "radio":
+         let radio = state[field] ? (<label htmlFor={field}>
+          <input
+            key={idx}
+            className={category}
+            type={SCHEMA[field].input}
+            name={SCHEMA[field].name}
+            placeholder={SCHEMA[field].placeholder}
+            onChange={handleChange}
+            checked
+          />
+          {SCHEMA[field].label}
+          </label>) : (<label htmlFor={field}>
+             <input
+               key={idx}
+               className={category}
+               type={SCHEMA[field].input}
+               name={SCHEMA[field].name}
+               placeholder={SCHEMA[field].placeholder}
+               onChange={handleChange}
+             />
+             {SCHEMA[field].label}
+           </label>);
+           return radio;
        case "checkbox":
          // Return checkbox as checked if user has clicked it
          let checkbox = state[field] ? (<label htmlFor={field}>
           <input
             key={idx}
             className={category}
-            type="checkbox"
+            type={SCHEMA[field].input}
             name={field}
             placeholder={SCHEMA[field].placeholder}
             onChange={handleChange}
             checked
           />
-          {SCHEMA[field].name}
+          {SCHEMA[field].label}
         </label>) : (<label htmlFor={field}>
              <input
                key={idx}
                className={category}
-               type="checkbox"
+               type={SCHEMA[field].input}
                name={field}
                placeholder={SCHEMA[field].placeholder}
                onChange={handleChange}
              />
-             {SCHEMA[field].name}
+             {SCHEMA[field].label}
            </label>);
          return (
            checkbox
-         );
-       case "radio":
-         return (
-           <label htmlFor={field}>
-             <input
-               key={idx}
-               className={category}
-               type="radio"
-               name={SCHEMA[field].name}
-               onChange={handleChange}
-             />
-             {SCHEMA[field].placeholder}
-           </label>
          );
        case null:
          break;

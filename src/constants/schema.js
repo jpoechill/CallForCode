@@ -59,7 +59,10 @@ const test_values = {
   address2: "Apt 123",
   zip: "94112",
   dob: "01/01/2019",
+  relation: "parent",
   notes: "Test Notes",
+  fema_number: "000000000",
+  fire_name: "tubbs",
   checked: true
 }
 
@@ -79,7 +82,7 @@ const SCHEMA = {
     placeholder: "Middle Name",
     test_value: test_values.middle_name,
     validation: () => {}
-  },
+  }, 
   survivor_last_name: {
     input: "text",
     type: "string",
@@ -188,7 +191,7 @@ const SCHEMA = {
     type: "string",
     options: relationOptions,
     initial_value: "",
-    test_value: test_values.dob,
+    test_value: test_values.relation,
     validation: () => {}
   },
   additional_contact_first_name: {
@@ -408,6 +411,7 @@ const SCHEMA = {
     type: "boolean",
     initial_value: false,
     name: "Alliance for Workplace Development",
+    label: "Alliance for Workplace Development",
     test_value: test_values.checked,
     validation: () => {}
   },
@@ -416,6 +420,7 @@ const SCHEMA = {
     type: "boolean",
     initial_value: "",
     name: "Butte 211",
+    label: "Butte 211",
     test_value: test_values.checked,
     validation: () => {}
   },
@@ -424,6 +429,7 @@ const SCHEMA = {
     type: "boolean",
     initial_value: "",
     name: "Caring Choices",
+    label: "Caring Choices",
     test_value: test_values.checked,
     validation: () => {}
   },
@@ -432,6 +438,7 @@ const SCHEMA = {
     type: "boolean",
     initial_value: "",
     name: "CHIP",
+    label: "CHIP",
     test_value: test_values.checked,
     validation: () => {}
   },
@@ -440,6 +447,7 @@ const SCHEMA = {
     type: "boolean",
     initial_value: "",
     name: "DESS",
+    label: "DESS",
     test_value: test_values.checked,
     validation: () => {}
   },
@@ -448,6 +456,7 @@ const SCHEMA = {
     type: "boolean",
     initial_value: "",
     name: "FEMA",
+    label: "FEMA",
     test_value: test_values.checked,
     validation: () => {}
   },
@@ -456,6 +465,7 @@ const SCHEMA = {
     type: "boolean",
     initial_value: "",
     name: "Habitat for Humanity",
+    label: "Habitat for Humanity",
     test_value: test_values.checked,
     validation: () => {}
   },
@@ -464,6 +474,7 @@ const SCHEMA = {
     type: "boolean",
     initial_value: "",
     name: "Jesus Center",
+    label: "Jesus Center",
     validation: () => {}
   },
   lsnc: {
@@ -471,6 +482,7 @@ const SCHEMA = {
     type: "boolean",
     initial_value: "",
     name: "LSNC",
+    label: "LSNC",
     test_value: test_values.checked,
     validation: () => {}
   },
@@ -479,6 +491,7 @@ const SCHEMA = {
     type: "boolean",
     initial_value: "",
     name: "LTRG Unmet Needs",
+    label: "LTRG Unmet Needs",
     test_value: test_values.checked,
     validation: () => {}
   },
@@ -487,6 +500,7 @@ const SCHEMA = {
     type: "boolean",
     initial_value: "",
     name: "NVCSS",
+    label: "NVCSS",
     test_value: test_values.checked,
     validation: () => {}
   },
@@ -495,6 +509,7 @@ const SCHEMA = {
     type: "boolean",
     initial_value: "",
     name: "Policy Holders United",
+    label: "Policy Holders United",
     test_value: test_values.checked,
     validation: () => {}
   },
@@ -503,6 +518,7 @@ const SCHEMA = {
     type: "boolean",
     initial_value: "",
     name: "Red Cross",
+    label: "Red Cross",
     test_value: test_values.checked,
     validation: () => {}
   },
@@ -511,6 +527,7 @@ const SCHEMA = {
     type: "boolean",
     initial_value: "",
     name: "Salvation Army",
+    label: "Salvation Army",
     test_value: test_values.checked,
     validation: () => {}
   },
@@ -519,6 +536,7 @@ const SCHEMA = {
     type: "boolean",
     initial_value: "",
     name: "St. Vincent de Paul",
+    label: "St. Vincent de Paul",
     test_value: test_values.checked,
     validation: () => {}
   },
@@ -527,6 +545,7 @@ const SCHEMA = {
     type: "boolean",
     initial_value: "",
     name: "Torres Shelter",
+    label: "Torres Shelter",
     test_value: test_values.checked,
     validation: () => {}
   },
@@ -535,6 +554,7 @@ const SCHEMA = {
     type: "boolean",
     initial_value: "",
     name: "Tzu Chi",
+    label: "Tzu Chi",
     test_value: test_values.checked,
     validation: () => {}
   },
@@ -543,6 +563,7 @@ const SCHEMA = {
     type: "boolean",
     initial_value: "",
     name: "Vet Center",
+    label: "Vet Center",
     test_value: test_values.checked,
     validation: () => {}
   },
@@ -551,6 +572,7 @@ const SCHEMA = {
     type: "boolean",
     initial_value: "",
     name: "Youth for Change",
+    label: "Youth for Change",
     test_value: test_values.checked,
     validation: () => {}
   },
@@ -606,6 +628,7 @@ const SCHEMA = {
   sba_loan_yes: {
     input: "radio",
     name: "sba_loan",
+    label: "Yes",
     type: "boolean",
     placeholder: "Yes",
     test_value: test_values.checked,
@@ -614,6 +637,7 @@ const SCHEMA = {
   sba_loan_no: {
     input: "radio",
     name: "sba_loan",
+    label: "No",
     type: "boolean",
     placeholder: "No",
     test_value: test_values.checked,

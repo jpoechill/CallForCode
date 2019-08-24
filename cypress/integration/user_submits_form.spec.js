@@ -1,45 +1,47 @@
+// Import SCHEMA for testing
+import SCHEMA from "../../src/constants/schema";
+
 describe('User submits form', () => {
     
 
     it('User fills out StartPage', () => {
-      let testData = {
-        survivor_first_name: "First Name",
-        survivor_middle_name: "Middle Name",
-        survivor_last_name: "Last Name",
-        survivor_phone: "000-000-0000",
-        survivor_email: "email@address.com",
-        survivor_current_address: "123 Stree Name",
-        survivor_apartment_number: "123",
-        survivor_city: "City",
-        survivor_state: "CA",
-        survivor_zip: "12345",
-        additional_contact_first_name: "First Name",
-        additional_contact_middle_name: "Middle Name",
-        additional_contact_last_name: "Last Name",
-        additional_contact_phone: "000-000-0000",
-        additional_contact_email: "email@address.com",
-        additional_contact_current_address: "123 Stree Name",
-        additional_contact_apartment_number: "123",
-        additional_contact_city: "City",
-        additional_contact_state: "CA",
-        additional_contact_zip: "12345",
-        fema_number: "ABCDEF123",
-        fire_name: "Tubbs Fire",
-        damaged_address: "123 Street",
-        damaged_apartment_number: "123",
-        damaged_city: "City",
-        damaged_state: "CA",
-        damaged_zip: "00000",
-        notes: "Notes",
-        signature: "signature"
-      }
         cy.visit('http://localhost:3000');
+
+        Object.keys(SCHEMA).forEach(fieldName => {
+          if (SCHEMA.hasOwnProperty(fieldName)) {
+            // Text inputs
+            if (SCHEMA[fieldName].input == "text") {
+              cy.get('[name=' + fieldName + ']')
+                .type(SCHEMA[fieldName].test_value)
+            }
+
+            // Select options
+            if (SCHEMA[fieldName].input == "select") {
+                  cy.get('[name=' + fieldName  + ']')
+                    .select(SCHEMA[fieldName].test_value)
+            } 
+
+            // Checkboxes or radio buttons
+            if (SCHEMA[fieldName].input == "checkbox") {
+                  cy.get('[name=' + fieldName  + ']')
+                    .check()
+            }
+
+            // Radio buttons  
+            if (SCHEMA[fieldName].input == "radio") {
+              cy.get('[name=' + SCHEMA[fieldName].name + ']')
+                .check() 
+            }
+            
+          }
+        });
         // *** GENERAL INFORMATION *** //
 
+        /*
         // Populate First Name
         cy.get('[name="survivor_first_name"]')
           .type(testData.survivor_first_name);
-        
+
         // Populate Middle Name
         cy.get('[name="survivor_middle_name"]')
           .type(testData.survivor_middle_name);
@@ -231,7 +233,7 @@ describe('User submits form', () => {
         // *** SUBMIT *** //
         cy.get('[name="submit"]')
           .click();
-        
+        */
         
     })
 })
