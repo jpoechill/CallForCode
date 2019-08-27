@@ -62,4 +62,3 @@ Please! We need all the help we can get to reach the MVP efficiently, effectivel
 3. Please review the <a href="./docs">project documentation</a>. This will help you understand the motivation behind the existing code and areas of improvement (there are many areas of improvement).
 
 4. Please see our <a href="docs/CONTRIBUTING.md">Contributing</a> guide
-
