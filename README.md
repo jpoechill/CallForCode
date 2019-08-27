@@ -22,7 +22,7 @@ The project is split into two apps: a Survivor Application and a Survivor Dashbo
 <img src="./public/images/WSMS.svg" />
 
 ## Survivor Application
-Interactive Prototype: <a href="https://invis.io/5VTM181XKRW"></a> (made by @jpoechill)
+<a href="https://invis.io/5VTM181XKRW">Link to Interactive Prototype</a> (made by @jpoechill)
 
 ### Core Functionality
 
@@ -33,7 +33,7 @@ Interactive Prototype: <a href="https://invis.io/5VTM181XKRW"></a> (made by @jpo
   - View the status of their application
   
 ## Survivor Dashboard
-Interactive Prototype: <a href="https://invis.io/CRTM199K49Y"></a> (made by @jpoechill)
+<a href="https://invis.io/CRTM199K49Y">Link to Interactive Prototype</a> (made by @jpoechill)
 
 ### Core Functionality:
 
