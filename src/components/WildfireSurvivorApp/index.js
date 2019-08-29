@@ -62,14 +62,47 @@ const Header = ({ state, setState }) => {
 
   return (
     <div id="header">
-      <svg viewBox="0 0 800 100"id="header-svg">
-        <text x="32" y="25" >Start</text>
-        {state["start_page"] ? <circle cx="50" cy="50" r="10" fill="orange" onClick={goToStartPage} /> : <circle cx="50" cy="50" r="10" fill="black" onClick={goToStartPage}/>}
-        <text x="173" y="25">Preview</text>
-        {state["preview_page"] ? <circle cx="200" cy="50" r="10" fill="orange" onClick={goToPreviewPage}/> : <circle cx="200" cy="50" r="10" fill="black" onClick={goToPreviewPage}/>}
-        <text x="308" y="25">Confirmation</text>
-        {state["confirmation_page"] ? <circle cx="350" cy="50" r="10" fill="orange" onClick={goToConfirmationPage}/> : <circle cx="350" cy="50" r="10" fill="black" onClick={goToConfirmationPage}/>}
-      </svg>
+      <section>
+        <div className="container">
+          <div className="row pt-5 pb-4">
+            <div className="col-md-6">
+              <img src={"/images/united-logo.png"} />
+            </div>
+            <div className="col-md-6 text-right">
+              <h1 className="font-weight-bold" style={{ color: '#111580' }}>
+                United Way of <br /> Northern California
+              </h1>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12 p-3" style={{ backgroundColor: '#F48118' }} />
+          </div>
+          <div className="row">
+            <div className="col-md-12 pt-4 text-center">
+              <h1 className="font-weight-bold" style={{ color: '#111580' }}>
+                Wildfire Victim Application
+              </h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 text-center">
+              <svg viewBox="0 0 800 100" id="header-svg" className="d-block m-auto">
+                <text x="32" y="25" >Start</text>
+                {state["start_page"] ? <circle cx="50" cy="50" r="10" fill="orange" onClick={goToStartPage} /> : <circle cx="50" cy="50" r="10" fill="black" onClick={goToStartPage} />}
+                <text x="173" y="25">Preview</text>
+                {state["preview_page"] ? <circle cx="200" cy="50" r="10" fill="orange" onClick={goToPreviewPage} /> : <circle cx="200" cy="50" r="10" fill="black" onClick={goToPreviewPage} />}
+                <text x="308" y="25">Confirmation</text>
+                {state["confirmation_page"] ? <circle cx="350" cy="50" r="10" fill="orange" onClick={goToConfirmationPage} /> : <circle cx="350" cy="50" r="10" fill="black" onClick={goToConfirmationPage} />}
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
