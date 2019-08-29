@@ -3,7 +3,7 @@ import SCHEMA from "../../constants/schema";
 import FIELDS from "../../constants/component_fields";
 
 const WildfireSurvivorApp = () => {
-  const initialState = {"start_page": true, "preview_page": false, "confirmation_page": false};
+  const initialState = { "start_page": true, "preview_page": false, "confirmation_page": false };
 
   // Set initial state
   Object.keys(SCHEMA).forEach(key => {
@@ -33,9 +33,9 @@ const WildfireSurvivorApp = () => {
   return (
     <div>
       <Header state={state} setState={setState} />
-    {state["start_page"] ? <StartPage state={state} setState={setState} handleChange={handleChange} /> : null}
-    {state["preview_page"] ? <PreviewPage state={state} setState={setState} /> : null}
-    {state["confirmation_page"] ? <ConfirmationPage /> : null}
+      {state["start_page"] ? <StartPage state={state} setState={setState} handleChange={handleChange} /> : null}
+      {state["preview_page"] ? <PreviewPage state={state} setState={setState} /> : null}
+      {state["confirmation_page"] ? <ConfirmationPage /> : null}
     </div>
   )
 
@@ -43,19 +43,19 @@ const WildfireSurvivorApp = () => {
 
 const Header = ({ state, setState }) => {
   const goToStartPage = e => {
-    let newState = {...state, "start_page": true, "preview_page": false, "confirmation_page": false}
+    let newState = { ...state, "start_page": true, "preview_page": false, "confirmation_page": false }
     localStorage.setItem("formData", JSON.stringify(newState));
     setState(newState);
   }
 
   const goToPreviewPage = e => {
-    let newState = {...state, "start_page": false, "preview_page": true, "confirmation_page": false}
+    let newState = { ...state, "start_page": false, "preview_page": true, "confirmation_page": false }
     localStorage.setItem("formData", JSON.stringify(newState));
     setState(newState);
   }
 
   const goToConfirmationPage = e => {
-    let newState = {...state, "start_page": false, "preview_page": false, "confirmation_page": true}
+    let newState = { ...state, "start_page": false, "preview_page": false, "confirmation_page": true }
     localStorage.setItem("formData", JSON.stringify(newState));
     setState(newState);
   }
@@ -106,7 +106,7 @@ const Header = ({ state, setState }) => {
     </div>
   )
 }
-const StartPage = ({state, setState, handleChange}) => {
+const StartPage = ({ state, setState, handleChange }) => {
   /**
    * lookup category in FIELDS, and fields in SCHEMA
    * return elements used for form inputs
@@ -115,99 +115,99 @@ const StartPage = ({state, setState, handleChange}) => {
    */
   const getInputElements = category => {
     return FIELDS[category].map((field, idx) => {
-     switch (SCHEMA[field].input) {
-       case "file":
-         return (
-           <input
-             key={idx}
-             className={category}
-             type="file"
-             name={field}
-             accept="image/*"
-             onChange={handleChange}
-             multiple
-           />
-         );
-       case "select":
-         return (
-           <select
-             key={idx}
-             className={category}
-             name={field}
-             onChange={handleChange}
-           >
-             {SCHEMA[field].options}
-           </select>
-         );
-       case "radio":
-         let radio = state[field] ? (<label htmlFor={SCHEMA[field].name}>
-          <input
-            key={idx}
-            className={category}
-            type={SCHEMA[field].input}
-            name={SCHEMA[field].name}
-            placeholder={SCHEMA[field].placeholder}
-            onChange={handleChange}
-            checked
-          />
-          {SCHEMA[field].label}
+      switch (SCHEMA[field].input) {
+        case "file":
+          return (
+            <input
+              key={idx}
+              className={category}
+              type="file"
+              name={field}
+              accept="image/*"
+              onChange={handleChange}
+              multiple
+            />
+          );
+        case "select":
+          return (
+            <select
+              key={idx}
+              className={category}
+              name={field}
+              onChange={handleChange}
+            >
+              {SCHEMA[field].options}
+            </select>
+          );
+        case "radio":
+          let radio = state[field] ? (<label htmlFor={SCHEMA[field].name}>
+            <input
+              key={idx}
+              className={category}
+              type={SCHEMA[field].input}
+              name={SCHEMA[field].name}
+              placeholder={SCHEMA[field].placeholder}
+              onChange={handleChange}
+              checked
+            />
+            {SCHEMA[field].label}
           </label>) : (<label htmlFor={SCHEMA[field].name}>
-             <input
-               key={idx}
-               className={category}
-               type={SCHEMA[field].input}
-               name={SCHEMA[field].name}
-               placeholder={SCHEMA[field].placeholder}
-               onChange={handleChange}
-             />
-             {SCHEMA[field].label}
-           </label>);
-           return radio;
-       case "checkbox":
-         // Return checkbox as checked if user has clicked it
-         let checkbox = state[field] ? (<label htmlFor={field}>
-          <input
-            key={idx}
-            className={category}
-            type={SCHEMA[field].input}
-            name={field}
-            placeholder={SCHEMA[field].placeholder}
-            onChange={handleChange}
-            checked
-          />
-          {SCHEMA[field].label}
-        </label>) : (<label htmlFor={field}>
-             <input
-               key={idx}
-               className={category}
-               type={SCHEMA[field].input}
-               name={field}
-               placeholder={SCHEMA[field].placeholder}
-               onChange={handleChange}
-             />
-             {SCHEMA[field].label}
-           </label>);
-         return (
-           checkbox
-         );
-       case null:
-         break;
-       case "text":
-       default:
-         return (
-           <input
-             key={idx}
-             className={category}
-             type="text"
-             name={field}
-             value={state[field]}
-             placeholder={SCHEMA[field].placeholder}
-             onChange={handleChange}
-           />
-         );
-     }
-   });
- };
+            <input
+              key={idx}
+              className={category}
+              type={SCHEMA[field].input}
+              name={SCHEMA[field].name}
+              placeholder={SCHEMA[field].placeholder}
+              onChange={handleChange}
+            />
+            {SCHEMA[field].label}
+          </label>);
+          return radio;
+        case "checkbox":
+          // Return checkbox as checked if user has clicked it
+          let checkbox = state[field] ? (<label htmlFor={field}>
+            <input
+              key={idx}
+              className={category}
+              type={SCHEMA[field].input}
+              name={field}
+              placeholder={SCHEMA[field].placeholder}
+              onChange={handleChange}
+              checked
+            />
+            {SCHEMA[field].label}
+          </label>) : (<label htmlFor={field}>
+            <input
+              key={idx}
+              className={category}
+              type={SCHEMA[field].input}
+              name={field}
+              placeholder={SCHEMA[field].placeholder}
+              onChange={handleChange}
+            />
+            {SCHEMA[field].label}
+          </label>);
+          return (
+            checkbox
+          );
+        case null:
+          break;
+        case "text":
+        default:
+          return (
+            <input
+              key={idx}
+              className={category}
+              type="text"
+              name={field}
+              value={state[field]}
+              placeholder={SCHEMA[field].placeholder}
+              onChange={handleChange}
+            />
+          );
+      }
+    });
+  };
 
   // Get input elements for each category on the Start Page
   let general_information_elements = getInputElements("general_information");
@@ -320,7 +320,7 @@ const StartPage = ({state, setState, handleChange}) => {
    * handle preview button click event
    */
   const handlePreview = (e) => {
-    let newState = { ...state, "start_page": false, "preview_page": true}
+    let newState = { ...state, "start_page": false, "preview_page": true }
     localStorage.setItem("formData", JSON.stringify(newState));
     setState(newState);
   }
@@ -662,13 +662,13 @@ const PreviewPage = ({ state, setState }) => {
    * handle submit button click event
    */
   const handleSubmit = (e) => {
-    let newState = { ...state, "preview_page": false, "confirmation_page": true}
+    let newState = { ...state, "preview_page": false, "confirmation_page": true }
     localStorage.setItem("formData", JSON.stringify(newState));
     setState(newState);
   }
 
   const goToStartPage = e => {
-    let newState = {...state, "start_page": true, "preview_page": false, "confirmation_page": false}
+    let newState = { ...state, "start_page": true, "preview_page": false, "confirmation_page": false }
     localStorage.setItem("formData", JSON.stringify(newState));
     setState(newState);
   }
@@ -677,7 +677,7 @@ const PreviewPage = ({ state, setState }) => {
     <div id="preview-container">
       <h2>General Information</h2>
       <p id="survivor-name-preview">
-        Name:{ " " + state["survivor_first_name"] + " " + state["survivor_middle_name"] + " " + state["survivor_last_name"]}
+        Name:{" " + state["survivor_first_name"] + " " + state["survivor_middle_name"] + " " + state["survivor_last_name"]}
       </p>
       <p id="survivor_phone_preview">
         Phone:{" " + state["survivor_phone"]}
@@ -692,20 +692,20 @@ const PreviewPage = ({ state, setState }) => {
       <p id="members_of_household_preview"></p>
       <h2>Additional Contact</h2>
       <p id="additional_contact_preview">
-      <p id="additional_contact_name_preview">
-        Name:{ " " + state["additional_contact_first_name"] + " " + state["additional_contact_middle_name"] + " " + state["additional_contact_last_name"]}
-      </p>
-      <p id="survivor_phone_preview">
-        Phone:{" " + state["additional_contact_phone"]}
-      </p>
-      <p id="additional_contact_email_preview">
-        Email:{" " + state["additional_contact_email"]}
-      </p>
-      <p id="survivor_address_preview">
-        Address:{" " + state["additional_contact_address1"] + " " + state["additional_contact_address2"] + ", " + state["additional_contact_city"] + ", " + state["additional_contact_state"] + " " + state["additional_contact_zip"]}
-      </p>
-      <h2>Members of Household</h2>
-      <p id="members_of_household_preview"></p>
+        <p id="additional_contact_name_preview">
+          Name:{" " + state["additional_contact_first_name"] + " " + state["additional_contact_middle_name"] + " " + state["additional_contact_last_name"]}
+        </p>
+        <p id="survivor_phone_preview">
+          Phone:{" " + state["additional_contact_phone"]}
+        </p>
+        <p id="additional_contact_email_preview">
+          Email:{" " + state["additional_contact_email"]}
+        </p>
+        <p id="survivor_address_preview">
+          Address:{" " + state["additional_contact_address1"] + " " + state["additional_contact_address2"] + ", " + state["additional_contact_city"] + ", " + state["additional_contact_state"] + " " + state["additional_contact_zip"]}
+        </p>
+        <h2>Members of Household</h2>
+        <p id="members_of_household_preview"></p>
       </p>
       <h2>Cash Grant Information</h2>
       <p id="fema_preview">
@@ -757,7 +757,7 @@ const PreviewPage = ({ state, setState }) => {
       </p>
       <h2>Case Managers</h2>
       <p id="case_managers_preview">
-        
+
       </p>
       <h2>SBA Loan</h2>
       <p id="sba_loan_preview">
