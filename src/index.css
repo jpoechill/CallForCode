@@ -22,3 +22,12 @@ input[type="text"] {
   display: flex;
   flex-direction: column;
 }
+
+/* Colors */
+.text-united-blue {
+  color: #111580;
+}
+
+.bg-united-orange {
+  background-color: #F48118;
+}

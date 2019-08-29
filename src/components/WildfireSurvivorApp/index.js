@@ -69,17 +69,17 @@ const Header = ({ state, setState }) => {
               <img src={"/images/united-logo.png"} />
             </div>
             <div className="col-md-6 text-right">
-              <h1 className="font-weight-bold" style={{ color: '#111580' }}>
+              <h1 className="font-weight-bold text-united-blue">
                 United Way of <br /> Northern California
               </h1>
             </div>
           </div>
           <div className="row">
-            <div className="col-md-12 p-3" style={{ backgroundColor: '#F48118' }} />
+            <div className="col-md-12 p-3 bg-united-orange" />
           </div>
           <div className="row">
             <div className="col-md-12 pt-4 text-center">
-              <h1 className="font-weight-bold" style={{ color: '#111580' }}>
+              <h1 className="font-weight-bold text-united-blue">
                 Wildfire Victim Application
               </h1>
             </div>
