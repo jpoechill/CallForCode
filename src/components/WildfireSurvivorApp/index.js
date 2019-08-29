@@ -326,98 +326,334 @@ const StartPage = ({state, setState, handleChange}) => {
   }
 
   return (
-      <div id="start-page-container">
-        <div id="general-information-container">
-          <h2>General Information</h2>
-          <h3>
-            Please provide your current information so that we can contact you
-            about your case
-          </h3>
-          {general_information_elements}
+    <div id="start-page-container">
+
+      <section id="general-information-container">
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h2 class="font-weight-bold pb-2">General Information</h2>
+              <h3>
+                Please provide your current information so that we can contact you
+                about your case
+                </h3>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+
+              {/* General Information */}
+              {general_information_elements}
+
+            </div>
+          </div>
         </div>
-        <div id="members-of-household-container">
-          <h2>Members of Household</h2>
-          <h3>Please provide information about members of your household</h3>
-          {members_of_household_elements}
-          <br />
-          <button name="add_household_member" onClick={addHouseholdMember}>
-            Add Household Member
-          </button>
+      </section>
+
+      <section id="members-of-household-container">
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h2 class="font-weight-bold pb-2">Members of Household</h2>
+              <h3>Please provide information about members of your household</h3>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+
+              {/* Member of Household */}
+              {members_of_household_elements}
+              <br />
+              <button name="add_household_member" onClick={addHouseholdMember}>
+                Add Household Member
+                </button>
+
+            </div>
+          </div>
         </div>
-        <div id="additional-contact-information-container">
-          <h2>Additional Contact</h2>
-          <h3>Please provide a contact if we are not able to reach you</h3>
-          {additional_contact_information_elements}
+      </section>
+
+      <section id="additional-contact-information-container">
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h2 class="font-weight-bold pb-2">Additional Contact</h2>
+              <h3>Please provide a contact if we are not able to reach you</h3>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+
+              {/* Additional Contact Info */}
+              {additional_contact_information_elements}
+
+            </div>
+          </div>
         </div>
-        <div id="cash-grant-information-container">
-          <h2>Cash Grant Information</h2>
-          <h3>
-            Please provide the information about the address where damage
-            occurred
-          </h3>
-          {cash_grant_information_elements}
+      </section>
+
+      <section id="cash-grant-information-container">
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h2 class="font-weight-bold pb-2">Cash Grant Information</h2>
+              <h3>
+                Please provide the information about the address where damage
+                occurred
+                </h3>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+
+              {/* Cash Grant Info */}
+              {cash_grant_information_elements}
+
+            </div>
+          </div>
         </div>
-        <div id="landlord-information-container">
-          <h3>If you rented, enter information about your landlord</h3>
-          {landlord_information_elements}
+      </section>
+
+      <section id="landlord-information-container">
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h3>If you rented, enter information about your landlord</h3>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+
+              {/* Landlord Info */}
+              {landlord_information_elements}
+
+            </div>
+          </div>
         </div>
-        <div id="notes-container">
-          <h2>Notes</h2>
-          <h3>
-            Briefly describe how you were impacted by the wildfire. Was your
-            primary residence destroyed or significantly damaged by the fire? To
-            what degree, if any, are you insured for any of your losses?
-            (Homeowners, renters, etc.)
-          </h3>
-          {notes_elements}
+      </section>
+
+
+      <section id="notes-container">
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h2 class="font-weight-bold pb-2">Notes</h2>
+              <h3>
+                Briefly describe how you were impacted by the wildfire. Was your
+                primary residence destroyed or significantly damaged by the fire? To
+                what degree, if any, are you insured for any of your losses?
+                (Homeowners, renters, etc.)
+                </h3>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+
+              {/* Notes */}
+              {notes_elements}
+
+            </div>
+          </div>
         </div>
-        <div id="photo-id-container">
-          <h2>Photo of ID</h2>
-          {photo_id_elements}
+      </section>
+
+      <section id="photo-id-container">
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h2 class="font-weight-bold pb-2">Photo of ID</h2>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+              <div className="bg-light p-5 mb-4"></div>
+            </div>
+            <div className="col-md-12 text-center">
+
+              {/* Photo ID */}
+              {photo_id_elements}
+
+            </div>
+          </div>
         </div>
-        <div id="address-proof-container">
-          <h2>Photo of address proof</h2>
-          {address_proof_elements}
+      </section>
+
+      <section id="address-proof-container">
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h2 class="font-weight-bold pb-2">Photo of address proof</h2>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+              <div className="bg-light p-5 mb-4"></div>
+            </div>
+            <div className="col-md-12 text-center">
+
+              {/* Address Proof */}
+              {address_proof_elements}
+
+            </div>
+          </div>
         </div>
-        <div id="damaged-house-container">
-          <h2>Photos of your damaged house</h2>
-          {house_damage_elements}
+      </section>
+
+      <section id="damaged-house-container">
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h2 class="font-weight-bold pb-2">Photos of your damaged house</h2>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+              <div className="bg-light p-5 mb-4"></div>
+            </div>
+            <div className="col-md-12 text-center">
+
+              {/* House Damage */}
+              {house_damage_elements}
+
+            </div>
+          </div>
         </div>
-        <div id="receipts-container">
-          <h2>Photos of your receipts</h2>
-          {receipts_elements}
+      </section>
+
+      <section id="receipts-container">
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h2 class="font-weight-bold pb-2">Photos of your receipts</h2>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+              <div className="bg-light p-5 mb-4"></div>
+            </div>
+            <div className="col-md-12 text-center">
+
+              {/* Receipts */}
+              {receipts_elements}
+
+            </div>
+          </div>
         </div>
-        <div id="consent-release-container">
-          <h2>Coordinated Assistance Network Consent and Release</h2>
-          {can_content_release_elements}
+      </section>
+
+      <section id="consent-release-container">
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h2 class="font-weight-bold pb-2">Coordinated Assistance Network Consent and Release</h2>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+              <div className="bg-light p-5 mb-4"></div>
+            </div>
+            <div className="col-md-12 text-center">
+
+              {/* Consent Release */}
+              {can_content_release_elements}
+
+            </div>
+          </div>
         </div>
-        <div id="agencies-container">
-          <h2>Other agencies you work with</h2>
-          {agencies_elements}
+      </section>
+
+      <section id="agencies-container">
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h2 class="font-weight-bold pb-2">Other agencies you work with</h2>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+
+              {/* Agencies */}
+              {agencies_elements}
+
+            </div>
+          </div>
         </div>
-        <div id="case-managers-container">
-          <h2>Case Managers you work with</h2>
-          {case_managers_information_elements}
-          <br />
-          <button name="add_case_manager" onClick={addCaseManager}>
-            Add Case Manager
-          </button>
+      </section>
+
+      <section id="case-managers-container">
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h2 class="font-weight-bold pb-2">Case Managers you work with</h2>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+
+              {/* Case Manager Info */}
+              {case_managers_information_elements}
+              <br />
+              <button name="add_case_manager" onClick={addCaseManager}>
+                Add Case Manager
+                </button>
+
+            </div>
+          </div>
         </div>
-        <div id="sba-loan-container">
-          <h2>Did you apply for a SBA loan?</h2>
-          {sba_loan_elements}
+      </section>
+
+      <section id="sba-loan-container">
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h2 class="font-weight-bold pb-2">Did you apply for a SBA loan?</h2>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+
+              {/* SBA Loan Info */}
+              {sba_loan_elements}
+
+            </div>
+          </div>
         </div>
-        <div id="signature-container">
-          <h2>Electronic Signature</h2>
-          <h3>
-            By entering my name, I understand this constitutes a legal signature
-            confirming that I acknowledge and agree that all information entered
-            is correct and truthful
-          </h3>
-          {signature_elements}
+      </section>
+
+      <section id="signature-container">
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h2 class="font-weight-bold pb-2">Electronic Signature</h2>
+              <h3>
+                By entering my name, I understand this constitutes a legal signature
+                confirming that I acknowledge and agree that all information entered
+                is correct and truthful.
+                </h3>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+
+              {/* Signature */}
+              {signature_elements}
+
+            </div>
+          </div>
         </div>
-        <button type="submit" onClick={handlePreview}>Preview</button>
-      </div>
+      </section>
+
+      <section>
+        <div className="container pb-5 mb-5">
+          <div className="row">
+            <div className="col-md-12 text-right">
+              <button className="btn btn-primary" type="submit" onClick={handlePreview}>Preview</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
   );
 };
 
