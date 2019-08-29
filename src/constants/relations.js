@@ -1,5 +1,3 @@
-import React from "react";
-
 const relations = [
   { name: "Partner", value: "partner" },
   { name: "Sibling", value: "sibling" },

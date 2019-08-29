@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SCHEMA from "../../constants/schema";
 import FIELDS from "../../constants/component_fields";
 
@@ -24,7 +24,7 @@ const WildfireSurvivorApp = () => {
    */
   const handleChange = e => {
     let name = e.target.name;
-    let value = e.target.type == "checkbox" ? e.target.checked : e.target.value
+    let value = e.target.type === "checkbox" ? e.target.checked : e.target.value
     let newState = { ...state, [name]: value };
     localStorage.setItem("formData", JSON.stringify(newState));
     setState(newState);
@@ -66,7 +66,7 @@ const Header = ({ state, setState }) => {
         <div className="container">
           <div className="row pt-5 pb-4">
             <div className="col-md-6">
-              <img src={"/images/united-logo.png"} />
+              <img src={"/images/united-logo.png"} alt="UN-Logo" />
             </div>
             <div className="col-md-6 text-right">
               <h1 className="font-weight-bold text-united-blue">
