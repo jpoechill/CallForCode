@@ -66,12 +66,12 @@ const Header = ({ state, setState }) => {
         <div className="container">
           <div className="row pt-5 pb-4">
             <div className="col-md-6">
-              <img src={"/images/united-logo.png"} alt="UN-Logo" />
+              <img src={"/images/united-logo.svg"} style={{width: '126px', height: '60px'}} alt="UN-Logo" />
             </div>
             <div className="col-md-6 text-right">
-              <h1 className="font-weight-bold text-united-blue">
+              <h4 className="font-weight-bold text-united-blue">
                 United Way of <br /> Northern California
-              </h1>
+              </h4>
             </div>
           </div>
           <div className="row">
@@ -79,9 +79,9 @@ const Header = ({ state, setState }) => {
           </div>
           <div className="row">
             <div className="col-md-12 pt-4 text-center">
-              <h1 className="font-weight-bold text-united-blue">
+              <h4 className="font-weight-bold text-united-blue">
                 Wildfire Victim Application
-              </h1>
+              </h4>
             </div>
           </div>
         </div>
@@ -332,11 +332,10 @@ const StartPage = ({ state, setState, handleChange }) => {
         <div className="container mb-5">
           <div className="row">
             <div className="col-md-12">
-              <h2 class="font-weight-bold pb-2">General Information</h2>
-              <h3>
-                Please provide your current information so that we can contact you
-                about your case
-                </h3>
+              <h4 class="font-weight-bold pb-2">General Information</h4>
+              <p>
+                Please provide your current information so that we can contact you about your case.
+              </p>
             </div>
           </div>
           <div className="row">
@@ -354,8 +353,10 @@ const StartPage = ({ state, setState, handleChange }) => {
         <div className="container mb-5">
           <div className="row">
             <div className="col-md-12">
-              <h2 class="font-weight-bold pb-2">Members of Household</h2>
-              <h3>Please provide information about members of your household</h3>
+              <h4 class="font-weight-bold pb-2">Members of Household</h4>
+              <p>
+                Please provide information about members of your household.
+              </p>
             </div>
           </div>
           <div className="row">
@@ -366,7 +367,7 @@ const StartPage = ({ state, setState, handleChange }) => {
               <br />
               <button name="add_household_member" onClick={addHouseholdMember}>
                 Add Household Member
-                </button>
+              </button>
 
             </div>
           </div>
@@ -377,8 +378,8 @@ const StartPage = ({ state, setState, handleChange }) => {
         <div className="container mb-5">
           <div className="row">
             <div className="col-md-12">
-              <h2 class="font-weight-bold pb-2">Additional Contact</h2>
-              <h3>Please provide a contact if we are not able to reach you</h3>
+              <h4 class="font-weight-bold pb-2">Additional Contact</h4>
+              <p>Please provide a contact if we are not able to reach you.</p>
             </div>
           </div>
           <div className="row">
@@ -396,11 +397,11 @@ const StartPage = ({ state, setState, handleChange }) => {
         <div className="container mb-5">
           <div className="row">
             <div className="col-md-12">
-              <h2 class="font-weight-bold pb-2">Cash Grant Information</h2>
-              <h3>
+              <h4 class="font-weight-bold pb-2">Cash Grant Information</h4>
+              <p>
                 Please provide the information about the address where damage
-                occurred
-                </h3>
+                occurred.
+                </p>
             </div>
           </div>
           <div className="row">
@@ -418,7 +419,7 @@ const StartPage = ({ state, setState, handleChange }) => {
         <div className="container mb-5">
           <div className="row">
             <div className="col-md-12">
-              <h3>If you rented, enter information about your landlord</h3>
+              <p>If you rented, enter information about your landlord</p>
             </div>
           </div>
           <div className="row">
@@ -437,13 +438,13 @@ const StartPage = ({ state, setState, handleChange }) => {
         <div className="container mb-5">
           <div className="row">
             <div className="col-md-12">
-              <h2 class="font-weight-bold pb-2">Notes</h2>
-              <h3>
-                Briefly describe how you were impacted by the wildfire. Was your
-                primary residence destroyed or significantly damaged by the fire? To
+              <h4 class="font-weight-bold pb-2">Notes</h4>
+              <p>
+                Briefly describe how you were impacted by the wildfire. 
+                Was your primary residence destroyed or significantly damaged by the fire? To
                 what degree, if any, are you insured for any of your losses?
-                (Homeowners, renters, etc.)
-                </h3>
+                (homeowners, renters, etc.)
+              </p>
             </div>
           </div>
           <div className="row">
@@ -461,7 +462,7 @@ const StartPage = ({ state, setState, handleChange }) => {
         <div className="container mb-5">
           <div className="row">
             <div className="col-md-12">
-              <h2 class="font-weight-bold pb-2">Photo of ID</h2>
+              <h4 class="font-weight-bold pb-2">Photo of ID</h4>
             </div>
           </div>
           <div className="row">
@@ -482,7 +483,7 @@ const StartPage = ({ state, setState, handleChange }) => {
         <div className="container mb-5">
           <div className="row">
             <div className="col-md-12">
-              <h2 class="font-weight-bold pb-2">Photo of address proof</h2>
+              <h4 class="font-weight-bold pb-2">Photo of address proof</h4>
             </div>
           </div>
           <div className="row">
@@ -503,7 +504,7 @@ const StartPage = ({ state, setState, handleChange }) => {
         <div className="container mb-5">
           <div className="row">
             <div className="col-md-12">
-              <h2 class="font-weight-bold pb-2">Photos of your damaged house</h2>
+              <h4 class="font-weight-bold pb-2">Photos of your damaged house</h4>
             </div>
           </div>
           <div className="row">
@@ -524,7 +525,7 @@ const StartPage = ({ state, setState, handleChange }) => {
         <div className="container mb-5">
           <div className="row">
             <div className="col-md-12">
-              <h2 class="font-weight-bold pb-2">Photos of your receipts</h2>
+              <h4 class="font-weight-bold pb-2">Photos of your receipts</h4>
             </div>
           </div>
           <div className="row">
@@ -545,7 +546,7 @@ const StartPage = ({ state, setState, handleChange }) => {
         <div className="container mb-5">
           <div className="row">
             <div className="col-md-12">
-              <h2 class="font-weight-bold pb-2">Coordinated Assistance Network Consent and Release</h2>
+              <h4 class="font-weight-bold pb-2">Coordinated Assistance Network Consent and Release</h4>
             </div>
           </div>
           <div className="row">
@@ -566,7 +567,7 @@ const StartPage = ({ state, setState, handleChange }) => {
         <div className="container mb-5">
           <div className="row">
             <div className="col-md-12">
-              <h2 class="font-weight-bold pb-2">Other agencies you work with</h2>
+              <h4 class="font-weight-bold pb-2">Other agencies you work with</h4>
             </div>
           </div>
           <div className="row">
@@ -584,7 +585,7 @@ const StartPage = ({ state, setState, handleChange }) => {
         <div className="container mb-5">
           <div className="row">
             <div className="col-md-12">
-              <h2 class="font-weight-bold pb-2">Case Managers you work with</h2>
+              <h4 class="font-weight-bold pb-2">Case Managers you work with</h4>
             </div>
           </div>
           <div className="row">
@@ -606,7 +607,7 @@ const StartPage = ({ state, setState, handleChange }) => {
         <div className="container mb-5">
           <div className="row">
             <div className="col-md-12">
-              <h2 class="font-weight-bold pb-2">Did you apply for a SBA loan?</h2>
+              <h4 class="font-weight-bold pb-2">Did you apply for a SBA loan?</h4>
             </div>
           </div>
           <div className="row">
@@ -624,12 +625,12 @@ const StartPage = ({ state, setState, handleChange }) => {
         <div className="container mb-5">
           <div className="row">
             <div className="col-md-12">
-              <h2 class="font-weight-bold pb-2">Electronic Signature</h2>
-              <h3>
+              <h4 class="font-weight-bold pb-2">Electronic Signature</h4>
+              <p>
                 By entering my name, I understand this constitutes a legal signature
                 confirming that I acknowledge and agree that all information entered
                 is correct and truthful.
-                </h3>
+              </p>
             </div>
           </div>
           <div className="row">
@@ -646,7 +647,7 @@ const StartPage = ({ state, setState, handleChange }) => {
       <section>
         <div className="container pb-5 mb-5">
           <div className="row">
-            <div className="col-md-12 text-right">
+            <div className="col-md-12 text-center">
               <button className="btn btn-primary" type="submit" onClick={handlePreview}>Preview</button>
             </div>
           </div>
@@ -675,100 +676,243 @@ const PreviewPage = ({ state, setState }) => {
 
   return (
     <div id="preview-container">
-      <h2>General Information</h2>
-      <p id="survivor-name-preview">
-        Name:{" " + state["survivor_first_name"] + " " + state["survivor_middle_name"] + " " + state["survivor_last_name"]}
-      </p>
-      <p id="survivor_phone_preview">
-        Phone:{" " + state["survivor_phone"]}
-      </p>
-      <p id="survivor_email_preview">
-        Email:{" " + state["survivor_email"]}
-      </p>
-      <p id="survivor_address_preview">
-        Address:{" " + state["survivor_address1"] + " " + state["survivor_address2"] + " " + state["survivor_city"] + ", " + state["survivor_state"] + " " + state["survivor_zip"]}
-      </p>
-      <h2>Members of Household</h2>
-      <p id="members_of_household_preview"></p>
-      <h2>Additional Contact</h2>
-      <p id="additional_contact_preview">
-        <p id="additional_contact_name_preview">
-          Name:{" " + state["additional_contact_first_name"] + " " + state["additional_contact_middle_name"] + " " + state["additional_contact_last_name"]}
-        </p>
-        <p id="survivor_phone_preview">
-          Phone:{" " + state["additional_contact_phone"]}
-        </p>
-        <p id="additional_contact_email_preview">
-          Email:{" " + state["additional_contact_email"]}
-        </p>
-        <p id="survivor_address_preview">
-          Address:{" " + state["additional_contact_address1"] + " " + state["additional_contact_address2"] + ", " + state["additional_contact_city"] + ", " + state["additional_contact_state"] + " " + state["additional_contact_zip"]}
-        </p>
-        <h2>Members of Household</h2>
-        <p id="members_of_household_preview"></p>
-      </p>
-      <h2>Cash Grant Information</h2>
-      <p id="fema_preview">
-        FEMA #: {" " + state["fema_number"]}
-      </p>
-      <p id="fire_name_preview">
-        Fire Name: {" " + state["fire_name"]}
-      </p>
-      <p id="fire_name_preview">
-        Damaged House Address: {" " + state["damaged_address1"] + " " + state["damaged_address2"] + " " + state["damaged_city"] + ", " + state["damaged_state"] + " " + state["damaged_zip"]}
-      </p>
-      <h2>Landlord Information</h2>
-      <p id="landlord_name_preview">
-        Name: {" " + state["landlord_first_name"] + " " + state["landlord_middle_name"] + " " + state["landlord_last_name"]}
-      </p>
-      <p id="landlord_phone_preview">
-        Phone: {" " + state["landlord_phone"]}
-      </p>
-      <p id="landlord_email_preview">
-        Email: {" " + state["landlord_email"]}
-      </p>
-      <h2>Notes</h2>
-      <p id="notes_preview">
-        Notes: {" " + state["notes"]}
-      </p>
-      <h2>Photo ID</h2>
-      <p id="photo_id_preview">
 
-      </p>
-      <h2>Address Proof</h2>
-      <p id="address_proof_preview">
+      <section>
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12 text-center">
+              <h4 class="font-weight-bold">Preview</h4>
+              <p class="pt-3">
+                This is a preview of the information you will be providing United Way of Northern California.
+              </p>
+              <p>
+                Please ensure the information is correct before submitting.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      </p>
-      <h2>Damaged House Photos</h2>
-      <p id="damaged_house_preview">
+      <section>
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h4 class="font-weight-bold pb-2">General Information</h4>
+              <p id="survivor-name-preview">
+                Name:{" " + state["survivor_first_name"] + " " + state["survivor_middle_name"] + " " + state["survivor_last_name"]}
+              </p>
+              <p id="survivor_phone_preview">
+                Phone:{" " + state["survivor_phone"]}
+              </p>
+              <p id="survivor_email_preview">
+                Email:{" " + state["survivor_email"]}
+              </p>
+              <p id="survivor_address_preview">
+                Address:{" " + state["survivor_address1"] + " " + state["survivor_address2"] + " " + state["survivor_city"] + ", " + state["survivor_state"] + " " + state["survivor_zip"]}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      </p>
-      <h2>Receipts</h2>
-      <p id="receipts_preview">
+      <section>
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h4 class="font-weight-bold pb-2">Members of Household</h4>
+              <p id="members_of_household_preview"></p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      </p>
-      <h2>CAN Consent and Release Form</h2>
-      <p id="can_conset_release_preview">
+      <section>
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h4 class="font-weight-bold pb-2">Additional Contact</h4>
+              <p id="additional_contact_preview">
+                <p id="additional_contact_name_preview">
+                  Name:{" " + state["additional_contact_first_name"] + " " + state["additional_contact_middle_name"] + " " + state["additional_contact_last_name"]}
+                </p>
+                <p id="survivor_phone_preview">
+                  Phone:{" " + state["additional_contact_phone"]}
+                </p>
+                <p id="additional_contact_email_preview">
+                  Email:{" " + state["additional_contact_email"]}
+                </p>
+                <p id="survivor_address_preview">
+                  Address:{" " + state["additional_contact_address1"] + " " + state["additional_contact_address2"] + ", " + state["additional_contact_city"] + ", " + state["additional_contact_state"] + " " + state["additional_contact_zip"]}
+                </p>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      </p>
-      <h2>Agencies You Work With</h2>
-      <p id="agencies_preview">
+      <section>
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h4 class="font-weight-bold pb-2">Cash Grant Information</h4>
+              <p id="fema_preview">
+                FEMA #: {" " + state["fema_number"]}
+              </p>
+              <p id="fire_name_preview">
+                Fire Name: {" " + state["fire_name"]}
+              </p>
+              <p id="fire_name_preview">
+                Damaged House Address: {" " + state["damaged_address1"] + " " + state["damaged_address2"] + " " + state["damaged_city"] + ", " + state["damaged_state"] + " " + state["damaged_zip"]}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section>
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h4 class="font-weight-bold pb-2">Landlord Information</h4>
+              <p id="landlord_name_preview">
+                Name: {" " + state["landlord_first_name"] + " " + state["landlord_middle_name"] + " " + state["landlord_last_name"]}
+              </p>
+              <p id="landlord_phone_preview">
+                Phone: {" " + state["landlord_phone"]}
+              </p>
+              <p id="landlord_email_preview">
+                Email: {" " + state["landlord_email"]}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      </p>
-      <h2>Case Managers</h2>
-      <p id="case_managers_preview">
+      <section>
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h4 class="font-weight-bold pb-2">Notes</h4>
+              <p id="notes_preview">
+                Notes: {" " + state["notes"]}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      </p>
-      <h2>SBA Loan</h2>
-      <p id="sba_loan_preview">
+      <section>
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h4 class="font-weight-bold pb-2">Photo ID</h4>
+              <p id="photo_id_preview"></p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      </p>
-      <h2>Electronic Signature</h2>
-      <p id="signature_preview">
-        {state["signature"]}
-      </p>
-      <button type="submit" onClick={goToStartPage}>Back</button>
-      <button type="submit" onClick={handleSubmit}>Submit</button>
+      <section>
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h4 class="font-weight-bold pb-2">Address Proof</h4>
+              <p id="address_proof_preview"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h4 class="font-weight-bold pb-2">Damaged House Photos</h4>
+              <p id="damaged_house_preview"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h4 class="font-weight-bold pb-2">Receipts</h4>
+              <p id="receipts_preview"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h4 class="font-weight-bold pb-2">CAN Consent and Release Form</h4>
+              <p id="can_conset_release_preview"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h4 class="font-weight-bold pb-2">Agencies You Work With</h4>
+              <p id="agencies_preview"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h4 class="font-weight-bold pb-2">Case Managers</h4>
+              <p id="case_managers_preview"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section>
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h4 class="font-weight-bold pb-2">SBA Loan</h4>
+              <p id="sba_loan_preview"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section>
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-md-12">
+              <h4 class="font-weight-bold pb-2">Electronic Signature</h4>
+              <p id="signature_preview">
+                {state["signature"]}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container pb-5 mb-5">
+          <div className="row">
+            <div className="col-md-12 text-center">
+              <button class="btn btn-secondary" type="submit" onClick={goToStartPage}>Back</button>
+              <button class="btn btn-primary"  type="submit" onClick={handleSubmit}>Submit</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   )
 }
@@ -776,7 +920,41 @@ const PreviewPage = ({ state, setState }) => {
 const ConfirmationPage = () => {
   return (
     <div id="confirmation-container">
-      <h2>Confirmation Page</h2>
+
+      <section>
+        <div className="container pb-5 mb-5">
+          <div className="row">
+            <div className="col-md-12 text-center">
+              <h4 class="font-weight-bold">Confirmation Page</h4>
+              <p class="pt-5">
+                Your Application ID number <strong>CAMP002030</strong> was submitted.
+              </p>
+              <p>
+                All the information was sent to your email at a.kepner@example.com.
+              </p>
+              <p>
+                To view or modify your application, refer to this link: <a href="https://unitedway.com/example_application/example">https://unitedway.com/example_application/example</a>.
+              </p>
+              <p>
+                If you have any questions, please contact us.
+              </p>
+              <p>
+                United Way of Northern California <br/>
+                2280 Benton Drive, Building B  <br/>
+                Redding, CA 96003
+              </p>
+              <p>
+                Phone: (530) 241-7521 <br/>
+                Fax: (530) 241-2053
+              </p>
+              <p class="pt-5">
+                <button class="btn btn-primary">Start a New Application</button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
     </div>
   )
 }
