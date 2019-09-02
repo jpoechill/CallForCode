@@ -12,6 +12,10 @@ h3 {
   font-size: 1.2em;
 }
 
+h4, h5 {
+  color: #111580;
+}
+
 input[type="text"] {
   font-size: 1.2em;
   color: #777777;
@@ -30,4 +34,10 @@ input[type="text"] {
 
 .bg-united-orange {
   background-color: #F48118;
+}
+
+.btn-primary {
+  background-color: #F48118 !important;
+  border-color: #F48118 !important;
+  color: #FFF;
 }
