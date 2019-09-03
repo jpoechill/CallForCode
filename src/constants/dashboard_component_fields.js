@@ -1,5 +1,5 @@
 const DASHBOARD_FIELDS = {
-  "general_info": {
+  "general_info": [
     "application_id",
     "batch",
     "date_of_application",
@@ -8,7 +8,7 @@ const DASHBOARD_FIELDS = {
     "damaged_house_city",
     "damaged_house_state",
     "damaged_house_zip",
-  },
+  ],
   "agencies": [],
   "document_approval": [],
   "house_status": [],
