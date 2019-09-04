@@ -2,7 +2,7 @@
 
 This is the development repository for two apps (Survivor Application and Survivor Dashboard) which together create the Wildfire Survivor Management System (WSMS).
 
-Static (Development) Hosted App: https://codepen.io/vishalbakshi/pen/JjPWxRR?editors=0110
+Static (Development) Hosted App: https://uw-survivor-app.netlify.com/
 
 ## Origin Story
 
