@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import WildfireSurvivorApp from "./components/WildfireSurvivorApp";
 import * as serviceWorker from './serviceWorker';
 import './index.css';
-import 'bootstrap/dist/css/bootstrap.css';
 
 
 ReactDOM.render(<WildfireSurvivorApp />, document.getElementById('root'));
