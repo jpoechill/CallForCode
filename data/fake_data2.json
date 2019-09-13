@@ -1,6 +1,8 @@
 {
 	"survivor_applications": [{
 		"application_id": "CAMP004356",
+		"batch": "1",
+		"application_submitted_on": "09/12/2019",
 		"survivor_first_name": "First Name",
 		"survivor_middle_name": "Middle Name",
 		"survivor_last_name": "Last Name",
