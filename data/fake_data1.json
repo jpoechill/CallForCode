@@ -1,5 +1,6 @@
 {
 	"survivor_applications": [{
+		"application_id": "CAMP004356",
 		"survivor_first_name": "First Name",
 		"survivor_middle_name": "Middle Name",
 		"survivor_last_name": "Last Name",
