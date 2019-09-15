@@ -36,6 +36,10 @@ input[type="text"] {
   background-color: #F48118;
 }
 
+.bg-united-blue {
+  background-color: #111580;
+}
+
 .btn-primary {
   background-color: #F48118 !important;
   border-color: #F48118 !important;
