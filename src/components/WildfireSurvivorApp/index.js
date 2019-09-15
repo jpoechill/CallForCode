@@ -36,6 +36,7 @@ const WildfireSurvivorApp = () => {
       {state["start_page"] ? <StartPage state={state} setState={setState} handleChange={handleChange} /> : null}
       {state["preview_page"] ? <PreviewPage state={state} setState={setState} /> : null}
       {state["confirmation_page"] ? <ConfirmationPage /> : null}
+      <Footer />
     </div>
   )
 
@@ -66,7 +67,10 @@ const Header = ({ state, setState }) => {
         <div className="container">
           <div className="row pt-5 pb-4">
             <div className="col-md-6">
-              <img src={"/images/united-logo.svg"} style={{width: '126px', height: '60px'}} alt="UN-Logo" />
+              <img src={"/images/united-logo.svg"} className="mb-2 mr-3" style={{width: '126px', height: '60px'}} alt="UN-Logo" />
+              <h4 className="d-inline font-weight-bold text-united-blue">
+                Live United
+              </h4>
             </div>
             <div className="col-md-6 text-right">
               <h4 className="font-weight-bold text-united-blue">
@@ -74,9 +78,15 @@ const Header = ({ state, setState }) => {
               </h4>
             </div>
           </div>
-          <div className="row">
-            <div className="col-md-12 p-3 bg-united-orange" />
-          </div>
+        </div>
+      </section>
+      
+      <section>
+        <div className="p-3 bg-united-orange" />
+      </section>
+
+      <section>
+        <div className="container">
           <div className="row">
             <div className="col-md-12 pt-4 text-center">
               <h4 className="font-weight-bold text-united-blue">
@@ -84,20 +94,58 @@ const Header = ({ state, setState }) => {
               </h4>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section>
-        <div className="container">
           <div className="row">
             <div className="col-md-12 text-center">
-              <svg viewBox="0 0 800 100" id="header-svg" className="d-block m-auto">
-                <text x="32" y="25" >Start</text>
-                {state["start_page"] ? <circle cx="50" cy="50" r="10" fill="orange" onClick={goToStartPage} /> : <circle cx="50" cy="50" r="10" fill="black" onClick={goToStartPage} />}
-                <text x="173" y="25">Preview</text>
-                {state["preview_page"] ? <circle cx="200" cy="50" r="10" fill="orange" onClick={goToPreviewPage} /> : <circle cx="200" cy="50" r="10" fill="black" onClick={goToPreviewPage} />}
-                <text x="308" y="25">Confirmation</text>
-                {state["confirmation_page"] ? <circle cx="350" cy="50" r="10" fill="orange" onClick={goToConfirmationPage} /> : <circle cx="350" cy="50" r="10" fill="black" onClick={goToConfirmationPage} />}
+              <svg viewBox="0 0 800 100" id="header-svg" className="d-block m-auto pb-5">
+                {/* Start State */}
+                <text x="183" y="90">Start</text>
+                {state["start_page"] ? 
+                  <g onClick={goToStartPage}>
+                    <text x="183" y="90">Start</text>
+                    <line x1="200" y1="50" x2="600" y2="50" stroke="#111580" stroke-width="2"></line>
+                    <circle cx="200" cy="50" r="10" fill="#F48118" /> 
+                  </g>
+                  : 
+                    <g> 
+                      <circle cx="200" cy="50" r="10" fill="#F48118" onClick={goToStartPage} />
+                    </g>
+                }
+                
+                {/* Preview State */}
+                {state["preview_page"] ? 
+                  <g onClick={goToPreviewPage}>
+                    <text x="374" y="90">Preview</text>
+                    <line x1="200" y1="50" x2="400" y2="50" stroke="#F48118" stroke-width="2"></line>
+                    <line x1="400" y1="50" x2="600" y2="50" stroke="#111580" stroke-width="2"></line>
+                    <circle cx="400" cy="50" r="10" fill="#F48118" /> 
+                  </g>
+                  : (state["confirmation_page"]) ?
+                    <g>
+                      <text x="374" y="90">Preview</text>
+                      <circle cx="400" cy="50" r="10" fill="#F48118" onClick={goToPreviewPage} />
+                    </g>
+                  : 
+                    <g onClick={goToPreviewPage}>
+                      <text x="374" y="90" fill="grey">Preview</text>
+                      <circle cx="400" cy="50" r="10" fill="#F48118" />
+                      <circle cx="400" cy="50" r="8" fill="white" />
+                    </g>
+                }
+                
+                {/* Confirmation State */}
+                {state["confirmation_page"] ? 
+                  <g onClick={goToConfirmationPage}>
+                    <text x="558" y="90">Confirmation</text>
+                    <line x1="200" y1="50" x2="600" y2="50" stroke="#F48118" stroke-width="2"></line>
+                    <circle cx="600" cy="50" r="10" fill="#F48118" /> 
+                  </g>
+                  : 
+                    <g onClick={goToConfirmationPage}>
+                      <text x="558" y="90" fill="grey">Confirmation</text>
+                      <circle cx="600" cy="50" r="10" fill="#F48118" />
+                      <circle cx="600" cy="50" r="8" fill="white" />
+                    </g>                    
+                }
               </svg>
             </div>
           </div>
@@ -106,6 +154,21 @@ const Header = ({ state, setState }) => {
     </div>
   )
 }
+
+const Footer = () => {
+  return (
+    <div className="section bg-united-blue">
+      <div className="container">
+        <div className="row py-5">
+          <div className="col-md-12 py-5 text-white text-center">
+              United Way of California <br/> Survivor Application. © 2019
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const StartPage = ({ state, setState, handleChange }) => {
   /**
    * lookup category in FIELDS, and fields in SCHEMA
@@ -321,6 +384,8 @@ const StartPage = ({ state, setState, handleChange }) => {
    */
   const handlePreview = (e) => {
     let newState = { ...state, "start_page": false, "preview_page": true }
+
+    window.scrollTo(0, 0)
     localStorage.setItem("formData", JSON.stringify(newState));
     setState(newState);
   }
@@ -332,7 +397,7 @@ const StartPage = ({ state, setState, handleChange }) => {
         <div className="container mb-5">
           <div className="row">
             <div className="col-md-12">
-              <h4 class="font-weight-bold pb-2">General Information</h4>
+              <h4 class="font-weight-bold pb-2 text-center">General Information</h4>
               <p>
                 Please provide your current information so that we can contact you about your case.
               </p>
@@ -953,8 +1018,8 @@ const StartPage = ({ state, setState, handleChange }) => {
       <section>
         <div className="container pb-5 mb-5">
           <div className="row">
-            <div className="col-md-12 text-center">
-              <button className="btn btn-primary" type="submit" onClick={handlePreview}>Preview</button>
+            <div className="col-md-12">
+              <button className="btn btn-primary float-right" type="submit" onClick={handlePreview}>Preview</button>
             </div>
           </div>
         </div>
@@ -1211,9 +1276,9 @@ const PreviewPage = ({ state, setState }) => {
       <section>
         <div className="container pb-5 mb-5">
           <div className="row">
-            <div className="col-md-12 text-center">
-              <button class="btn btn-secondary" type="submit" onClick={goToStartPage}>Back</button>
-              <button class="btn btn-primary"  type="submit" onClick={handleSubmit}>Submit</button>
+            <div className="col-md-12">
+              <button class="btn btn-secondary float-left" type="submit" onClick={goToStartPage}>Back</button>
+              <button class="btn btn-primary float-right"  type="submit" onClick={handleSubmit}>Submit</button>
             </div>
           </div>
         </div>
