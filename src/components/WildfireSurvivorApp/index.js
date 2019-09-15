@@ -1018,8 +1018,8 @@ const StartPage = ({ state, setState, handleChange }) => {
       <section>
         <div className="container pb-5 mb-5">
           <div className="row">
-            <div className="col-md-12 text-center">
-              <button className="btn btn-primary" type="submit" onClick={handlePreview}>Preview</button>
+            <div className="col-md-12">
+              <button className="btn btn-primary float-right" type="submit" onClick={handlePreview}>Preview</button>
             </div>
           </div>
         </div>
@@ -1276,9 +1276,9 @@ const PreviewPage = ({ state, setState }) => {
       <section>
         <div className="container pb-5 mb-5">
           <div className="row">
-            <div className="col-md-12 text-center">
-              <button class="btn btn-secondary" type="submit" onClick={goToStartPage}>Back</button>
-              <button class="btn btn-primary"  type="submit" onClick={handleSubmit}>Submit</button>
+            <div className="col-md-12">
+              <button class="btn btn-secondary float-left" type="submit" onClick={goToStartPage}>Back</button>
+              <button class="btn btn-primary float-right"  type="submit" onClick={handleSubmit}>Submit</button>
             </div>
           </div>
         </div>
