@@ -68,7 +68,8 @@
 		"case_manager_1_email": "email@address.com",
 		"sba_loan_yes": "true",
 		"sba_loan_no": "false",
-		"signature": "First Last Middle"
+		"signature": "First Last Middle",
+		"dashboard_notes": ["Received updated receipt for $1379. Clearly can see date and time. Receipt is approved for cash grant.", "Received updated receipt for $2330. The receipt for $1379 does not clearly show date and time. Receipt is approved for cash grant."]
 	}, {
 		"survivor_first_name": "First Name",
 		"survivor_middle_name": "Middle Name",
