@@ -33,6 +33,7 @@ const FIELDS = {
   ],
   cash_grant_information: [
     "fema_number",
+    "camp_number",
     "fire_name",
     "damaged_address1",
     "damaged_address2",
