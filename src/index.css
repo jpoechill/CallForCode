@@ -27,6 +27,12 @@ input[type="text"] {
   flex-direction: column;
 }
 
+/* Margins, Padding */
+.form-control {
+  margin-left: 0px !important;
+}
+
+
 /* Colors */
 .text-united-blue {
   color: #111580;
