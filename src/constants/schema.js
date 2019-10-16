@@ -36,12 +36,12 @@ const placeholders = {
   first_name: "First Name",
   middle_name: "Middle Name",
   last_name: "Last Name",
-  phone: "###-###-####",
-  email: "email@address.com",
+  phone: "Phone Number",
+  email: "Email Address",
   city: "City",
-  address1: "Address 1",
-  address2: "Address 2",
-  zip: "#####",
+  address1: "Current Address",
+  address2: "Apt.",
+  zip: "Zip Code",
   dob: "MM/DD/YYYY",
   relation: "parent",
   notes: ""
@@ -71,6 +71,7 @@ const SCHEMA = {
     input: "text",
     type: "string",
     initial_value: "",
+    columnSize: 4,
     placeholder: "First Name",
     test_value: test_values.first_name,
     validation: () => {}
@@ -79,6 +80,7 @@ const SCHEMA = {
     input: "text",
     type: "string",
     initial_value: "",
+    columnSize: 4,
     placeholder: "Middle Name",
     test_value: test_values.middle_name,
     validation: () => {}
@@ -87,6 +89,7 @@ const SCHEMA = {
     input: "text",
     type: "string",
     initial_value: "",
+    columnSize: 4,
     placeholder: "Last Name",
     test_value: test_values.last_name,
     validation: () => {}
@@ -95,7 +98,8 @@ const SCHEMA = {
     input: "text",
     type: "string",
     initial_value: "",
-    placeholder: "###-###-####",
+    columnSize: 6,
+    placeholder: "Phone Number",
     test_value: test_values.phone,
     validation: () => {}
   },
@@ -103,7 +107,8 @@ const SCHEMA = {
     input: "text",
     type: "string",
     initial_value: "",
-    placeholder: "email@address.com",
+    columnSize: 6,
+    placeholder: "Email Address",
     test_value: test_values.email,
     validation: () => {}
   },
@@ -111,7 +116,8 @@ const SCHEMA = {
     input: "text",
     type: "string",
     initial_value: "",
-    placeholder: "Address 1",
+    columnSize: 8,
+    placeholder: "Current Address",
     test_value: test_values.address1,
     validation: () => {}
   },
@@ -119,7 +125,8 @@ const SCHEMA = {
     input: "text",
     type: "string",
     initial_value: "",
-    placeholder: "Address 2",
+    columnSize: 4,
+    placeholder: "Apt.",
     test_value: test_values.address2,
     validation: () => {}
   },
@@ -127,6 +134,7 @@ const SCHEMA = {
     input: "text",
     type: "string",
     initial_value: "",
+    columnSize: 4,
     placeholder: "City",
     test_value: test_values.city,
     validation: () => {}
@@ -136,6 +144,7 @@ const SCHEMA = {
     options: stateOptions,
     type: "string",
     initial_value: "",
+    columnSize: 4,
     placeholder: null,
     test_value: test_values.state,
     validation: () => {}
@@ -144,7 +153,8 @@ const SCHEMA = {
     input: "text",
     type: "string",
     initial_value: "",
-    placeholder: "#####",
+    columnSize: 4,
+    placeholder: 'Zip Code',
     test_value: test_values.zip,
     validation: () => {}
   },
@@ -158,6 +168,7 @@ const SCHEMA = {
     input: "text",
     type: "string",
     initial_value: "",
+    columnSize: 4,
     placeholder: "First Name",
     test_value: test_values.first_name,
     validation: () => {}
@@ -166,6 +177,7 @@ const SCHEMA = {
     input: "text",
     type: "string",
     initial_value: "",
+    columnSize: 4,
     placeholder: "Middle Name",
     test_value: test_values.middle_name,
     validation: () => {}
@@ -174,6 +186,7 @@ const SCHEMA = {
     input: "text",
     type: "string",
     initial_value: "",
+    columnSize: 4,
     placeholder: "Last Name",
     test_value: test_values.last_name,
     validation: () => {}
@@ -182,6 +195,7 @@ const SCHEMA = {
     input: "text",
     type: "string",
     initial_value: "",
+    columnSize: 6,
     placeholder: "MM/DD/YYYY",
     test_value: test_values.dob,
     validation: () => {}
@@ -191,6 +205,7 @@ const SCHEMA = {
     type: "string",
     options: relationOptions,
     initial_value: "",
+    columnSize: 6,
     test_value: test_values.relation,
     validation: () => {}
   },
@@ -199,6 +214,7 @@ const SCHEMA = {
     placeholder: "First Name",
     type: "string",
     initial_value: "",
+    columnSize: 4,
     test_value: test_values.first_name,
     validation: () => {}
   },
@@ -207,6 +223,7 @@ const SCHEMA = {
     placeholder: "Middle Name",
     type: "string",
     initial_value: "",
+    columnSize: 4,
     test_value: test_values.middle_name,
     validation: () => {}
   },
@@ -215,38 +232,43 @@ const SCHEMA = {
     placeholder: "Last Name",
     type: "string",
     initial_value: "",
+    columnSize: 4,
     test_value: test_values.last_name,
     validation: () => {}
   },
   additional_contact_phone: {
     input: "text",
-    placeholder: "###-###-####",
+    placeholder: "Phone Number",
     type: "string",
     initial_value: "",
+    columnSize: 6,
     test_value: test_values.phone,
     validation: () => {}
   },
   additional_contact_email: {
     input: "text",
-    placeholder: "email@address.com",
+    placeholder: "Email Address",
     type: "string",
     initial_value: "",
+    columnSize: 6,
     test_value: test_values.email,
     validation: () => {}
   },
   additional_contact_address1: {
     input: "text",
-    placeholder: "Address 1",
+    placeholder: "Current Address",
     type: "string",
     initial_value: "",
+    columnSize: 8,
     test_value: test_values.address1,
     validation: () => {}
   },
   additional_contact_address2: {
     input: "text",
-    placeholder: "Address 2",
+    placeholder: "Apt.",
     type: "string",
     initial_value: "",
+    columnSize: 4,
     test_value: test_values.address2,
     validation: () => {}
   },
@@ -255,6 +277,7 @@ const SCHEMA = {
     placeholder: "City",
     type: "string",
     initial_value: "",
+    columnSize: 4,
     test_value: test_values.city,
     validation: () => {}
   },
@@ -263,46 +286,62 @@ const SCHEMA = {
     options: stateOptions,
     type: "string",
     initial_value: "",
+    columnSize: 4,
     test_value: test_values.state,
     validation: () => {}
   },
   additional_contact_zip: {
     input: "text",
-    placeholder: "#####",
+    placeholder: "Zip Code",
     type: "string",
     initial_value: "",
+    columnSize: 4,
     test_value: test_values.zip,
     validation: () => {}
   },
   fema_number: {
     type: "string",
-    placeholder: "#########",
+    placeholder: "FEMA Number",
     input: "text",
     initial_value: "",
+    columnSize: 4,
     test_value: test_values.fema_number,
+    validation: () => {}
+  },
+  camp_number: {
+    type: "string",
+    placeholder: "CAMP Number",
+    input: "text",
+    initial_value: "",
+    columnSize: 4,
+    test_value: test_values.camp_number,
     validation: () => {}
   },
   fire_name: {
     type: "string",
+    placeholder: "Fire Name",
     input: "select",
     options: fireNameOptions,
     initial_value: "",
+    columnSize: 4,
     test_value: test_values.fire_name,
     validation: () => {}
   },
   damaged_address1: {
     type: "string",
-    placeholder: "Address 1",
+    placeholder: "Address Where the Damage Occurred",
     input: "text",
     initial_value: "",
+    columnSize: 8,
     test_value: test_values.address1,
     validation: () => {}
   },
   damaged_address2: {
     type: "string",
-    placeholder: "Address 2",
+    placeholder: "Apt.",
     input: "text",
     initial_value: "",
+    columnSize: 4,
     test_value: test_values.address2,
     validation: () => {}
   },
@@ -311,6 +350,7 @@ const SCHEMA = {
     placeholder: "City",
     input: "text",
     initial_value: "",
+    columnSize: 4,
     test_value: test_values.city,
     validation: () => {}
   },
@@ -319,14 +359,16 @@ const SCHEMA = {
     options: stateOptions,
     input: "select",
     initial_value: "",
+    columnSize: 4,
     test_value: test_values.state,
     validation: () => {}
   },
   damaged_zip: {
     type: "string",
-    placeholder: "#####",
+    placeholder: "Zip Code",
     input: "text",
     initial_value: "",
+    columnSize: 4,
     test_value: test_values.zip,
     validation: () => {}
   },
@@ -335,6 +377,7 @@ const SCHEMA = {
     placeholder: "First Name",
     type: "string",
     initial_value: "",
+    columnSize: 4,
     test_value: test_values.first_name,
     validation: () => {}
   },
@@ -343,6 +386,7 @@ const SCHEMA = {
     placeholder: "Middle Name",
     type: "string",
     initial_value: "",
+    columnSize: 4,
     test_value: test_values.middle_name,
     validation: () => {}
   },
@@ -351,27 +395,32 @@ const SCHEMA = {
     placeholder: "Last Name",
     type: "string",
     initial_value: "",
+    columnSize: 4,
     test_value: test_values.last_name,
     validation: () => {}
   },
   landlord_phone: {
     type: "string",
-    placeholder: "###-###-####",
+    placeholder: "Phone Number",
     input: "text",
     initial_value: "",
+    columnSize: 6,
     test_value: test_values.phone,
     validation: () => {}
   },
   landlord_email: {
     type: "string",
+    placeholder: "Email Address",
     input: "text",
     initial_value: "",
+    columnSize: 6,
     test_value: test_values.email,
     validation: () => {}
   },
   notes: {
     type: "string",
-    input: "text",
+    placeholder: "Description of Wildfire Impact",
+    input: "textarea",
     initial_value: "",
     test_value: test_values.notes,
     validation: () => {}
@@ -580,6 +629,7 @@ const SCHEMA = {
     input: "select",
     type: "string",
     options: agencyOptions,
+    columnSize: 12,
     test_value: "youth_for_change",
     validation: () => {}
   },
@@ -593,6 +643,7 @@ const SCHEMA = {
     input: "text",
     type: "string",
     initial_value: "",
+    columnSize: 4,
     placeholder: placeholders["first_name"],
     test_value: test_values.first_name,
     validation: () => {}
@@ -601,6 +652,7 @@ const SCHEMA = {
     input: "text",
     type: "string",
     initial_value: "",
+    columnSize: 4,
     placeholder: placeholders["middle_name"],
     test_value: test_values.middle_name,
     validation: () => {}
@@ -609,6 +661,7 @@ const SCHEMA = {
     input: "text",
     type: "string",
     initial_value: "",
+    columnSize: 4,
     placeholder: placeholders["last_name"],
     test_value: test_values.last_name,
     validation: () => {}
@@ -617,11 +670,13 @@ const SCHEMA = {
     input: "text",
     type: "string",
     initial_value: "",
+    columnSize: 6,
     placeholder: placeholders["phone"],
     test_value: test_values.phone
   },
   case_manager_0_email: {
     initial_value: "",
+    columnSize: 6,
     placeholder: placeholders["email"],
     test_value: test_values.email
   },

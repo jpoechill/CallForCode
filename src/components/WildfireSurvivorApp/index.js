@@ -193,80 +193,116 @@ const StartPage = ({ state, setState, handleChange }) => {
           );
         case "select":
           return (
-            <select
-              key={idx}
-              className={category}
-              name={field}
-              onChange={handleChange}
-            >
-              {SCHEMA[field].options}
-            </select>
+            <div className={ 'pt-4' + ' ' + ('col-md-' + SCHEMA[field].columnSize) }>
+              <select
+                key={idx}
+                className={category, 'form-control'}
+                name={field}
+                onChange={handleChange}
+              >
+                {SCHEMA[field].options}
+              </select>
+            </div>
           );
         case "radio":
-          let radio = state[field] ? (<label htmlFor={SCHEMA[field].name}>
-            <input
-              key={idx}
-              className={category}
-              type={SCHEMA[field].input}
-              name={SCHEMA[field].name}
-              placeholder={SCHEMA[field].placeholder}
-              onChange={handleChange}
-              checked
-            />
-            {SCHEMA[field].label}
-          </label>) : (<label htmlFor={SCHEMA[field].name}>
-            <input
-              key={idx}
-              className={category}
-              type={SCHEMA[field].input}
-              name={SCHEMA[field].name}
-              placeholder={SCHEMA[field].placeholder}
-              onChange={handleChange}
-            />
-            {SCHEMA[field].label}
-          </label>);
+          let radio = state[field] ? (
+            <div class="col-md-12 form-check pl-5 pt-3">
+              <input
+                key={idx}
+                className={category + ' form-check-input'}
+                type={SCHEMA[field].input}
+                name={SCHEMA[field].name}
+                placeholder={SCHEMA[field].placeholder}
+                onChange={handleChange}
+                checked
+              />
+              <label htmlFor={SCHEMA[field].name} class="form-check-label pl-3">
+              {SCHEMA[field].label}
+              </label>
+            </div>
+            ) : (
+            <div class="col-md-12 form-check pl-5 pt-3">
+              <input
+                key={idx}
+                className={category + ' form-check-input'}
+                type={SCHEMA[field].input}
+                name={SCHEMA[field].name}
+                placeholder={SCHEMA[field].placeholder}
+                onChange={handleChange}
+              />
+              <label htmlFor={SCHEMA[field].name} class="form-check-label pl-3">
+                {SCHEMA[field].label}
+              </label>
+            </div>
+            );
           return radio;
         case "checkbox":
           // Return checkbox as checked if user has clicked it
-          let checkbox = state[field] ? (<label htmlFor={field}>
-            <input
-              key={idx}
-              className={category}
-              type={SCHEMA[field].input}
-              name={field}
-              placeholder={SCHEMA[field].placeholder}
-              onChange={handleChange}
-              checked
-            />
-            {SCHEMA[field].label}
-          </label>) : (<label htmlFor={field}>
-            <input
-              key={idx}
-              className={category}
-              type={SCHEMA[field].input}
-              name={field}
-              placeholder={SCHEMA[field].placeholder}
-              onChange={handleChange}
-            />
-            {SCHEMA[field].label}
-          </label>);
+          let checkbox = state[field] ? (
+            <div class="col-md-3">
+              <div class="form-check pb-3">
+                <input
+                  key={idx}
+                  className={category + ' ' + 'form-check-input'}
+                  type={SCHEMA[field].input}
+                  name={field}
+                  placeholder={SCHEMA[field].placeholder}
+                  onChange={handleChange}
+                  checked
+                />
+                <label htmlFor={field} class="form-check-label pl-3">
+                  {SCHEMA[field].label}
+                </label>
+              </div>
+            </div>
+            ) : (
+            <div class="col-md-3">
+              <div class="form-check pb-3">
+                <input
+                  key={idx}
+                  className={category + ' ' + 'form-check-input'}
+                  type={SCHEMA[field].input}
+                  name={field}
+                  placeholder={SCHEMA[field].placeholder}
+                  onChange={handleChange}
+                />
+                <label htmlFor={field} class="form-check-label pl-3">
+                  {SCHEMA[field].label}
+                </label>
+              </div>
+            </div>
+          );
           return (
             checkbox
+          );
+        case "textarea":
+          return (
+            <div class="col-md-12">
+              <textarea 
+                className={"form-control w-100"}
+                rows="8"
+                name={field}
+                placeholder={SCHEMA[field].placeholder}
+                onChange={handleChange}
+              />
+            </div>
           );
         case null:
           break;
         case "text":
         default:
           return (
-            <input
-              key={idx}
-              className={category}
-              type="text"
-              name={field}
-              value={state[field]}
-              placeholder={SCHEMA[field].placeholder}
-              onChange={handleChange}
-            />
+            <div className={ 'pt-3' + ' ' + ('col-md-' + SCHEMA[field].columnSize) }>
+              <input
+                key={idx}
+                className={category, 'form-control'}
+                type="text"
+                name={field}
+                value={state[field]}
+                placeholder={SCHEMA[field].placeholder}
+                onChange={handleChange}
+              />  
+            </div>
           );
       }
     });
@@ -407,57 +443,9 @@ const StartPage = ({ state, setState, handleChange }) => {
             <div className="col-md-12">
 
               {/* General Information */}
-              {/* {general_information_elements} */}
-
-              {/* Start Static Form Elements*/}
-              <form>
-                {/* Name */}
-                <div class="row pt-1">
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="First Name" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Middle Name" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Last Name" />
-                  </div>
-                </div>
-
-                {/* Phone and Email */}
-                <div className="row pt-3">
-                  <div class="col-md-6">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Phone Number" />
-                  </div>
-                  <div class="col-md-6">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Email Address" />
-                  </div>
-                </div>
-
-                {/* Current Address */}
-                <div className="row pt-3">
-                  <div class="col-md-8">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Current Address" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Apt." />
-                  </div>
-                </div>
-
-                {/* City, State, Zip */}
-                <div className="row pt-3">
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="City" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="State" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Zip Code" />
-                  </div>
-                </div>
-              </form>
-              {/* End Static Form Elements */}
+              <div class="row pt-1">
+                {general_information_elements}
+              </div>
 
             </div>
           </div>
@@ -470,7 +458,7 @@ const StartPage = ({ state, setState, handleChange }) => {
             <div className="col-md-12">
               <h4 class="font-weight-bold pb-2">Members of Household</h4>
               <p>
-                Please provide information about members of your household.
+                Please provide information about the members of your household.
               </p>
             </div>
           </div>
@@ -478,33 +466,9 @@ const StartPage = ({ state, setState, handleChange }) => {
             <div className="col-md-12">
 
               {/* Member of Household */}
-              {/* {members_of_household_elements} */}
-
-              {/* Start Static Form Elements*/}
-              <form>
-                {/* Name */}
-                <div class="row pt-1">
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="First Name" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Middle Name" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Last Name" />
-                  </div>
-                </div>
-
-                {/* Date of Birth */}
-                <div class="row pt-3">
-                  <div class="col-md-6">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Date of Birth" />
-                  </div>
-                  <div class="col-md-6">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Relation" />
-                  </div>
-                </div>
-              </form>
+              <div class="row pt-1">
+                { members_of_household_elements }
+              </div>
 
               <br />
               <button class="btn btn-primary" name="add_household_member" onClick={addHouseholdMember}>
@@ -527,58 +491,10 @@ const StartPage = ({ state, setState, handleChange }) => {
           <div className="row">
             <div className="col-md-12">
 
-              {/* Additional Contact Info */}
-              {/* {additional_contact_information_elements} */}
-
-              {/* Start Static Form Elements */}
-              <form>
-                {/* Name */}
-                <div class="row pt-1">
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="First Name" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Middle Name" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Last Name" />
-                  </div>
-                </div>
-
-                {/* Phone and Email */}
-                <div className="row pt-3">
-                  <div class="col-md-6">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Phone Number" />
-                  </div>
-                  <div class="col-md-6">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Email Address" />
-                  </div>
-                </div>
-
-                {/* Current Address */}
-                <div className="row pt-3">
-                  <div class="col-md-8">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Current Address" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Apt." />
-                  </div>
-                </div>
-
-                {/* City, State, Zip */}
-                <div className="row pt-3">
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="City" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="State" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Zip Code" />
-                  </div>
-                </div>
-              </form>
-              {/* End Static Form Elements */}
+              <div className="row">
+                {/* Additional Contact Info */}
+                { additional_contact_information_elements }
+              </div>
 
             </div>
           </div>
@@ -613,46 +529,9 @@ const StartPage = ({ state, setState, handleChange }) => {
             <div className="col-md-12">
 
               {/* Cash Grant Info */}
-              {/* {cash_grant_information_elements} */}
-
-              {/* Start Static Form Elements */}
-              <form>
-                {/* Name */}
-                <div class="row pt-1">
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="FEMA Number" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="CAMP Number" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Fire Name" />
-                  </div>
-                </div>
-
-                {/* Address */}
-                <div class="row pt-3">
-                  <div class="col-md-8">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Address where the damage occurred" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Apt." />
-                  </div>
-                </div>
-
-                {/* City, State, Zip */}
-                <div class="row pt-3">
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="City" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="State" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Zip Code" />
-                  </div>
-                </div>
-              </form>
+              <div className="row">
+                {cash_grant_information_elements}
+              </div>
 
             </div>
           </div>
@@ -670,38 +549,14 @@ const StartPage = ({ state, setState, handleChange }) => {
             <div className="col-md-12">
 
               {/* Landlord Info */}
-              {/* {landlord_information_elements} */}
-              
-              <form>
-                {/* Name */}
-                <div class="row pt-1">
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="First Name" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Middle Name" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Last Name" />
-                  </div>
-                </div>
-
-                {/* Phone, Email */}
-                <div class="row pt-3">
-                  <div class="col-md-6">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Phone Number" />
-                  </div>
-                  <div class="col-md-6">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Email Address" />
-                  </div>
-                </div>
-              </form>
+              <div className="row">
+                {landlord_information_elements}
+              </div>
 
             </div>
           </div>
         </div>
       </section>
-
 
       <section id="notes-container">
         <div className="container mb-5">
@@ -720,23 +575,16 @@ const StartPage = ({ state, setState, handleChange }) => {
             <div className="col-md-12">
 
               {/* Notes */}
-              {/* {notes_elements} */}
-
-              <form>
-                {/* Notes */}
-                <div class="row pt-1">
-                  <div class="col-md-12">
-                    <textarea class="form-control w-100" rows="8"></textarea>
-                  </div>
-                </div>
-              </form>
+              <div className="row">
+                { notes_elements }
+              </div>
 
             </div>
           </div>
         </div>
       </section>
 
-      <section id="photo-id-container">
+        <section id="photo-id-container">
         <div className="container mb-5">
           <div className="row">
             <div className="col-md-12">
@@ -849,7 +697,7 @@ const StartPage = ({ state, setState, handleChange }) => {
             <div className="col-md-12 text-center">
 
               {/* Consent Release */}
-              {can_content_release_elements}
+              { can_content_release_elements }
 
             </div>
           </div>
@@ -867,36 +715,9 @@ const StartPage = ({ state, setState, handleChange }) => {
             <div className="col-md-12">
 
               {/* Agencies */}
-              {/* {agencies_elements} */}
-
-              {/* Start Static Form Elements */}
-              <form>
-                {/* Checkbox Input Elements */}
-
-                {/* Render 4 columns, with a list 5 checkboxes each. */}
-                <div class="row pt-1">
-                  {/* Iterate 4 times */}
-                  {
-                    [...Array(4)].map((e, i) => (
-                        <div class="col-md-3">
-
-                        {/* Iterate 5 times */}
-                        {
-                          [...Array(5)].map((e, i) => (
-                            
-                            <div class="form-check pb-3">
-                              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" />
-                              <label class="form-check-label" for="defaultCheck1">
-                                Agency Name
-                              </label>
-                            </div> 
-                          ))
-                        }
-                        </div>
-                    ))
-                  }
-                </div>
-              </form>
+              <div className="row">
+                { agencies_elements }
+              </div>
 
             </div>
           </div>
@@ -914,46 +735,9 @@ const StartPage = ({ state, setState, handleChange }) => {
             <div className="col-md-12">
 
               {/* Case Manager Info */}
-              {/* {case_managers_information_elements} */}
-
-              <form>
-                {/* Dropdown */}
-                <div class="row pt-1 pb-1">
-                  <div class="col-md-12">
-                    <div class="dropdown">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        List of Case Managers
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                      </div>
-                    </div>
-                  </div>                                      
-                </div>
-
-                {/* Name, ID, and Email */}
-                <div class="row pt-1">
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="First Name" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Middle Name" />
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Last Name" />
-                  </div>
-                </div>
-                <div class="row pt-1">
-                  <div class="col-md-6">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="###-###-####" />
-                  </div>
-                  <div class="col-md-6">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Email Address" />
-                  </div>
-                </div>
-              </form>
+              <div className="row">
+                { case_managers_information_elements }
+              </div>
 
               <br />
               <button name="add_case_manager" class="btn btn-primary" onClick={addCaseManager}>
@@ -976,7 +760,9 @@ const StartPage = ({ state, setState, handleChange }) => {
             <div className="col-md-12">
 
               {/* SBA Loan Info */}
-              {sba_loan_elements}
+              <div className="row">
+                { sba_loan_elements }
+              </div>
 
             </div>
           </div>
@@ -999,22 +785,14 @@ const StartPage = ({ state, setState, handleChange }) => {
             <div className="col-md-12">
 
               {/* Signature */}
-              {/* {signature_elements} */}
-
-              <form>
-                {/* Name */}
-                <div class="row pt-1">
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="" aria-describedby="" placeholder="" />
-                  </div>
-                </div>
-              </form>   
+              { signature_elements }
 
             </div>
           </div>
         </div>
       </section>
 
+      {/* Go to Next Form Page */}
       <section>
         <div className="container pb-5 mb-5">
           <div className="row">
