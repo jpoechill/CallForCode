@@ -44,7 +44,9 @@ const GeneralInformation = ({ handleChange }) => {
   );
 
   return (
-    <div id="general-information-container">{general_information_elements}</div>
+    <div id="general-information-container">
+      {general_information_elements}
+    </div>
   );
 };
 

@@ -27,6 +27,12 @@ input[type="text"] {
   flex-direction: column;
 }
 
+/* Margins, Padding */
+.form-control {
+  margin-left: 0px !important;
+}
+
+
 /* Colors */
 .text-united-blue {
   color: #111580;
@@ -34,6 +40,10 @@ input[type="text"] {
 
 .bg-united-orange {
   background-color: #F48118;
+}
+
+.bg-united-blue {
+  background-color: #111580;
 }
 
 .btn-primary {
