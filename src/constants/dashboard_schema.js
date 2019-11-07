@@ -6,6 +6,33 @@ import agencies from "./agencies"
  * screen name: [field names]
  * 
  * New fields that need to be added to data schema:
+ * application_id
+ * batch
+ * application_submitted_on
+ * united_way_case_manager_first_name
+ * united_way_case_manager_middle_name
+ * united_way_case_manager_last_name
+ * cash_grants
+ * cash_grant_id
+ * cash_grant_notifications
+ * cash_grant_amount
+ * cash_grant_batch
+ * cash_grant_card_check_number
+ * cash_grant_send_date
+ * cash_grant_receive_date
+ * cash_grant_type
+ * cash_grant_received
+ * cash_grant_notifications
+ * cash_grant_notification_id
+ * cash_grant_notification_text
+ * cash_grant_notification_date
+ * dashboard_note_id
+ * dashboard_note_text
+ * dashboard_note_date
+ * application_status
+ * application_update_text
+ * application_update_author
+ * application_update_date
  * 
  */
  const DASHBOARD_SCHEMA = {
