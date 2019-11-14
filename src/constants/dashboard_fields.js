@@ -35,7 +35,7 @@ import agencies from "./agencies"
  * application_update_date
  * 
  */
- const DASHBOARD_SCHEMA = {
+ const DASHBOARD_FIELDS = {
      "header": [
          "application_id",
          "batch",
@@ -107,3 +107,5 @@ import agencies from "./agencies"
      "application_status": "",
      "last_updates": [{name: "", update: "", date: ""}]
  }
+
+ export default DASHBOARD_FIELDS;

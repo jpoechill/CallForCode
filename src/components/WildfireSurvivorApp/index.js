@@ -28,6 +28,7 @@ const WildfireSurvivorApp = () => {
     let value = e.target.type === "checkbox" ? e.target.checked : e.target.value
     let newValidation = state["validation"]
     // Update the validation for the given input using the validation function in schema.js
+    // 
     newValidation[name] = SCHEMA[e.target.name].validation(value) ? '' : 'has-error';
     let newState = { ...state, [name]: value, ["validation"]: newValidation };
     localStorage.setItem("formData", JSON.stringify(newState));
@@ -35,18 +36,6 @@ const WildfireSurvivorApp = () => {
 
   };
 
-  /**
-   * Form validation function
-   * contains all validation checks for the entire form
-   * returns object with field name keys and boolean values
-   */
-  const validate = () => {
-    // loop through all input elements
-    // call the validation function from SCHEMA
-    // if any input is not valid, disable the submit button
-    let field_names = Object.keys(SCHEMA);
-    let field_validation = {}
-  }
   return (
     <div>
       <Header state={state} setState={setState} />
