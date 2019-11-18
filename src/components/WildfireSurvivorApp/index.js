@@ -224,13 +224,14 @@ const StartPage = ({ state, setState, handleChange }) => {
             <div class="col-md-12 form-check pl-5 pt-3">
               <input
                 key={idx}
+                id={field}
                 className={category + ' form-check-input'}
                 type={SCHEMA[field].input}
                 name={SCHEMA[field].name}
                 placeholder={SCHEMA[field].placeholder}
                 onChange={handleChange}
               />
-              <label htmlFor={SCHEMA[field].name} class="form-check-label pl-3">
+              <label htmlFor={SCHEMA[field].name} for={field} class="form-check-label pl-3">
                 {SCHEMA[field].label}
               </label>
             </div>
@@ -243,6 +244,7 @@ const StartPage = ({ state, setState, handleChange }) => {
               <div class="form-check pb-3">
                 <input
                   key={idx}
+                  id={field}
                   className={category + ' ' + 'form-check-input'}
                   type={SCHEMA[field].input}
                   name={field}
@@ -250,7 +252,7 @@ const StartPage = ({ state, setState, handleChange }) => {
                   onChange={handleChange}
                   checked
                 />
-                <label htmlFor={field} class="form-check-label pl-3">
+                <label htmlFor={field} for={field} className="form-check-label pl-3">
                   {SCHEMA[field].label}
                 </label>
               </div>
@@ -260,13 +262,14 @@ const StartPage = ({ state, setState, handleChange }) => {
               <div class="form-check pb-3">
                 <input
                   key={idx}
+                  id={field}
                   className={category + ' ' + 'form-check-input'}
                   type={SCHEMA[field].input}
                   name={field}
                   placeholder={SCHEMA[field].placeholder}
                   onChange={handleChange}
                 />
-                <label htmlFor={field} class="form-check-label pl-3">
+                <label htmlFor={field} for={field} class="form-check-label pl-3">
                   {SCHEMA[field].label}
                 </label>
               </div>
