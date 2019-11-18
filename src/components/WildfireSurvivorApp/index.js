@@ -29,7 +29,7 @@ const WildfireSurvivorApp = () => {
     let newValidation = state["validation"]
     // Update the validation for the given input using the validation function in schema.js
     // 
-    newValidation[name] = SCHEMA[e.target.name].validation(value) ? '' : 'has-error';
+    newValidation[name] = SCHEMA[e.target.name].validation(value) ? 'is-valid' : 'is-invalid';
     let newState = { ...state, [name]: value, ["validation"]: newValidation };
     localStorage.setItem("formData", JSON.stringify(newState));
     setState(newState);
