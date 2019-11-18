@@ -12,7 +12,7 @@ Static (Development) Hosted App: https://uw-survivor-app.netlify.com/
 
 - [x] Initial Kickoff + Gather Requirements
 - [x] Initial Sketches (<a href="https://sketch.cloud/s/8Az7w">Sketch files</a>)
-- [ ] Initial (Development) Survivor Application
+- [x] Initial (Development) Survivor Application
 - [ ] Initial (Development) Survivor Dashboard
 - [ ] Initial (Production) Release for Survivor Application
 - [ ] Initial (Production) Release for Survivor Dashboard
