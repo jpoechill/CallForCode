@@ -216,7 +216,7 @@ const StartPage = ({ state, setState, handleChange }) => {
                 onChange={handleChange}
                 checked
               />
-              <label htmlFor={SCHEMA[field].name} class="form-check-label pl-3">
+              <label htmlFor={SCHEMA[field].name} className="form-check-label pl-3">
               {SCHEMA[field].label}
               </label>
             </div>
@@ -231,7 +231,7 @@ const StartPage = ({ state, setState, handleChange }) => {
                 placeholder={SCHEMA[field].placeholder}
                 onChange={handleChange}
               />
-              <label htmlFor={SCHEMA[field].name} for={field} class="form-check-label pl-3">
+              <label htmlFor={SCHEMA[field].name} for={field} className="form-check-label pl-3">
                 {SCHEMA[field].label}
               </label>
             </div>
@@ -269,7 +269,7 @@ const StartPage = ({ state, setState, handleChange }) => {
                   placeholder={SCHEMA[field].placeholder}
                   onChange={handleChange}
                 />
-                <label htmlFor={field} for={field} class="form-check-label pl-3">
+                <label htmlFor={field} for={field} className="form-check-label pl-3">
                   {SCHEMA[field].label}
                 </label>
               </div>
